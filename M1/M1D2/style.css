@@ -1,0 +1,45 @@
+.titolo{
+    text-align: center;
+
+}
+
+.sottotitolo{
+    text-align: center;
+    color: #12607a;
+    background-color: #e1eee6;
+    margin:0;
+    height: 30px;
+    padding: 8px;
+}
+
+.barra{
+     margin: 0;
+}
+
+.focaccia{
+    text-align: center;
+}
+
+.paragrafo{
+    text-align: left;
+    font-size: 1.5em;
+}
+
+
+.pagina{
+    margin-left: 250px;
+    margin-right:  250px;
+}
+
+.focaccia{
+    border-radius: 3%;
+    text-align: center;
+    width: 500px;
+}
+
+.tabella{
+    text-align: left;
+    border: yellow;
+    border-left-width: 100px;
+   
+}

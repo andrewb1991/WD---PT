@@ -1,0 +1,40 @@
+h1 {
+    color: purple;
+}
+
+#title1{
+    color: yellow;
+}
+
+.distance{
+    text-align: center;
+}
+
+.funnycolor{
+    color: hotpink;
+}
+/* si possono anche unire più stili */
+
+#big{
+    font-size: 35pt;
+}
+
+#arial{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#cambria{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+#garamond{
+    font-family: Garamond;
+}
+.lighter{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.bold{
+    font-family: Arial, Helvetica, sans-serif
+    font-weight: .bold;
+}

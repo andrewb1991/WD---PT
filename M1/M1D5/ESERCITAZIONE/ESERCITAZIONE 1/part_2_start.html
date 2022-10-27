@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin-left: 4rem;
+        margin-top: 4rem;
+      }
+      .container div {
+        width: 70px;
+        height: 60px;
+        border: 1px solid black;
+                  /* 1) Muovi i riquadri verso sinistra orizzontalmente */
+                  display: inline-block;
+
+      }
+
+
+                /* 2) UN selettore CSS per cambiare il bordo dei riquadri la cui positione è pari. */
+                 div:nth-child(even)
+                 {
+                  border: 1px dotted;
+                }
+
+
+                /* 3) UN selettore CSS per colorare di verde il colore delle lettere B e D nei riquadri di posizione dispari. */
+              
+                .container div:nth-child(2n+1) span:nth-child(2n) {
+                color: green;
+      }
+                           
+
+              /* 4) Scrivi UN selettore CSS per colorare di blu l’ultima lettera (D) del secondo riquadro  */
+
+              .container div:nth-child(2) span:last-of-type
+              {
+              color: blue;
+              }
+
+            /* 5) Scrivi UN selettore CSS per colorare di giallo tutte le lettere eccetto l’ultima (D) del sesto riquadro.  */    
+
+              .container div:nth-child(6) span:not(:last-of-type)
+              {
+              color: yellow;
+            }
+
+            /* Gli esercizi seguenti richiederanno il posizionamento CSS degli elementi!position:relative ← genitore (div);position:absolute ← figlio (span) */
+      
+      		/* 6) Es. 6) Scrivi un selettore CSS per cambiare la posizione della lettera A in tutti i riquadri. Dovresti ottenere il seguente risultato: */
+      
+      .container div {
+        position:relative;
+      }
+      
+      
+      
+    span:nth-child(1)
+                  {
+        position: absolute;
+              top: 65px;
+              left: 30px;
+      }
+      
+      
+      		/* 7) Scrivi un selettore CSS per cambiare la posizione della lettera B in tutti i riquadri. Dovresti ottenere il seguente risultato: */
+      
+      
+      span:nth-child(2){
+        position:absolute;
+        bottom: 65px;
+        left: 15px;
+      }
+          		
+      
+      
+      /* Es. 8) Scrivi un selettore CSS per cambiare la posizione della lettera D nell’ultimo riquadro. Dovresti ottenere il seguente risultato: */
+      	
+
+      .container div:nth-child(10) span:last-of-type
+          {
+        position: relative;
+        left: 40px;
+        top: 10px;
+        
+        
+      }
+      
+      
+      /* Es. 9) Scrivi un selettore CSS per cambiare la posizione della lettera D nel primo riquadro. Dovresti ottenere il seguente risultato: */
+
+	      .container div:nth-child(1) span:nth-child(4)
+
+      {
+        position: absolute;
+        right: 75px;
+        top: 15px;
+      }
+      
+      /* Es. 10) Rimuovi gli spazi bianchi tra i riquadri. (sono il risultato di default di position:inline-block) */
+      
+      .container {
+        display:flex;
+        flex-direction: row;     
+       }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+      <div>
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+      </div>
+    </div>
+  </body>
+</html>

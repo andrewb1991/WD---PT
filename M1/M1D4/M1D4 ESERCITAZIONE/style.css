@@ -1,0 +1,164 @@
+body{
+width: 100%;
+height: 100%;
+margin: 20px;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: rgba(184, 178, 178, 0.868);
+
+}
+
+
+.logo_bg {
+    background-color: #15334e;
+}
+
+.logo_up 
+{
+    background-color: #15334e;
+    width: 100px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.hp_link {
+    background-color: #295f92;
+}
+
+.list_up{
+    margin: 10px;
+    color: white;
+    font-size: 10pt;
+    }
+
+ .line_up{
+        background-color: rgb(255, 106, 0);
+        text-align: center;
+        font-size: 10pt;
+        color: white;
+        height: 20px;    
+    }
+
+    .bg_image{
+        text-align: center;
+        height: 80px;
+        background-image: url(assets/bg-image.png);
+        margin: 0;
+    }
+
+    .title_1{
+        color: white;
+        margin: 0;
+        font-size: 18pt;
+    }
+    
+    .subtitle_1{
+        color: white;
+        margin: 0%;
+        font-size: 12pt;
+    }
+
+    .products_1{
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: white;
+        margin: 10px;
+        text-align: center;
+    }    
+
+    .products_2{
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: white;
+        margin: 10px;
+        text-align: center;
+    }    
+
+
+    /* .products_2{
+        width: 230px;
+        height: 230px;
+        display: inline;
+        background-color: white;
+        margin: 30px;
+    }     */
+
+
+    .product1_img{
+        width: 230px;
+        height: 300px;
+        border-radius: 30px;
+        margin: 5px;
+        display: inline;
+    }
+    
+    .product2_img{
+        width: 700px;
+        height: 200px;
+        margin: 10px;
+        }
+    
+        .logo_down 
+        {
+            width: 100px;              background-color: #15334e;
+            margin: 10px;
+    
+        }
+        
+        .line_down{
+            background-color: #2b5a84;
+            text-align: center;
+            color: white;
+            height: 28px;
+            margin: 0%;
+        
+        }
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 280px;
+    height: 280px;
+    margin: 10px;
+    padding: 5px;
+    background-color: white;
+}
+
+.child_img {
+    display: block;
+    height: 58px;
+    padding: 15px;
+    width: 92px;
+    text-align: center;
+    }
+
+.child{
+    height: 110px;
+    width: 110px;
+    font-size: 8pt;
+    text-align: center;
+    
+
+}
+
+.megacontainer {
+;
+display: flex;
+flex-wrap: wrap;
+}
+
+.linkimg {
+text-align: center;
+
+}
+
+.logo_bg_bottom {
+    background-color: #15334e;
+    text-align: center;
+}

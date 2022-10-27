@@ -1,0 +1,452 @@
+body {
+margin:0%;
+width: 100%;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.navbar {
+width: 100%;
+height: 110px;
+display: flex;
+position: fixed;
+background-color: rgba(243,244,244,255);
+;
+box-shadow: inset 0px -10px 5px #dedede;
+justify-content: space-between;
+top: 0%;
+opacity: 1;
+z-index: 1;
+
+}
+
+.navbarleft {
+    margin-left: 80px;
+}
+
+.navbarright
+{
+    display: flex;
+    margin-right: 80px;
+    margin-top: 30px;
+}
+
+.logo {
+    width: 200px;
+    height: 100px;    
+    margin-bottom: 10px;
+    background: #0d0d0d;
+
+}
+
+.iconbar {
+width: 30px;
+height: 30px;
+padding: 5px;
+border-radius: 50%;
+
+}
+
+.iconbar:hover {
+cursor: pointer;
+box-shadow: 0 0 5px #0d0d0d;
+;
+}
+
+.buttonbar {
+border: 3px solid grey;
+background-color: white;
+border-radius: 10px;
+width: auto;
+height: 40px;
+font-size: 12pt;
+margin-left: 5px;
+}
+.buttonbar:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px #0d0d0d;    
+}
+
+.userbar {
+color: white;
+background-color: red;
+border-radius: 50%;
+font-size: 22pt;
+margin-left: 15px;
+margin-bottom: 10px;
+}
+
+.userbar:hover{
+cursor: pointer;
+box-shadow: 0 0 5px #0d0d0d;    
+}
+.mainsite {
+margin-top: 110px;
+width: 100%;
+height: 100%;
+margin-top: 110px;
+display: flex;
+flex-direction: row;
+margin-left: 30px;
+
+}
+
+#leftsection {
+display: flex;
+flex-direction: column;
+margin-left: 80px;
+width: 54%;
+border-right: 1px solid #7c70709b;
+scroll-behavior: smooth;
+z-index: 0;
+
+}
+
+
+#rightsection {
+width: 36%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+position: sticky;
+top:110px;
+right: 0;
+bottom: 500px;
+z-index: 0;
+}
+
+
+
+#navbar2 {
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+font-size: 12pt;
+font-weight: bold;
+margin-top: 40px;
+color: grey;
+border-bottom: 1px solid grey;
+width: 95%;
+height: 40px;
+margin-bottom: 20px;
+}
+
+.tabbar2{
+margin-right: 20px;
+}
+.tabbar2:hover{
+color: black;
+border-bottom: 1px solid black;
+cursor: pointer;
+}
+.tabbar2active{
+border-bottom: 1px solid black;
+color: #0d0d0d;
+cursor: pointer;
+}
+.news {
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+margin-left: 0px;
+}
+
+
+
+.newscontent {
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+padding: 30px 0 30px 0;
+width: 70%;
+height: 200px;
+
+}
+
+.newsauthor {
+font-size: 12pt;
+font-weight: bold;
+color: grey;
+margin-bottom: 10px;
+display: flex;
+
+
+}
+
+#iconauthor {
+width: 30px;
+height: 30px;
+}
+
+.newstitle{
+font-size: 16pt;
+font-weight: bold;
+}
+
+.newspreview{
+font-size: 14pt;
+color: grey;
+margin-bottom: 10px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+height: 50px;
+margin-bottom: 0%;
+}
+
+.newsinfo {
+font-size: 10pt;
+color: grey;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+}
+
+.newsphoto {
+    margin-right: 30px;
+    margin-top: 73px;
+}
+
+#category {
+border: 1px solid grey;
+padding: 5px;
+border-radius: 20px;
+background-color: #f3f3f3db;
+}
+
+#category:hover {
+    cursor: pointer;;
+}
+
+.contwitter {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+font-size: 14pt;
+color: grey;
+text-align: center;
+align-items: center;
+margin: 20px;
+height: 200px;
+padding: 20px;
+border-bottom: 1px solid grey;
+}
+.logo2 {
+width: 50px;
+height: 30px;
+color: rgb(29, 155, 240);
+}
+
+.logotw{
+    color: rgb(29, 155, 240);
+
+}
+
+.combinatedlogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(29, 155, 240);
+}
+.buttontwitter {
+border: 1px solid grey;
+background-color: white;
+width: 53%;
+height: 19%;
+border-radius: 20px;
+align-items: center;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+
+.buttontwitter:hover {
+background-color: grey;
+cursor: pointer;
+color: white;
+}
+
+
+
+.titleright {
+font-size: 14pt;
+font-weight: bold;
+margin-bottom: 30px;
+margin-left: 30px;
+margin-top: 20px;
+
+}
+
+.recommended {
+    width: 80%;
+    margin-bottom: 20px;
+    margin-left: 30px;}
+
+.buttonrecom {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttonrecom > button {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+color: grey;
+width: 80px;
+padding: 10px;
+border-radius: 20px;
+font-size: 10pt;
+border: 1px solid grey;
+margin: 5px;}
+
+.buttonrecom > button:hover {
+cursor: pointer;
+background-color: rgb(211, 206, 206);
+color: white;
+}
+
+
+.follow {
+display: flex;
+flex-direction: column;
+margin-left: 30px;
+width: 60%;
+height: 40px;
+margin-bottom: 20px;
+}
+
+.userfollow {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+width: 444px;}
+
+.userfollow > #followicon, div, button:hover {
+cursor: pointer;
+}
+
+#authorfollow:hover {
+background-color: rgb(211, 206, 206);
+color: white;
+
+}
+
+#followicon {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border: 1px solid yellow;
+color: orange;
+margin-right: 10px;
+}
+
+.author {
+display: flex;
+flex-direction: column;
+margin-bottom: 10px;
+margin-top: 10px;
+width: 250px;}
+
+#authorname {
+font-weight: bold;
+font-size: 14pt;
+margin-bottom: 3px;
+}
+
+#authorbio {
+font-size: 10pt;
+color: grey;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+margin-bottom: 3px;
+
+}
+
+#authorfollow {
+border: 1px solid grey;
+color: grey;
+width: 80px;
+height: 40px;
+border-radius: 20px;
+font-size: 12pt;
+}
+
+.newsinfomain {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+#iconinfo {
+width: 25px;
+height: 25px;
+color: grey;
+}
+
+.follower {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+
+}
+
+.recently {
+display: flex;
+flex-direction: column;
+margin-left: 40px;
+margin-bottom: 40px;
+}
+
+#recentlyuser {
+font-size: 8pt;
+font-weight: bold;
+color: black;
+display: flex;
+justify-content: flex-start;
+margin-bottom: -10px;
+align-items: baseline;
+}
+
+#recentlytitle {
+font-size: 12pt;
+color: black;
+font-weight: bold;
+width: 250px;
+margin-bottom: 10px;
+}
+
+#recentlyinfo {
+font-size: 10pt;
+margin-bottom: 10px;
+}
+
+#recentlylink {
+    margin-top: 20px;
+text-decoration: underline;
+color: green;
+}
+
+.navfooter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    color: grey;
+    font-size: 9pt;
+    cursor: pointer;
+}
+
+#rightsection:hover{
+position: relative;
+top:0px;
+left:0;
+right:0;
+bottom:0;
+}
+

@@ -1,0 +1,99 @@
+
+/*center allinea tutti i div figli al centro */
+.pinterest_card_container {
+display: flex;
+justify-content: center;
+width: 100%;
+height: 100%;
+}
+
+.pinterest_card
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 400px;
+    height: 600px;
+    background-color: black;
+    border-radius: 60px;
+    user-select: none;
+    overflow: hidden;
+    background-image: url(assets/panorama.jpeg);
+    box-shadow: black 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.pinterest_card_overlay {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 400px;
+height: 600px;
+opacity: 0;
+background: #00000069;
+transition: opacity ease 1s;
+}
+
+.icon {
+  width:30px;
+  height: 20px;
+  }
+
+.pinterest_card_bottom {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+margin: 20px;
+
+}
+
+.pinterest_card_up {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  }
+  
+.pinterest_card:hover .pinterest_card_overlay {
+opacity: 1;
+}
+
+.button-ellipsis {
+  width: 90px;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+ }
+  .button_up {
+    width: 100px;
+    height: 50px;
+    color: black;
+    font-size: 14pt;
+    border-radius: 45%;  
+  }
+
+.pinterest_card_up{
+  position: relative;
+  bottom: 48px;
+  transition: bottom 1s;
+}    
+
+.button_bottom {
+  border-radius: 10%;
+}
+
+.button_bottom {
+  position: relative;
+  bottom: -60px;
+  transition: bottom 1s;
+}
+
+.pinterest_card_overlay:hover .button_bottom {
+  bottom: 0;
+
+}
+
+.pinterest_card_overlay:hover .pinterest_card_up {
+  bottom: 0;
+}

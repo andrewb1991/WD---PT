@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cd170d55a7.js" crossorigin="anonymous"></script>
+    <title>Medium Homepage</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navbarleft"><img class="logo" src="assets/mediumlogo.png" alt="/mediumlogo.png"></div>
+            <div class="navbarright">
+                <div>
+                    <ion-icon class="iconbar" name="search"></ion-icon>
+                </div>
+                <div>
+                    <ion-icon class="iconbar" name="bookmarks"></ion-icon>
+                </div>
+                <div>
+                    <ion-icon class="iconbar" name="notifications"></ion-icon>
+                </div>
+                <div> <button class="buttonbar">Resume Membership</button></div>
+                <div><button class="userbar">A</button></div>
+            </div>
+        </div>
+    </header>
+    <main class="mainsite">
+        <section id="leftsection">
+            <nav id="navbar2">
+                <div class="tabbar2">FOLLOWING</div>
+                <div class="tabbar2active">RECOMMENDED FOR YOU</div>
+            </nav>
+            <div class="news">
+                <div class="newscontent">
+                    <div class="newsauthor">
+                        <i class="fa-solid fa-circle-user" id="iconauthor"></i>
+                        Ryan Holiday
+                    </div>
+                    <div class="newstitle">
+                        If You Try To Do Everything, You Won’t Do Anything
+                    </div>
+                    <!-- usare ellipsis per non far apparire tutto nella preview -->
+                    <div class="newspreview">
+                        In 1956 Harry Belafonte placed a call to Coretta Scott King. With her husband arrested once
+                        again, he wanted to check in with her and see how she was doing and what the movement might
+                        need. Except they could barely carry on a conversation, because Coretta kept being pulled away
+                        from the phone to attend to one of the children, to check on dinner, to answer the door.
+                    </div>
+                    <div class="newsinfomain">
+                        <div class="newsinfo">
+                            Oct 19 · 6 min read · <span id="category">Philosophy</span>
+                        </div>
+                        <div>
+                            <i id="iconinfo" class="fa-regular fa-bookmark"></i>
+                            <i id="iconinfo" class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <!-- sinitra -->
+                    </div>
+                </div>
+                <div class="newsphoto">
+                    <img style="margin-top:73px;"
+                src="assets/mainimg1.jpeg" alt="img1">
+
+                    <!-- thumbnails -->
+                </div>
+                <!-- flex row - space between   
+                            1(autore / titolo / preview / data - durata lettura - bollino di app usata) 2 (- aggiungi a segnalibro / ... /) -->
+            </div>
+            <div class="news">
+                <div class="newscontent">
+                    <div class="newsauthor">
+                        <i class="fa-solid fa-circle-user" id="iconauthor"></i>
+                        Yael Wolfe
+                    </div>
+                    <div class="newstitle">
+                        The Real Problem When 46-Year-Old Women Are Crying in Their Cars
+                    </div>
+                    <!-- usare ellipsis per non far apparire tutto nella preview -->
+                    <div class="newspreview">
+                        And it isn’t because we’re single
+                    </div>
+                    <div class="newsinfomain">
+
+                        <div class="newsinfo">
+                            Oct 21 · 8 min read · <span id="category">Singles</span>
+                        </div>
+                        <div>
+                            <i id="iconinfo" class="fa-regular fa-bookmark"></i>
+                            <i id="iconinfo" class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+
+                    <!-- sinitra -->
+                </div>
+
+                <div class="newsphoto">
+                    <img src="assets/mainimg2.jpeg" alt="img1">
+
+                    <!-- thumbnails -->
+                </div>
+                <!-- flex row - space between   
+                            1(autore / titolo / preview / data - durata lettura - bollino di app usata) 2 (- aggiungi a segnalibro / ... /) -->
+            </div>
+            <div class="news">
+                <div class="newscontent">
+                    <div class="newsauthor">
+                        <i class="fa-solid fa-circle-user" id="iconauthor"></i>
+                        Chaz Hutton
+                    </div>
+                    <div class="newstitle">
+                        How to draw comics when you can’t actually draw. </div>
+                    <!-- usare ellipsis per non far apparire tutto nella preview -->
+                    <div class="newspreview">
+                        So, you can’t draw and you’re not funny, but you want to draw comics.
+                    </div>
+                    <div class="newsinfomain">
+                        <div class="newsinfo">
+                            Mar 23, 2018 · 5 min read ·
+                            <span id="category">Drawing</span>
+                        </div>
+                        <div>
+                            <i id="iconinfo" class="fa-regular fa-bookmark"></i>
+                            <i id="iconinfo" class="fa-solid fa-ellipsis"></i>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <div class="newsphoto">
+                    <img src="assets/mainimg3.jpeg" alt="img1">
+
+                </div>
+
+            </div>
+            <div class="news">
+                <div class="newscontent">
+                    <div class="newsauthor">
+                        <i class="fa-solid fa-circle-user" id="iconauthor"></i>
+                        Brad Stulberg
+                    </div>
+                    <div class="newstitle">
+                        Amusing Ourselves to Death in the Attention Economy </div>
+                    <!-- usare ellipsis per non far apparire tutto nella preview -->
+                    <div class="newspreview">
+                        Recently at the gas station, I was filling up my tank as a beautiful woman appeared on the
+                        high-definition screen placed on the pump. She told me when I’m feeling stressed out and
+                        overwhelmed, I need to repeat to myself a few times the phrase everything is figureoutable and
+                        then I’d be okay. My brain, she explained, would learn not to become stressed out. </div>
+                    <div class="newsinfomain">
+                        <div class="newsinfo">
+                            Oct 20
+                            ·
+                            5 min read
+                            ·
+                            <span id="category">Psychology</span>
+                        </div>
+                        <div>
+                            <i id="iconinfo" class="fa-regular fa-bookmark"></i>
+                            <i id="iconinfo" class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+
+                    <!-- sinitra -->
+                </div>
+                <div class="newsphoto">
+                    <img src="assets/mainimg4.jpeg" alt="img1">
+
+                    <!-- thumbnails -->
+                </div>
+                <!-- flex row - space between   
+                            1(autore / titolo / preview / data - durata lettura - bollino di app usata) 2 (- aggiungi a segnalibro / ... /) -->
+            </div>
+            <div class="news">
+                <div class="newscontent">
+                    <div class="newsauthor">
+                        <i class="fa-solid fa-circle-user" id="iconauthor"></i>
+
+                        Ed Knight
+                    </div>
+                    <div class="newstitle">
+                        Guessing C For Every Answer Is Now Enough To Pass The New York State Algebra Exam </div>
+                    <!-- usare ellipsis per non far apparire tutto nella preview -->
+                    <div class="newspreview">
+                        My student, River, spent more time in the courtroom than the classroom last year. One Friday
+                        night in September, a drunk friend called and asked for a ride home from a party. River obliged.
+                        That’s a problem when you’re 14 years old. On his excellent adventure with his drunk friend,
+                        River drove over the landscaping of several local businesses and ended with his car in the woods
+                        caught in a web of maple sugaring lines. Things spiralled from there.
+
+                    </div>
+                    <div class="newsinfomain">
+
+                        <div class="newsinfo">
+                            Aug 17
+                            ·
+                            11 min read
+                            ·
+                            <span id="category">Education</span>
+                        </div>
+                        <div>
+                            <i id="iconinfo" class="fa-regular fa-bookmark"></i>
+                            <i id="iconinfo" class="fa-solid fa-ellipsis"></i>
+                        </div>
+                        <!-- sinitra -->
+                    </div>
+                    <!-- sinitra -->
+                </div>
+                <div class="newsphoto">
+                    <img src="assets/mainimg5.png" alt="img1">
+
+                    <!-- thumbnails -->
+                </div>
+                <!-- flex row - space between   
+                            1(autore / titolo / preview / data - durata lettura - bollino di app usata) 2 (- aggiungi a segnalibro / ... /) -->
+            </div>
+            <div class="news">
+                <div class="newscontent">
+                    <div class="newsauthor">
+                        <i class="fa-solid fa-circle-user" id="iconauthor"></i>
+                        Tom Zimberoff
+                    </div>
+                    <div class="newstitle">
+                        Behind Every Great Enterprise Lies a Crime </div>
+                    <!-- usare ellipsis per non far apparire tutto nella preview -->
+                    <div class="newspreview">
+                        An Autobiographical Account Leading Up to My First Published Pictures </div>
+                    <div class="newsinfomain">
+                        <div class="newsinfo">
+                            Oct 21
+                            ·
+                            29 min read
+                            ·
+                            <span id="category">Memoir</span>
+                        </div>
+                        <div>
+                            <i id="iconinfo" class="fa-regular fa-bookmark"></i>
+                            <i id="iconinfo" class="fa-solid fa-ellipsis"></i>
+                        </div>
+                    </div>
+                    <!-- sinitra -->
+                </div>
+                <div class="newsphoto">
+                    <img src="assets/mainimg6.png" alt="img1">
+
+                    <!-- thumbnails -->
+                </div>
+                <!-- flex row - space between   
+                            1(autore / titolo / preview / data - durata lettura - bollino di app usata) 2 (- aggiungi a segnalibro / ... /) -->
+            </div>
+
+        </section>
+        <section id="rightsection">
+            <div class="contwitter">
+                <div class="combinatedlogo">
+                    <img class="logo2" src="assets/mediumlogo2.png" alt="">
+                    <div>+</div> <i class="fa-brands fa-twitter fa-2xl"></i>
+                </div>
+                <div>Discover Medium
+                    writers you already
+                    follow on Twitter.</div>
+                <button class="buttontwitter">
+                    <div class="logotw"> <i class="fa-brands fa-twitter fa-2xl"></i></div>Connect to Twitter
+                </button>
+                <div><a style="color: grey; font-size=14pt;" href="https://www.twitter.com">Maybe Later</a></div>
+            </div>
+
+            </div>
+            <div class="titleright">Recommended topics</div>
+
+            <div class="recommended">
+                <div class="buttonrecom">
+                    <button> Technology </buttton>
+                        <button> Money
+                        </button>
+                        <button>
+                            Business
+                        </button>
+                        <button> Productivity
+                        </button>
+                        <button> Psychology
+                        </button>
+                        <button> Mindfulness
+                        </button>
+                        <button> Art
+                        </button>
+
+                </div>
+            </div>
+            <div class="titleright">Who to Follow</div>
+            <div>
+
+                <div class="follower">
+                    <div>
+                        <div class="follow">
+                            <div class="userfollow">
+                                <i class="fa-solid fa-circle-user fa-2xl"></i>
+                                <div class="author">
+                                    <div id="authorname">Lessig</div>
+                                    <div id="authorbio">law protessor, activist</div>
+                                </div>
+                                <button id="authorfollow">Follow</button>
+                            </div>
+                        </div>
+                        <div class="follow">
+                            <div class="userfollow">
+                                <i class="fa-solid fa-circle-user fa-2xl"></i>
+                                <div class="author">
+                                    <div id="authorname">David Wineberg</div>
+                                    <div id="authorbio">Author. The Straight Done. or
+                                        What I learned from my first</div>
+                                </div>
+                                <button id="authorfollow">Follow</button>
+                            </div>
+                        </div>
+                        <div class="follow">
+                            <div class="userfollow">
+                                <i class="fa-solid fa-circle-user fa-2xl"></i>
+                                <div class="author">
+                                    <div id="authorname">Bonsu Thompson</div>
+                                    <div id="authorbio">Bonsu Thompson is a writer
+                                        producer, Brooklynite and 2019</div>
+                                </div>
+                                <button id="authorfollow">Follow</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="titleright">Recently Saved</div>
+            <div class="recently">
+                <div id="recentlyuser"> <i class="fa-solid fa-circle-user fa-lg" id="iconauthor"></i>
+                    </ion-icon>Eva Keiffenheim in Age of Awareness</div>
+                <div id="recentlytitle">The Feynman Technique Will Make You
+                    Remember What YOu Read</div>
+                <div id="recentlyinfo">Oct 2, 2020 • 6 min read &#9733;
+                </div>
+                <div id="recentlyuser"> <i class="fa-solid fa-circle-user fa-lg" id="iconauthor"></i>
+                    chrissy teiger </div>
+                <div id="recentlytitle">Hi.</div>
+
+                <div id="recentlyinfo">Oct 27 2020 - 6 min read</div>
+                <a id="recentlylink" href="www.google.com">See all (3)</a>
+
+            </div>
+            <footer>
+                <nav class="navfooter">
+                    <span>Status</span>
+                    <span>Writers</span>
+                    <span>Blog</span>
+                    <span>Privacy</span>
+                    <span>Terms</span>
+                    <span>Careers</span>
+                    <span>About</span>
+
+                </nav>
+            </footer>
+
+        </section>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+.box {
+width: 800px;
+height: 600px;
+border: 1px solid black;
+position: absolute;
+top: 15%;
+left: 25%;
+right: 25%;
+bottom: 25%;
+display: flex;
+flex-direction: column;
+}
+
+.box1 {
+ height: 100px;
+width: 100%;
+background-color: rgb(69, 176, 212);
+
+}
+
+.box2 {
+
+display: flex;
+flex-direction: row;
+height: 400px;
+width: 100%;
+}
+
+#box2_1 {
+background-color: orange;
+width: 15%;
+}
+
+#box2_2 {
+    background-color: yellow;
+    width: 60%;
+    }
+
+#box2_3{
+     background-color: rgba(237, 215, 16, 0.747);
+    width: 25%;
+        }
+
+.box3 {
+height: 100px;
+background-color: rgb(69, 176, 212);
+}
+

@@ -1,0 +1,62 @@
+#pinterest_container {
+    display: flex;
+    justify-content: center;
+}
+
+#pinterest{
+    width: 400px;
+    height: 600px;
+    background-image: url('./assets/panorama.jpeg');
+    border-radius: 15%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#pinterest_overlay {
+    width: 400px;
+    height: 600px;
+    background: #00000069;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    transition: opacity ease 0.5s;   
+}
+
+#pinterest:hover #pinterest_overlay {
+opacity: 1;
+
+}
+
+#button-top {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #button-bottom {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  #button-top > button
+   {
+    position: relative;
+    top: -20px;
+    transition: top 1.5s;
+  }
+
+
+  #button-bottom > button {
+    position: relative;
+    bottom: -50px;
+    transition: bottom 0.6s;
+  }
+  
+    #pinterest:hover #button-top > button {
+        top: 0;
+      }
+      
+      #pinterest:hover #button-bottom > button {
+        bottom: 0;
+      }
+      
