@@ -9,18 +9,50 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let a = 10;
+if (a != 5){
+console.log(`not equal`)
+}
 
 /* ESERCIZIO 3
   Scrivi un algoritmo che mostri "divisible by 5" in console se un numero fornito è perfettamente divisibile per 5 (suggerimento: cerca l'operatore modulo su un motore di ricerca)
 */
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+let b;
+b = 25;
+
+if (b % 5 == 0){
+  console.log(`divisible by 5`)
+}
+else{
+console.log(`NOT`)
+}
 
 /* ESERCIZIO 4
   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
 */
 
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+let c = 4;
+let d = 8;
+
+if (c + d === 8) {
+console.log(`IL TOTALE E' 8`)
+}
+else {
+console.log(`IL TOTALE NON E' 8`)
+}
+
+if (c  === 8 || d === 8)
+{
+console.log(`Uno dei due numeri è 8`)
+}
+else {
+console.log (`Nessuno dei due numeri è 8`)
+}
 
 /* ESERCIZIO 5
   Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
