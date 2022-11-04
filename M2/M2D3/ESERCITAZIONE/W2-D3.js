@@ -1,81 +1,162 @@
-/* ESERCIZIO 1
- Scrivi un algoritmo per trovare il più grande tra due numeri interi.
-*/
+// /* ESERCIZIO 1
+//  Scrivi un algoritmo per trovare il più grande tra due numeri interi.
+// */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+// /* SCRIVI QUI LA TUA RISPOSTA */
+// const e = 8;
+// const f = 8;
 
-/* ESERCIZIO 2
-  Scrivi un algoritmo che mostri "not equal" in console se un numero intero fornito è diverso da 5.
-*/
+// if (e > f) {
+//   console.log(`${e} è maggiore di ${f}`);
+// } else if (e < f) {
+//   console.log(`${f} è maggiore di ${e}`);
+// }
+// else if (e === f) {
+//   console.log(`I DUE NUMERI SONO UGUALI: ${e}`);
+// }
 
-/* SCRIVI QUI LA TUA RISPOSTA */
-let a = 10;
-if (a != 5){
-console.log(`not equal`)
-}
+// /* ESERCIZIO 2
+//   Scrivi un algoritmo che mostri "not equal" in console se un numero intero fornito è diverso da 5.
+// */
 
-/* ESERCIZIO 3
-  Scrivi un algoritmo che mostri "divisible by 5" in console se un numero fornito è perfettamente divisibile per 5 (suggerimento: cerca l'operatore modulo su un motore di ricerca)
-*/
-/* SCRIVI QUI LA TUA RISPOSTA */
-
-let b;
-b = 25;
-
-if (b % 5 == 0){
-  console.log(`divisible by 5`)
-}
-else{
-console.log(`NOT`)
-}
-
-/* ESERCIZIO 4
-  Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
-*/
+// /* SCRIVI QUI LA TUA RISPOSTA */
+// let a = 4;
+// if (a != 5) {
+//   console.log(`not equal`)
+// }
 
 
-/* SCRIVI QUI LA TUA RISPOSTA */
 
-let c = 4;
-let d = 8;
+// // function isNumber5(num) {
+// //   if(num !== 5) {
+// //     console.log(`not equal`)
+// //   }
+// // }
+// // isNumber5(8)
+// // isNumber5(5)
+// // isNumber5(7)
 
-if (c + d === 8) {
-console.log(`IL TOTALE E' 8`)
-}
-else {
-console.log(`IL TOTALE NON E' 8`)
-}
+// /* ESERCIZIO 3
+//   Scrivi un algoritmo che mostri "divisible by 5" in console se un numero fornito è perfettamente divisibile per 5 (suggerimento: cerca l'operatore modulo su un motore di ricerca)
+// */
+// /* SCRIVI QUI LA TUA RISPOSTA */
 
-if (c  === 8 || d === 8)
-{
-console.log(`Uno dei due numeri è 8`)
-}
-else {
-console.log (`Nessuno dei due numeri è 8`)
-}
+// let b;
+// b = 100000005;
 
-/* ESERCIZIO 5
-  Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
-  C'è una promozione in corso: se il totale del carrello supera 50, l'utente ha diritto alla spedizione gratuita (altrimenti la spedizione ha un costo fisso pari a 10).
-  Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
-*/
+// if (b % 5 === 0) {
+//   console.log(`divisible by 5`);
+// }
 
-/* SCRIVI QUI LA TUA RISPOSTA */
 
-/* ESERCIZIO 6
-  Stai lavorando su un sito di e-commerce. Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
-  Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
-*/
+// /* ESERCIZIO 4
+//   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
+// */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
 
-/* ESERCIZIO 7
-  Crea tre variabili, e assegna un valore numerico a ciascuna di esse.
-  Utilizzando un blocco condizionale, crea un algoritmo per ordinarle secondo il loro valore, dal più alto al più basso.
-  Alla fine mostra il risultato in console.
-*/
+// /* SCRIVI QUI LA TUA RISPOSTA */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+// let c = 2;
+// let d = 6;
+// if (c === 8 || d === 8) {
+//   console.log(`Uno dei due numeri è 8`)
+// }
+// else {
+//   console.log(`Nessuno dei due numeri è 8`)
+// }
+// if (c + d === 8) {
+//   console.log(`la somma di ${c} e ${d} è uguale a 8`);
+// }
+// else if (c - d === 8) {
+//   console.log(`La differenza tra ${c} e ${d} è uguale a 8`);
+// } else if (d - c === 8) {
+//   console.log(`La differenza tra ${d} e ${c} è uguale a 8`);
+// }
+// else {
+//   console.log(`NO`);
+// }
+
+
+// /* ESERCIZIO 5
+//   Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
+//   C'è una promozione in corso: se il totale del carrello supera 50, l'utente ha diritto alla spedizione gratuita (altrimenti la spedizione ha un costo fisso pari a 10).
+//   Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
+// */
+
+// /* SCRIVI QUI LA TUA RISPOSTA */
+
+// function getTotalCost(totalShoppingCart) {
+//   let shippingCost = 10
+//   if (totalShoppingCart > 50) {
+//     shippingCost = 0;
+//   }
+//   return totalShoppingCart + shippingCost;
+// }
+// console.log(`Il carrello è di ${getTotalCost(400)}`);
+
+// /* OPPURE */
+
+// // function getTotalCost2(totalShoppingCart) {
+// //   return totalShoppingCart > 50 ? totalShoppingCart : totalShoppingCart + 10;
+// // }
+
+// // console.log(getTotalCost2(110));
+
+// /* ESERCIZIO 6
+//   Stai lavorando su un sito di e-commerce. Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
+//   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
+// */
+
+// /* SCRIVI QUI LA TUA RISPOSTA */
+
+// function getTotalCost2(totalShoppingCart) {
+//   let shippingCost = 10
+//   if (totalShoppingCart > 50) {
+//     shippingCost = 0;
+//   }
+//   return totalShoppingCart - (totalShoppingCart / 5) + shippingCost;
+// }
+// console.log(`Il carrello è di ${getTotalCost2(40)}`);
+
+// /* ESERCIZIO 7
+//   Crea tre variabili, e assegna un valore numerico a ciascuna di esse.
+//   Utilizzando un blocco condizionale, crea un algoritmo per ordinarle secondo il loro valore, dal più alto al più basso.
+//   Alla fine mostra il risultato in console.
+// */
+
+// /* SCRIVI QUI LA TUA RISPOSTA */
+
+// function sortSequence(g, h, i) {
+//   let one, two, three;
+//   if (g > h && g > i) {
+//     one = g;
+//   } else if (h > g && h > i) {
+//     one = h;
+//   } else {
+//     one = i;
+//   }
+
+//   if (g > h && g < i) {
+//     two = g;
+//   } else if (h > g && h < i) {
+//     two = h;
+//   } else {
+//     two = i;
+//   }
+
+
+//   if (g < h && g < i) {
+//     three = g;
+//   } else if (h < g && h < i) {
+//     three = h;
+//   } else {
+//     three = i;
+//   }
+//   console.log(one, two, three);
+// }
+// return sortSequence(1, 2, 3);
+
+// one = a > b > c ? a : b > a && b > c ? b : c
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un numero fornito sia un intero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
@@ -83,9 +164,28 @@ console.log (`Nessuno dei due numeri è 8`)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function isNumeroIntero(num) {
+  return typeof num === 'number' && num % 1 === 0;
+}
+
+// console.log(isNumeroIntero(10));
 /* ESERCIZIO 9
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
 */
+
+function checkPari(num){
+if(!isNumeroIntero(num)){
+    console.log(`ERRORE!!!`); return}
+  if (num % 2 === 0) {
+  console.log(`PARI`)
+}    
+else {
+  console.log(`DISPARI`)
+}
+}
+checkPari(2)
+checkPari(3)
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
