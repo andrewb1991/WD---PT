@@ -164,30 +164,30 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-function isNumeroIntero(num) {
-  return typeof num === 'number' && num % 1 === 0;
-}
+// function isNumeroIntero(num) {
+//   return typeof num === 'number' && num % 1 === 0;
+// }
 
 // console.log(isNumeroIntero(10));
 /* ESERCIZIO 9
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
 */
 
-function checkPari(num){
-if(!isNumeroIntero(num)){
-    console.log(`ERRORE!!!`); return}
-  if (num % 2 === 0) {
-  console.log(`PARI`)
-}    
-else {
-  console.log(`DISPARI`)
-}
-}
-checkPari(2)
-checkPari(3)
-
-
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+// function checkPari(num){
+// if(!isNumeroIntero(num)){
+//     console.log(`ERRORE!!!`); return}
+//   if (num % 2 === 0) {
+//   console.log(`PARI`)
+// }    
+// else {
+//   console.log(`DISPARI`)
+// }
+// }
+// checkPari(2)
+// checkPari(3)
+
 
 /* ESERCIZIO 10
   Modifica la logica del seguente algoritmo in modo che mostri in console il messaggio corretto in ogni circostanza.
@@ -203,6 +203,20 @@ checkPari(3)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+// let val = 10;
+
+// if (val < 10 && val >= 6) {
+//   console.log(`Meno di 10`)
+// } else if (val < 5 && val !== 5) {
+//   console.log(`Meno di 5`)
+// }
+// else if (val === 5) {
+//   console.log(`Valore uguale a 5`)
+// }
+// else{
+//     console.log(`Uguale a 10 o maggiore`)
+//   }
+
 /*
 ESERCIZIO 11
   Crea un blocco condizionale if/else annidato su più livelli per mostrare in console il messaggio corretto in ogni condizione.
@@ -216,12 +230,36 @@ ESERCIZIO 11
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+// let num = 20;
+
+// if (num <5){
+//   console.log(`Tiny`)
+// }
+// else if (num < 10) {
+//   console.log(`Small`)
+// }
+// else if (num < 15) {
+//   console.log(`Medium`)
+// }
+// else if (num < 20) {
+//   console.log(`Large`)
+// }
+// else if (num >= 20) {
+//   console.log(`Huge`)
+// }
+
 /*  ESERCIZIO 12
   Usa un operatore ternaio per assegnare ad una variabile chiamata "gender" i valori "male" o "female".
   La scelta deve essere basata sul valore di un'altra variabile chiamata isMale.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+// let isMale = 0;
+// let male = ("é un maschio!");
+// let female = ("è una femmina!");
+// let gender = isMale ? male : female;
+// console.log(gender);
+
 
 /* ESERCIZIO 13
   Mostra i numeri da 0 a 5 (incluso) in ordine ascendente utilizzando un ciclo while.
@@ -229,29 +267,79 @@ ESERCIZIO 11
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+// let n = -1;
+// while (n <= 4) {
+//   n++;
+//   console.log(n);
+// }
+
+
 /* ESERCIZIO 14
   Mostra i numeri da 0 a 10 (incluso) in ordine ascendente utilizzando un ciclo for.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+
+// for (let num = 0; num <= 10; num++)
+// console.log(num)
+
+
 /* ESERCIZIO 15
   Mostra i numeri da 0 a 10 (incluso) in ordine ascendente, ma evitando di mostrare i numeri 3 e 8.
 */
 
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+// for (let num = 0; num <= 10; num++){
+// if (num === 3){
+//   continue;
+// } else if (num === 8){
+//   continue;
+// }
+// console.log(num);
+// }
+
 
 /* ESERCIZIO 16
   Scrivi un ciclo in JavaScript per iterare da 0 a 15. Per ciascun elemento, il ciclo deve controllare the il valore corrente sia pari o dispari, e mostrare il risultato in console.
 */
 
+
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+// for (let num = 0; num <=15; num++)
+// if(num % 2){
+//   console.log(`${num} E' DISPARI`);
+// }
+// else {
+//   console.log(`${num} E' PARI!`)
+// }
 
 /* ESERCIZIO 17
   Scrivi un algoritmo che iteri i numeri da 1 a 100, stampandoli in console. Se un valore tuttavia è multiplo di 3, stampa al suo posto la parola "Fizz" e se il numero è multiplo di 5, stampa "Buzz". Se le condizioni si verificano entrambe, stampa "FizzBuzz".
 */
 
+
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+// for (let num = 0; num <=100; num++){
+//   {
+//  console.log(`${num}`)
+//  }
+//  if (num % 3 === 0 && num % 5 === 0){
+//      console.log(`${num} FizzBuzz`);  
+//    }
+//  else if (num % 5 === 0){
+//  console.log(`${num} Buzz`);
+//    }
+// else if (num % 3 === 0){
+//  console.log(`${num} Fizz`);
+// }
+// }
 
 /* ESERCIZIO 18
   Scrivi un algoritmo per controllare il giorno della settimana. Usa uno switch-case sulla variabile "day", che può avere un valore da 1 a 7.
@@ -259,3 +347,37 @@ ESERCIZIO 11
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+// let day = 7;
+
+// for(day === 1; day <=7; day++){
+//   if(day===1){
+//   console.log(`Lunedì`);
+//   break;
+// }
+// else if (day === 2) {
+//   console.log(`Martedì`);
+//   break;
+// }
+// else if (day === 3){
+//   console.log(`Mercoledi`);
+//   break;
+// }
+// else if (day === 4){
+//   console.log(`Giovedì`);
+//   break;
+// }
+// else if (day === 5){
+//   console.log(`Venerdì`);
+//   break;
+// }
+// else if (day === 6){
+//   console.log(`Sabato`);
+//   break;
+// }
+// else if (day === 7){
+//   console.log(`Domenica`);
+//   break;
+// }
+// }
+//  console.log();
