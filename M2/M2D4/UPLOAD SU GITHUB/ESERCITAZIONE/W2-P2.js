@@ -2,53 +2,130 @@
   Fornito il seguente oggetto, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
 */
 
-const me = {
-  name: 'Joh',
-  lastName: 'Doe',
-  skills: ['javascript', 'html', 'css'],
-}
+// const me = {
+//   name: 'Joh',
+//   lastName: 'Doe',
+//   skills: ['javascript', 'html', 'css'],
+// }
+
+// me.skills.pop();
+// console.log(me);
 
 /* ESERCIZIO 2
   Scrivi del codice per creare un array di soli valori DISPARI da 1 a 100.
  */
+// const oddNumers = [];
+// for(let i = 1; i<=100; i = i + 2){
+//   oddNumers.push(i);
+// }
+// console.log(oddNumers);
 
-/* ESERCIZIO 3
-  Scrivi del codice per creare un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
- */
 
-/* ESERCIZIO 4
-  Scrivi del codice per ricavare solamente i valori PARI da un array composto da soli valori numerici.
- */
+// /* ESERCIZIO 3
+//   Scrivi del codice per creare un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
+//  */
+
+// function randomIntFromInterval(min, max){
+//   return Math.floor(Math.random() * (max - min + 1))
+// }
+
+// const randomArray = [];
+// for (let i = 0; i < 10; i++){
+//   randomArray.push(randomIntFromInterval(0,100));
+// }
+// console.log(randomArray);
+
+// /* ESERCIZIO 4
+//   Scrivi del codice per ricavare solamente i valori PARI da un array composto da soli valori numerici.
+//  */
+
+// const arrayPari = [];
+// for(i = 0; i < 100; i++){
+// arrayPari.push(randomIntFromInterval(0,100)); 
+// }
+// const myEvenNumbers = [];
+// for (const num of arrayPari){
+//   if(num %2 === 0){
+//     myEvenNumbers.push(num);
+//   }
+// }
+// console.log(myEvenNumbers);
+
 
 /* ESERCIZIO 5
   Scrivi del codice per sommare a catena i numeri contenuti in un array.
  */
+  function randomIntFromInterval(min, max){
+    return Math.floor(Math.random() * (max - min + 1))
+  }
+  function generateRandomNumbers(length){
+  const myArr = [];
+  for(i = 0; i < length; i++){
+  myArr.push(randomIntFromInterval(0,100)); 
+}
+return myArr;
+  }
+const numbers = generateRandomNumbers(10);
+console.log(numbers);
+
+// let sum = 0;
+
+// for(const num of numbers){
+//   sum += num;
+// }
+// console.log(sum);
 
 /* ESERCIZIO 6
   Scrivi del codice per incrementare di 1 tutti i valori numerici in un array.
 */
+// for(let i = 0; i < numbers.length; i++){
+//   numbers[i]++;
+// }
+// console.log(numbers);
+
 
 /* ESERCIZIO 7 (EXTRA)
   Scrivi del codice per eliminare solo i valori PARI da un array.
 */
+// console.log(numbers);
+// for(let i = numbers.length -1; i >= 0; i--){
+//   if(numbers[i] %2 === 0){
+//     numbers.splice(i,1);
+//   }
+// }
+// console.log(numbers);
 
 /* ESERCIZIO 8
   Scrivi del codice per creare un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 10 (incluso), SENZA AMMETTERE DUPLICATI.
  */
+  // console.log(numbers);
 
 /* ESERCIZIO 9
   Sostituisci ogni stringa contenuta in un array con un numero rappresentante la sua lunghezza.
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
 
+// const myStringArray = [`Andrea`, `è`, `Simpatico`];
+// for(let i = 0; i < myStringArray.length; i++){
+//   myStringArray[i] = myStringArray[i].length;
+// }
+// console.log(myStringArray);
+
+
 /* ESERCIZIO 10
   Scrivi un algoritmo in grado di invertire un array.
   es: [1, 3, 5] ==> [5, 3, 1]
 */
-
+// const arrayReverse = [2,5,8];
+// console.log(arrayReverse, `Array 1`);
+// arrayReverse.reverse();
+// console.log(arrayReverse);
 /* ESERCIZIO 11
   Scrivi del codice per estrarre il massimo valore numerico da un array.
 */
+// console.log(numbers);
+// numbers.sort();
+// console.log(numbers);
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -169,6 +246,7 @@ const movies = [
 /* ESERCIZIO 12
   Scrivi del codice per trovare il film più vecchio nell'array fornito.
 */
+console.log(movies);
 
 /* ESERCIZIO 13
   Scrivi del codice per ottenere il numero di film contenuti nell'array fornito.
