@@ -31,3 +31,7 @@ const amy = {
 
 const prices = [34, 5, 2]
 const shippingCost = 50
+
+
+
+

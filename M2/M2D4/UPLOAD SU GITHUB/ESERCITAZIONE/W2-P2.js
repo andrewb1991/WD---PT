@@ -242,15 +242,20 @@ const movies = [
       'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
   },
 ]
-
+console.log(movies);
 /* ESERCIZIO 12
   Scrivi del codice per trovare il film più vecchio nell'array fornito.
 */
-console.log(movies);
+for(i = 0; i < movies.length; i++){
+  parseInt(movies.Year);
+  console.log(movies[i].Year);
+}
+
 
 /* ESERCIZIO 13
   Scrivi del codice per ottenere il numero di film contenuti nell'array fornito.
 */
+
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array con solamente i titoli dei film contenuti nell'array fornito.
