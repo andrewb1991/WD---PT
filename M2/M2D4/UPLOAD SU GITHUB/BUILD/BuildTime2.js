@@ -11,6 +11,26 @@ In entrambi i casi, la spedizione è gratuita per ogni carrello con costo superi
 In basso troverai degli esempi di utenti, una lista prezzi e un costo fisso di spedizione.
 */
 
+
+function calculateFinalPrice(buyer, prices, shippingCost) {
+  //sommo i prezzi e trovo il totale;
+  let total = 0;
+  for(const price of prices){
+    total += prices;
+  } //applico sconto 30% per gli ambassador
+if(buyer.isAmbassador){
+  //applico il discount (lo sconto) dal totale;
+const discount = (total / 100)*30;
+total -= discount;
+}
+  if(total < 100){//applico shipping cost su ordini totale < 100; (giro la domanda al contrario)
+    total += shippingCost;
+  }
+return total; //restituisco il totale con sconto su shippingcost se il totale è maggiore di 100, con l'aggiunta di shippingcost
+console.log(`Il prezzo finale per` + buyer.name + ` ` + buyer.lastName + `è: ` + total);
+}
+
+
 const marco = {
   name: 'Marco',
   lastName: 'Rossi',
@@ -29,9 +49,28 @@ const amy = {
   isAmbassador: false,
 }
 
-const prices = [34, 5, 2]
+const prices = [340, 327, 220]
 const shippingCost = 50
 
 
+function calculateFinalPrice(buyer, prices, shippingCost) {
+  //sommo i prezzi e trovo il totale;
+  let total = 0;
+  for(const price of prices){
+    total += price;
+  } //applico sconto 30% per gli ambassador
+  if(buyer.isAmbassador){
+  //applico il discount (lo sconto) dal totale;
+      const discount = (total / 100) * 30;
+      total -= discount;
+}
+  if(total < 100){//applico shipping cost su ordini totale < 100; (giro la domanda al contrario)
+    total += shippingCost;
+  }
+console.log(`Il prezzo finale per ` + buyer.name + ` ` + buyer.lastName + ` è: ` + total);
+}
 
 
+calculateFinalPrice(marco, prices, shippingCost);
+calculateFinalPrice(paul, prices, shippingCost);
+calculateFinalPrice(amy, prices, shippingCost);

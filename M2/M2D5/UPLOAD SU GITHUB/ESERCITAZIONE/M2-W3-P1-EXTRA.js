@@ -56,6 +56,17 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const longest = (stringArr) => {
+    let max = null; //variabile d'appoggio;
+    for(let i = 0; i < stringArr.length; i++){
+        const element = stringArr[i];
+        if(max === null || max.length < element.length){
+        max = element;
+        }
+    }
+return max;
+}
+console.log(longest([`ciao`, `evviva`, `vercingetorige` ]))
 /* EXTRA 9
  Scrivi una funzione per creare un filtro anti spam molto semplice per una casella email. La funzione riceve una stringa come parametro, "emailContent", e ritorna un boolean.
  La funzione deve tornare true se emailContent NON contiene le parole "SPAM" o "SCAM".
@@ -63,12 +74,28 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const mailFilter = emailContent => !emailContent.toUpperCase().includes(`SCAM`) && !emailContent.toUpperCase().includes(`SPAM`);
+
+console.log(
+    mailFilter(`QUesto non è uno ScAM!`)
+    )
+
 /* EXTRA 10
  Scrivi una funzione che riceve come parametro una data e ritorna il numero di giorni passati ad oggi.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const daysToToday = (date) => { 
+    const now = new Date();
+    const diffMs = Math.abs(now.getTime() - date.getTime());
+    return Math.floor(diffMs /1000 /60 /60 /24); 
+    //una data è codificata in javascript con date, n di millisecondi dal 1/1/1970 fino a questo preciso momento. ogni data è convertibile in millisecondi.
+}
+console.log(
+    daysToToday(new Date(`2021-11-11`))
+    
+    );
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due interi, "x" e "y".
  La funzione deve tornare una matrice di x volte y, e ogni valore deve rappresentare l'indice dell'elemento.
@@ -78,3 +105,21 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+//matrice in javascript = array di un array
+
+const matrixGenerator = (x, y) => {
+    const matrix = []; // prima costruisco un array
+    for(let i = 0; i < y; i++){
+        const row = [];
+        for(let j = 0; j < x; j++){
+            row.push(j.toString() + i.toString())
+        }
+
+    matrix.push(row);
+    }
+return matrix;
+
+}
+console.log(matrixGenerator(6,7));
+
+

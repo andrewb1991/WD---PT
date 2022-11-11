@@ -246,10 +246,6 @@ console.log(movies);
 /* ESERCIZIO 12
   Scrivi del codice per trovare il film più vecchio nell'array fornito.
 */
-for(i = 0; i < movies.length; i++){
-  parseInt(movies.Year);
-  console.log(movies[i].Year);
-}
 
 
 /* ESERCIZIO 13
