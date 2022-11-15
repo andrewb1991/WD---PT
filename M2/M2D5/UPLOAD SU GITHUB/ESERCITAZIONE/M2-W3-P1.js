@@ -133,18 +133,18 @@ REGOLE
 */
 //str.split e str.join
 
-function upperFirst(upperString){
-    const words = upperString.split(` `);
-for(i = 0; i < words.length; i++ ){
-     const word = words[i];
-     const upperWord = word[0].toUpperCase() + word.substr(1, word.length -1);
-     words[i] = upperWord;
-}
-return words.join(` `);
-}
-const str = "ciao mi chiamo andrea bramucci";
-console.log(
-    upperFirst(str));
+// function upperFirst(upperString){
+//     const words = upperString.split(` `);
+// for(i = 0; i < words.length; i++ ){
+//      const word = words[i];
+//      const upperWord = word[0].toUpperCase() + word.substr(1, word.length -1);
+//      words[i] = upperWord;
+// }
+// return words.join(` `);
+// }
+// const str = "ciao mi chiamo andrea bramucci";
+// console.log(
+//     upperFirst(str));
 
     
 /* SCRIVI QUI LA TUA RISPOSTA */
@@ -160,3 +160,17 @@ console.log(
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+// function randomInt(min, max){
+//     return Math.floor(Math.random() * (max - min +1) - min);
+// }
+
+// function giveMeRandom(lenght){
+//     const randomArr = [];
+//     for( let i = 0; i < lenght; i++){
+//         randomArr.push(randomInt(0,10))
+//     }
+// return randomArr;
+// }
+// console.log(
+//     giveMeRandom(10),
+//     )
