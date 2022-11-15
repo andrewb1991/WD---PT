@@ -1,4 +1,6 @@
 // Esercizi aggiuntivi
+// SU CODEPEN.IO LINK = https://codepen.io/LoSceicco/pen/YzvNdMq?editors=1010
+
 
 /* EXTRA 1
  Scrivi una funzione chiamata "checkArray", che riceve come parametro un array di numeri random (creati con giveMeRandom)
