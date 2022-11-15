@@ -49,57 +49,59 @@ return randomArr;
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
-// price, id, name, quantity;
-const generateRandomId = () => new Date().getTime().toString();
+const generateRandomID = () => new Date().getTime().toString(); 
 const generateProduct = () => {
-  const productDb = [
-    'Panino col salame',
-    'Kebab',
-    'Nduja di Spilinga',
-    'Pastiera',
-    'Ravioli del plin',
-    'Pizza',
-    'Pasta con le sarde',
-    'Caprese',
-    'Nu Bell Babà',
-    'Pane e acqua'
-  ];
-  const randomIndex = randomInt(0, productDb.length - 1);
+  const productDb =[ 'Panino col salame',
+  'Kebab',
+  'Nduja di Spilinga',
+  'Pastiera',
+  'Ravioli del plin',
+  'Pizza',
+  'Pasta con le sarde',
+  'Caprese',
+  'Nu Bell Babà',
+  'Pane e acqua'];
+  const randomIndex = randomInt(0, productDb.length -1);
   return productDb[randomIndex];
 }
 
 const generateRandomCartItem = () => {
-  const price = randomInt(10, 200);
-  const id = generateRandomId();
+  const price = randomInt(10,200);
+  const id = generateRandomID();
   const name = generateProduct();
   const quantity = randomInt(1, 10);
-  cart.push({
-    id,
-    name,
-    price,
-    quantity});
-}
-
-const generateRandomCart = () => {
-  const cartLength = randomInt(5, 10);
-  const cart = [];
-  for(let i = 0; i < cartLength; i++) {
-    cart.push(generateRandomCartItem())
+  return { price, id, name, quantity
   }
-  return cart;
 }
 
+// price, nome, id, quantity;
+const generateRandomCart = () => {
+  const cartLenght = randomInt(5,20);
+  const cart = [];
+for(let i = 0; i < cartLenght; i++){
+  const price = randomInt(10,200);
+  const id = generateRandomID();
+  const name = generateProduct();
+  const quantity = randomInt(1, 10);
+  cart.push(generateRandomCartItem());
+}
+return cart;
+}
 
-const totalCartPrice = cart => {
+// console.log(generateRandomCart());
+const totalCartPrice = cart => { 
   let total = 0;
-  for(const cartItem of cart) {
-    total += cartItem.price * cartItem.quantity;
+  for(const cartItem of cart){
+    total += cartItem.price * cartItem.quantity
   }
   return total;
-}
+  }
+const randomCart = generateRandomCart();
+const total = totalCartPrice(randomCart);
 
-
+// console.log(
+//   randomCart, total,
+//   )
 /* EXTRA 3
  Nel tuo sito e-commerce hai un array di oggetti chiamato shoppingCart. Ognuno di questi oggetti ha un prezzo, un nome, un id e la quantità da spedire.
  Crea una funzione chiamata "addToShoppingCart" che riceve un nuovo oggetto, lo aggiunge allo shoppingCart e ritorna il numero totale degli oggetti in esso contenuti.
@@ -107,15 +109,19 @@ const totalCartPrice = cart => {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const addToShoppingCart = (cart, newCartItem) => {
-  cart.push(newCartItem);
-  let totalQuantity = 0;
-  for(const item of cart) {
-    totalQuantity += item.quantity;
-  }
-  return totalQuantity;
-}
+// const addToShoppingCart = (cart, newCartItem) => {
 
+//     cart.push(newCartItem);
+//     let totalQuantity = 0;
+//     for (const item of cart){
+//   totalQuantity += item.quantity;
+//     }
+//   return totalQuantity;
+// }
+// const maxCartItem = maxShoppingCart(maxCartItem);
+// const randomCartItem = generateRandomCartItem();
+// const totalQuantity  = addToShoppingCart(randomCart, randomCartItem);
+// console.log(randomCart, randomCartItem, totalQuantity);
 
 /* EXTRA 4
  Nel tuo sito e-commerce hai un array di oggetti chiamato shoppingCart. Ognuno di questi oggetti ha un prezzo, un nome, un id e la quantità da spedire.
@@ -123,6 +129,18 @@ const addToShoppingCart = (cart, newCartItem) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+// const maxShoppingCart = (cart) =>{
+//   let maxCartPrice = null;
+//   for(const item of cart){
+//     if(maxCartItem === null || item.price > maxCartItem.price){
+//       maxCartItem = item;
+//     }
+//   }
+// return maxCartItem;
+// }
+// const maxItem = maxShoppingCart(randomCart);
+// console.log(randomCart, maxItem);
+
 
 /* EXTRA 5
  Nel tuo sito e-commerce hai un array di oggetti chiamato shoppingCart. Ognuno di questi oggetti ha un prezzo, un nome, un id e la quantità da spedire.
@@ -130,6 +148,9 @@ const addToShoppingCart = (cart, newCartItem) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const latestShoppingCart = cart => cart[cart.lenght-1];
+console.log( randomCart, latestShoppingCart(randomCart));
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve come parametro un intero "x" compreso tra 0 e 9.
