@@ -248,14 +248,37 @@ console.log(movies);
 */
 
 
+//const movie creata da noi, per ciclare i movies, creo prima una variabile.
+let oldest = null;
+for(const movie of movies){
+  console.log(`oldest is;`, oldest);
+  console.log(`movie is: `, movie);
+  if(oldest === null){
+    oldest = movie;
+    continue;
+  }
+console.log(movie.Year, oldest.Year);
+if(movie.Year < oldest.Year){
+  oldest = movie;
+}
+}
+console.log(oldest);
+
+
 /* ESERCIZIO 13
   Scrivi del codice per ottenere il numero di film contenuti nell'array fornito.
 */
-
-
+let total = 0;
+for (i = 0; i < movies.length; i ++){
+  total = movies.length;
+}
+console.log(total);
 /* ESERCIZIO 14
   Scrivi del codice per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+function filterTitle ()
+
+
 
 /* ESERCIZIO 15
   Scrivi del codice per ottenere dall'array fornito solamente i film usciti nel millennio corrente.

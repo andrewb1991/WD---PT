@@ -91,6 +91,7 @@ return cart;
 }
 
 // console.log(generateRandomCart());
+
 const totalCartPrice = cart => { 
   let total = 0;
   for(const cartItem of cart){
@@ -101,9 +102,9 @@ const totalCartPrice = cart => {
 const randomCart = generateRandomCart();
 const total = totalCartPrice(randomCart);
 
-// console.log(
-//   randomCart, total,
-//   )
+console.log(
+  randomCart, total,
+  )
 /* EXTRA 3
  Nel tuo sito e-commerce hai un array di oggetti chiamato shoppingCart. Ognuno di questi oggetti ha un prezzo, un nome, un id e la quantità da spedire.
  Crea una funzione chiamata "addToShoppingCart" che riceve un nuovo oggetto, lo aggiunge allo shoppingCart e ritorna il numero totale degli oggetti in esso contenuti.
@@ -152,7 +153,6 @@ const total = totalCartPrice(randomCart);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const latestShoppingCart = cart => cart[cart.lenght-1];
-console.log( randomCart, latestShoppingCart(randomCart));
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve come parametro un intero "x" compreso tra 0 e 9.
@@ -160,6 +160,10 @@ console.log( randomCart, latestShoppingCart(randomCart));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const loopUntil = num 0 {
+  
+}
 
 /* EXTRA 7
  Crea una funzione chiamata "average" che riceve un array come parametro e ritorna la media aritmetica dei numeri in esso contenuti.
