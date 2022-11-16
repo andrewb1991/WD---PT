@@ -4,10 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="W3-P2.md" type="text/javascript" ></script>
-    <title>15 11 2022 ARASH</title>
+    <script src="main.js" type="text/javascript" ></script>  
+
+    <link rel="stylesheet" href="style.css">
+    <title>La Bottega di Andrew</title>
 </head>
 <body>
-    
+    <h1 onclick="changeH1()">La bottega di Andrew</h1>
+    <button onclick="changeBg()">CAMBIA COLORE DELLA PAGINA</button>
+    <table>
+        <tr>
+          <th>Smartphone</th>
+          <th>Foto</th>
+          <th>Descrizione</th>
+          <th>Prezzo</th>
+          <th>Buy Here!</th>
+          <th>Lascia un Commento</th>
+        </tr>
+        <tr>
+          <td>Oppo Find X5</td>
+          <td><img class="img1" src="assets/find x5.png" alt="finx5"></td>
+          <td>Questo Oppo Find X5 è un prodotto con pochi competitor per ciò che riguarda la multimedialità grazie alla fotocamera da ben 50 megapixel che permette al Oppo Find X5 di scattare foto di alta qualità con una risoluzione di 8165x6124 pixel e di registrare video in 4K alla risoluzione di 3840x2160 pixel. Lo spessore di 8.7mm è contenuto e rende questo Oppo Find X5 molto interessante.</td>
+          <td>539€</td>
+          <td><a onmouseover="changeLink()" href="https://www.amazon.it/OPPO-Smartphone-Fotocamera-Garanzia-Versione/dp/B09SZFRBCH/ref=sr_1_1_sspa?crid=XB6L8HOIA632&keywords=find+x5&qid=1668614741&qu=eyJxc2MiOiIzLjQ1IiwicXNhIjoiMi40NCIsInFzcCI6IjAuODEifQ%3D%3D&sprefix=FIND+%2Caps%2C126&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Compra Qui!</a></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>Xiaomi 12T Pro</td>
+            <td><img class="img1" src="assets/xiaomi 12t pro.jpeg" alt=""></td>
+            <td>Xiaomi 12T Pro è indubbiamente uno degli smartphone Android più avanzati e completi disponibili sul mercato, grazie alla ricca dotazione e all'elevata multimedialità. Dispone di un grande display da 6.67 pollici con una risoluzione di 2712x1220 pixel. Le funzionalità offerte da questo Xiaomi 12T Pro sono veramente tante e all'avanguardia. A cominciare dal modulo 5G che permette un trasferimento dati e una navigazione in internet eccellente.</td>
+            <td>607€</td>
+            <td><a onclick="changeLink()" href="https://www.amazon.it/Xiaomi-12T-Pro-Smartphone-Hypercharge/dp/B0BB847CB9/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2IHXBNVNC5TOU&keywords=XIAOMI+12+T+PRO&qid=1668614761&qu=eyJxc2MiOiI0LjAyIiwicXNhIjoiMi45MCIsInFzcCI6IjEuMzcifQ%3D%3D&sprefix=xiaomi+12+t+pro%2Caps%2C171&sr=8-1">Compra Qui!</a></td>
+            <td><input type="text"></td>
+          </tr>
+              <td>iPhone 14 Pro 128GB</td>
+              <td><img class="img1" src="assets/iphone 14 pro.jpg" alt=""></td>
+              <td>Apple iPhone 14 Pro è uno smartphone iOS con caratteristiche all'avanguardia che lo rendono una scelta eccellente per ogni tipo di utilizzo, rappresentando uno dei migliori dispositivi mobili mai realizzati. Dispone di un grande display da 6.1 pollici e di una risoluzione da 2556x1179 pixel, fra le più elevate attualmente in circolazione. Le funzionalità offerte da questo Apple iPhone 14 Pro sono innumerevoli e tutte al top di gamma. A cominciare dal modulo 5G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS.
+            </td>
+              <td>1289€</td>
+              <td><a onmouseover="changeLink()" href="https://www.amazon.it/Apple-iPhone-14-Pro-128/dp/B0BDKWLP8P/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1D3L01D7HB63X&keywords=IPHONE+14+PRO&qid=1668614777&qu=eyJxc2MiOiIzLjgzIiwicXNhIjoiMy4zNSIsInFzcCI6IjMuMDIifQ%3D%3D&sprefix=iphone+14+pro%2Caps%2C149&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Compra Qui!</a></td>
+              <td><input type="text"></td>
+            </tr>
+              <tr>
+            <td>Samsung Galaxy Z Flip 4 128GB</td>
+            <td><img class="img1" src="assets/galaxy z flip 4.jpg" alt=""></td>
+            <td>Samsung Galaxy Z Flip 4 è uno degli smartphone Android più avanzati e completi che ci siano in circolazione. Dispone di un grande display da 6.7 pollici con una risoluzione di 2640x1080 pixel. Le funzionalità offerte da questo Samsung Galaxy Z Flip 4 sono veramente tante e all'avanguardia. A cominciare dal modulo 5G che permette un trasferimento dati e una navigazione in internet eccellente.</td>
+            <td>619€</td>
+            <td><a onmouseover="changeLink()" href="https://www.amazon.it/Smartphone-Caricatore-Telefono-Pieghevole-Versione/dp/B0B6GK6GNQ/ref=sr_1_1_sspa?keywords=galaxy+z+flip+4&qid=1668614791&qu=eyJxc2MiOiIzLjU3IiwicXNhIjoiMy41MSIsInFzcCI6IjEuODkifQ%3D%3D&sprefix=GALAXY+Z+%2Caps%2C126&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Compra Qui!</a></td>
+            <td><input type="text"></td>
+          </tr>
+            <tr>
+            <td>Vivo V23 5G</td>
+            <td><img class="img1" src="assets/vivo v23.jpg" alt=""></td>
+            <td>vivo V23 è un smartphone Android di buon livello, fortemente votato all'imaging, in grado di soddisfare anche l'utente più esigente. Sorprende il display Touchscreen da 6.44 pollici che pone questo vivo al vertice della categoria. Risoluzione di 2400x1080 pixel. Sul versante delle funzionalità a questo vivo V23 non manca davvero nulla. A cominciare dal modulo 5G che permette un trasferimento dati e una navigazione in internet eccellente, passando per la connettività Wi-fi e il GPS.</td>
+            <td>367€</td>
+            <td><a onmouseover="changeLink()" href="https://www.amazon.it/Smartphone-Fotocamera-notturna-Frontale-Cellulari/dp/B09TPJFJ8W/ref=sr_1_1?keywords=vivo+v23+5g&qid=1668614806&qu=eyJxc2MiOiIzLjQ1IiwicXNhIjoiMi43OSIsInFzcCI6IjIuMDYifQ%3D%3D&sprefix=VIVO+V23+%2Caps%2C241&sr=8-1">Compra Qui!</a></td>
+            <td><input type="text"></td>
+          </tr>
+                </table>
+<footer onclick="changeInd()">
+<div>
+    La Bottega di Andrew, Corso Matteotti, 250 Fano (PU) 61032
+</div>
+</footer>
+<script src="main.js" type="text/javascript" ></script>  
 </body>
 </html>
