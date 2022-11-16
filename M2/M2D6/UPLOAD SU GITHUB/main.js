@@ -25,9 +25,8 @@ function changeInd(newInd){
 
 function changeLink(newLink){
 let alink = document.querySelector(`a`);
-    alink.style.color = (`red`);
-    alink.style.fontWeight = (`bold`);
-    alink = newLink;
+    alink.style.color = `red`;
+    alink.style.fontWeight = `bold`;
 }
 
 //si cambia solo il primo <a> non gli altri
