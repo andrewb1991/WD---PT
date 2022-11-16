@@ -161,9 +161,26 @@ const latestShoppingCart = cart => cart[cart.lenght-1];
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const loopUntil = num 0 {
+const checkEndLoop = (num, randomNumbers) => {
+  if(randomNumbers.length < 3) {
+    return false;
+  }
   
+  return randomNumbers[randomNumbers.length - 1] > num &&
+    randomNumbers[randomNumbers.length - 2] > num &&
+    randomNumbers[randomNumbers.length - 3] > num;
 }
+const loopUntil = num => {
+  console.log('looping with: ' + num);
+  const randomNumbers = [];
+  while(!checkEndLoop(num, randomNumbers)) {
+  const random = randomInt(1, 10);
+  console.log(random);
+  randomNumbers.push(random); 
+ }
+}
+//const randomNum = randomInt(1, 3);
+//loopUntil(randomNum);
 
 /* EXTRA 7
  Crea una funzione chiamata "average" che riceve un array come parametro e ritorna la media aritmetica dei numeri in esso contenuti.
@@ -171,6 +188,23 @@ const loopUntil = num 0 {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const crazyAverage = (arr) => {
+  let total = 0, totalElements = 0;
+  for(const element of arr) {
+    if(typeof element !== 'number') {
+      continue;
+    }
+    total += element;
+    totalElements++;
+  }
+  return total / totalElements;
+}
+
+console.log(
+ crazyAverage([2, 3,'vincenzo', false, 3, 6, 'paolo'])
+)
+
 
 /* EXTRA 8
  Scrivi una funzione chiamata "longest" che ricerca la stringa più lunga all'interno del parametro ricevuto (un array di stringhe).
