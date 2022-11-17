@@ -2,8 +2,10 @@
     function changeH1(newH1) {
         let Ch1 = document.querySelector("h1");
         Ch1.innerText = newH1;
-        Ch1.innerHTML = ("LA BOTTEGA DI ANDREW IN MAIUSCOLO");
-        console.log(newH1);
+        Ch1.addEventListener(`click`, () => {
+            Ch1.innerHTML = ("LA BOTTEGA DI ANDREW IN MAIUSCOLO");
+            console.log(newH1);
+        })
       }
 
 // ESERCIZIO 8 M2D6 ---> Scrivi una funzione per cambiare il colore di background della pagina
@@ -24,10 +26,19 @@ function changeInd(newInd){
 // ES.10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
 
 function changeLink(newLink){
-let alink = document.querySelector(`a`);
-    alink.style.color = `red`;
-    alink.style.fontWeight = `bold`;
+const alink = document.querySelectorAll(`a`);
+for(const al of alink){
+al.style.color = `red`;
+al.style.fontWeight = `bold`; 
 }
+alink = newLink;
+}
+// ES.11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
 
-//si cambia solo il primo <a> non gli altri
+function changeCSS = (){
+    document.querySelectorAll(`img`).style.display = `none`;
+};
 
+// //       const firstUlDisappear = function () {
+// document.getElementById(`firstList`).style.display = `none`;
+// };

@@ -42,44 +42,53 @@
       </div>
     </div>
 
-    <div>
+    <footer>
       <p>Anche questo testo è qua solamente per gli esercizi!</p>
       <h2 style="color: red">
         Salva questa pagina sul tuo computer e aprila con VSCode per vedere le
         domande!
       </h2>
-    </div>
+    </footer>
     <script>
       /* ESERCIZIO 1
        Scrivi una funzione per cambiare il titolo del documento in qualcos'altro.
       */
 
       const changeTitle = function (newTitle) {
-        //
-      }
+       const title = document.querySelector(`h1`);
+       title.innerText = newTitle;
+      };
 
       /* ESERCIZIO 2
        Scrivi una funzione per cambiare la classe del titolo della pagina in "myHeading".
       */
 
       const addClassToTitle = function () {
-        //
-      }
+       document.querySelector(`h1`).classList.add(`myHeading`);
+
+      };
 
       /* ESERCIZIO 3
        Scrivi una funzione per cambiare il contenuto di tutti i p che sono discendenti di un div.
       */
 
       const changePcontent = function () {
-        //
-      }
+        const paragraphs = document.querySelectorAll(`div p`);
+        for(const p of paragraphs)
+        {
+          p.innerText = `HOLA HOLA!`;
+        }
+      };
 
       /* ESERCIZIO 4
        Scrivi una funzione per cambiare la proprietà href di ogni link a https://www.google.com
       */
 
       const changeUrls = function () {
-        //
+          const links = document.getElementsByTagName(`a`);
+          for(const l of links){
+            l.href = `https://www.google.com`;
+          }
       }
 
       /* ESERCIZIO 5
@@ -87,15 +96,21 @@
       */
 
       const addToTheSecond = function (content) {
-        //
-      }
+        const newLi = document.createElement(`li`);
+        newLi.innerText = content;
+       const ul = document.getElementById(`secondList`);
+         ul.appendChild(newLi);
+      };
 
       /* ESERCIZIO 6
        Scrivi una funzione per aggiungere un secondo paragrafo al primo div.
       */
-
+//siamo partiti dai figli per risalire al padre (parentnode, poi creiamo un figlio p dentro il div)
       const addParagraph = function (content) {
-        //
+      const firstDiv = document.querySelector(`div p`).parentNode;
+      const newP = document.createElement(`p`);
+      newP.innerHTML = content;
+      firstDiv.appendChild(newP);
       }
 
       /* ESERCIZIO 7
@@ -103,31 +118,40 @@
       */
 
       const firstUlDisappear = function () {
-        //
-      }
+      document.getElementById(`firstList`).style.display = `none`;
+      };
 
       /* ESERCIZIO 8
        Scrivi una funzione per rendere verde lo sfondo di ogni lista non-ordinata.
       */
 
       const paintItGreen = function () {
-        //
-      }
+        const uls = document.querySelectorAll(`ul`);
+        for(const ul of uls){
+          ul.style.backgroundColor = `limegreen`;
+        }
+      };
 
       /* ESERCIZIO 9
        Rendi il tag h1 capace di cambiare colore del testo ogni volta che l'utente ci clicca sopra.
       */
 
       const makeItClickable = function () {
-        //
-      }
+        const h1 = document.querySelector(`h1`);
+        h1.addEventListener(`click`, addClassToTitle,)
+        console.log(`titolo cliccato!`);
+      };
 
       /* ESERCIZIO 10
        Cambia il testo del footer con qualcos'altro quando l'utente ci clicca sopra.
       */
 
       const changeFooterText = function () {
-        //
+       const footer= document.querySelector(`footer`);
+       footer.addEventListener(`click`, () =>{
+          footer.innerText = "CIO DEL CIO!"
+      });
+
       }
 
       /* ESERCIZIO 11
@@ -135,14 +159,16 @@
       */
 
       const inputField = document.getElementById('input-field')
-      // ...
+      inputField.addEventListener(`input`, event =>{
+      console.log( event.target.value);
+      });
 
       /* ESERCIZIO 12
        Crea un messaggio di benvenuto con un alert quando la pagina ha finito di caricarsi.
       */
 
       window.onload = function () {
-        //
+        alert(`Caricamento della pagina terminato`)
       }
 
       /* ESERCIZIO 13
