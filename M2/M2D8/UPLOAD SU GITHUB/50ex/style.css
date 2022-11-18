@@ -1,0 +1,35 @@
+body {
+    width: 600px;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+h1{
+    text-align: center;
+}
+
+img {
+width: 100px;
+height: 100px;
+}
+
+a {
+    color: green;
+}
+
+.tabm2{
+    border:1px solid blue;
+    border-radius: 18px;
+}
+
+p{
+margin: 30px;
+display: none;
+}
+td{
+    border: 1px solid green;
+    border-bottom: 1px dotted red;
+    border-top:  1px dotted red;
+    border-collapse: separate;
+}
+

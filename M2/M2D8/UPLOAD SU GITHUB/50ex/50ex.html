@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<title>M2</title>
+<link rel="stylesheet" href="style.css">
+<script src="main.js" type="text/javascript" ></script>
+
+<!--
+        ESERCIZI HTML
+
+        1) Assegna un titolo per questa pagina FATTO
+        2) Crea un tag h1 con il contenuto che preferisci FATTO
+        3) Crea una lista ordinata con alcuni elementi al suo interno fatto
+        4) Crea una tabella con 4 righe e 5 colonne fatto
+        5) Aggiungi un'immagine a ogni seconda cella di ogni riga fatto
+        6) Aggiungi un tag <a> ad ogni immagine fatto
+        7) Unisci insieme 2 celle della tabella fatto
+        8) Dividi la pagina inserendo una riga orizzontale fatto
+        9) Crea un elemento contenitore con al suo interno un paragrafo e una lista non ordinata fatto
+        10) Crea un footer contenente alcune informazioni sul creatore della pagina fatto
+
+        ESERCIZI CSS
+
+        11) Assegna una larghezza massima al tag body e centralo nella pagina fatto
+        12) Centra ogni tag h1 fatto
+        13) Cambia il colore di ogni link nella pagina fatto
+        14) Crea una classe e assegnale un bordo fatto
+        15) Fai in modo che la i bordi della tabella che hai creato siano arrotondati fatto
+        16) Aggiungi un margine ad ogni paragrafo fatto
+        17) Crea una classe che una volta assegnata cambi la dimensione e il peso del font fatto
+        18) Crea una classe per nascondere un elemento fatto
+        19) Aggiungi un bordo verde a ogni <td> fatto
+        20) Aggiungi un bordo puntato rosso a ogni <tr> (nota: <tr> non accetta una proprietà "border") fatto
+
+        ESERCIZI JAVASCRIPT
+
+        21) Date le variabili x = "John" e y = "Doe", mostra in console "John <> Doe" fatto
+        22) Crea un oggetto con le seguenti proprietà: name, surname, email fatto
+        23) Cancella la proprietà email dall'oggetto appena creato fatto
+        24) Crea un array contenente 10 stringhe fatto
+        25) Mostra in console ogni stringa del precedente array FATTO
+      
+        26) Crea un array contenente 100 numeri random
+        27) Scrivi una funzione per trovare il valore massimo e il valore minimo dall'array appena creato
+        28) Crea un array di array, nel quale ogni array "figlio" ha 10 numeri random
+        29) Crea una funzione che riceve 2 array come parametri e ritorni quello con più elementi
+        30) Crea una funzione che riceve 2 array numerici come parametri e ritorna quello con la somma totale degli elementi maggiore
+
+        ESERCIZI SUL DOM
+
+        31) Seleziona l'elemento con id "container" nella pagina
+        32) Seleziona tutti gli elementi di tipo <td> nella pagina
+        33) Usa un ciclo per stampare in console il testo contenuto in ogni elemento <td> nella pagina
+        34) Scrivi una funzione per cambiare il titolo della pagina
+        35) Scrivi una funzione per aggiungere una nuova riga alla tabella nella pagina
+        36) Scrivi una funzione per aggiungere la classe "test" ad ogni riga nella tabella
+        37) Scrivi una funzione per aggiungere uno sfondo rosso a ogni link presente nella pagina
+        38) Mostra in console "Page loaded" quando la pagina ha finito di caricarsi
+        39) Scrivi una funzione per aggiungere nuovi elementi alla lista non ordinata nella pagina
+        40) Scrivi una funzione per svuotare una lista nella pagina
+
+        ESERCIZI EXTRA
+
+        41) Aggiungi un event listener in modo che compaia un alert quando il cursore passa sopra un link; l'alert deve mostrare la sua proprietà href
+        42) Crea un bottone che una volta cliccato nasconde ogni immagine nella pagina
+        43) Crea un bottone che una volta cliccato nasconde o mostra la tabella nella pagina
+        44) Crea una funzione per calcolare la somma di ogni numero contenuto in tutte le celle della tabella (se il contenuto è un numero)
+        45) Cancella l'ultima lettera dal titolo della pagina ogni volta che l'utente ci clicca sopra
+        46) Aggiungi un event listener in modo che cliccando un <td> nella pagina, questo cambi colore di sfondo
+        47) Aggiungi un bottone che una volta cliccato elimini un <td> a caso nella tabella
+        48) Aggiungi automaticamente un bordo rosa ad una cella della tabella quando il cursore ci passa sopra
+        49) Scrivi una funzione per creare una tabella con 4 righe e 3 colonne e aggiungerla alla fine della pagina
+        50) Scrivi una funzione per rimuovere l'ultima tabella presente nella pagina
+        
+    -->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+</head>
+
+<body cz-shortcut-listen="true">
+  <h1>La mia mattinata per M2</h1>
+  <ol>
+    <li>Svegliarsi</li>
+    <li>Fare colazione</li>
+    <li>Lavarsi i denti</li>
+    <li>Andare a lavoro</li>
+    <li>Pranzare</li>
+  </ol>
+
+  <table class="tabm2">
+    <tr>
+      <td>Colonna 1</td>
+      <td>Colonna 2</td>
+      <td>Colonna 3</td>
+      <td>Colonna 4</td>
+      <td>Colonna 5</td>
+    </tr>
+    <tr>
+      <td>Dato 1,1</td>
+      <td><img src="assets/svegliarsi.jpeg" alt="svegliarsi"><a href="https://it.wiktionary.org/wiki/svegliarsi">SVEGLIARSI</a></td>
+      <td colspan="2">CELLA UNITA 1</td>
+      <td>CELLA UNITA 2</td>
+      <td>Dato 1,2</td>
+    </tr>
+    <tr>
+      <td>Dato 1,1</td>
+      <td><img src="assets/lavaredenti.jpeg" alt="lavaredenti"><a href="https://it.wiktionary.org/wiki/denti">LAVARE I DENTI</a></td>
+      <td>Dato 1,2</td>
+      <td>Dato 1,2</td>
+      <td>Dato 1,2</td>
+    </tr>
+    <tr>
+      <td>Dato 1,1</td>
+      <td><img src="assets/andare a lavoro.png" alt="andarealavoro"><a href="https://it.wiktionary.org/wiki/lavoro#Sostantivo">LAVORARE</a></td>
+      <td>Dato 1,2</td>
+      <td>Dato 1,2</td>
+      <td>Dato 1,2</td>
+    </tr>
+    <tr>
+      <td>Dato 1,1</td>
+      <td><img src="assets/pranzare.jpeg" alt="pranzare">
+        <a href="https://it.wiktionary.org/wiki/Appendice:Coniugazioni/Italiano/pranzare">PRANZARE</a></td>
+      <td>Dato 1,2</td>
+      <td>Dato 1,2</td>
+      <td>Dato 1,2</td>
+    </tr>
+
+  </table>
+  <hr>
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, atque placeat, culpa quas repellendus, non ipsam ab voluptate impedit fuga aut reprehenderit perspiciatis aperiam. Atque eos non quae esse perspiciatis.</p>
+    <ul>
+      <li>Rosa</li>
+      <li>Rosae</li>
+      <li>Rosae</li>
+      <li>Rosam</li>
+      <li>Rosa</li>
+    </ul>
+
+  </div>
+  <footer>
+    Andrea Bramucci, M2D8 Fano (PU). GitHub: @andrewb1991
+  </footer>
+</body>
+
+</html>
