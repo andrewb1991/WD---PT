@@ -4,7 +4,7 @@ let x = "John";
 let y = "Doe";
 console.log(`${x} <> ${y}`);
 // 22
-const myPerson = {name:"Andrea", surname:"Bramucci", email:"andrea.bramucci@gmail.com"};
+const myPerson = { name: "Andrea", surname: "Bramucci", email: "andrea.bramucci@gmail.com" };
 console.log(myPerson);
 // 23
 delete myPerson.email;
@@ -14,16 +14,16 @@ const array = ["ciao", "mi", "chiamo", "Andrea", "Bramucci", "ho", "trenta", "an
 // 25
 console.log(array);
 // 26
-function randomInt(min, max){
-    return Math.floor(Math.random() * (max - min +1) - min);
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) - min);
 }
 
-function randomArrInt(lenght){
+function randomArrInt(lenght) {
     const randomArr = [];
-    for( let i = 0; i < lenght; i++){
-        randomArr.push(randomInt(0,100))
+    for (let i = 0; i < lenght; i++) {
+        randomArr.push(randomInt(0, 100))
     }
-return randomArr;
+    return randomArr;
 }
 console.log(randomArrInt(100));
 
@@ -54,7 +54,7 @@ const cont = document.getElementById(`container`);
 const printTd = function () {
     td = null;
     const tds = document.querySelectorAll(`td`);
-    for( let i = 0; i < tds.length; i++){
+    for (let i = 0; i < tds.length; i++) {
         console.log(tds);
     }
 };
@@ -62,19 +62,19 @@ const printTd = function () {
 const changeTitolo = function (newTitle) {
     const title = document.querySelector(`h1`);
     title.innerText = newTitle;
-   };
+};
 // 35
-const addNewTr = function (){
+const addNewTr = function () {
     const tables = document.querySelector(`table tr`).parentNode;
     const newRow = document.createElement(`tr`);
-tables.appendChild(newRow);
+    tables.appendChild(newRow);
 }
 
 // 36
 
 const addClass = function (cla) {
     const newClass = document.querySelectorAll(`tr`);
-    for( const cla of newClass){
+    for (const cla of newClass) {
         cla.classList.add(`test`);
     }
 };
@@ -82,7 +82,7 @@ const addClass = function (cla) {
 // 37
 const addColoLink = function (link) {
     const newLink = document.querySelectorAll(`a`);
-    for(const link of newLink){
+    for (const link of newLink) {
         link.style.color = `red`;
     }
 }
@@ -90,28 +90,27 @@ const addColoLink = function (link) {
 // 38
 window.onload = function () {
     console.log(`Page loaded`)
-  }
+}
 // 39
 
 const addToTheUl = function (content) {
     const newUl = document.createElement(`li`);
     newUl.innerText = content;
-   const uls = document.querySelector(`ul`);
-     uls.appendChild(newUl);
-  };
+    const uls = document.querySelector(`ul`);
+    uls.appendChild(newUl);
+};
 // 40
-  const removeLi = function(){
+const removeLi = function () {
     document.querySelector(`ul`).style.display = `none`;
 
 }
 // 41
-const overLink = function (){
-const alinks = document.querySelectorAll(`a`);
-    for(const ali of alinks)
-    {
-        ali.addEventListener(`mouseover`, overLink);
-         alert("Questo è il link:");
-    }
-    alinks.innerText = 
-    return alinks;
+// const seeLink = funcion (alink){
+
+// }
+const seeLink = function (ali) {
+    const alinks = document.querySelectorAll(`a`);
+    for (i = 0; i < alinks.length; i++) {
+        alinks[i].addEventListener(onmouseover,event =>))
+    };
 }
