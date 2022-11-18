@@ -27,14 +27,91 @@ return randomArr;
 }
 console.log(randomArrInt(100));
 
-const myArr = randomArrInt;
 
-    const max = Math.max.apply(myArr);
-console.log(max);
-const min = Math.min.apply(myArr);
-console.log(min);
+// let max = -Infinity;
+// let min = Infinity;
 
-// function minNum(arr) {
-//     var min = Math.min.apply(null, arr);
-//     console.log(min);
+// for(let number of randomArrInt.length){
+//     if(number > max){
+//         max = number;
+
+// if(number < min){
+//  min = number;
+// }   
+//  }
 // }
+
+// 27
+// 28
+// 29
+// 30
+
+//31
+const cont = document.getElementById(`container`);
+//32
+// const tdhtml = document.querySelectorAll(`td`);
+//33
+const printTd = function () {
+    td = null;
+    const tds = document.querySelectorAll(`td`);
+    for( let i = 0; i < tds.length; i++){
+        console.log(tds);
+    }
+};
+// 34
+const changeTitolo = function (newTitle) {
+    const title = document.querySelector(`h1`);
+    title.innerText = newTitle;
+   };
+// 35
+const addNewTr = function (){
+    const tables = document.querySelector(`table tr`).parentNode;
+    const newRow = document.createElement(`tr`);
+tables.appendChild(newRow);
+}
+
+// 36
+
+const addClass = function (cla) {
+    const newClass = document.querySelectorAll(`tr`);
+    for( const cla of newClass){
+        cla.classList.add(`test`);
+    }
+};
+
+// 37
+const addColoLink = function (link) {
+    const newLink = document.querySelectorAll(`a`);
+    for(const link of newLink){
+        link.style.color = `red`;
+    }
+}
+
+// 38
+window.onload = function () {
+    console.log(`Page loaded`)
+  }
+// 39
+
+const addToTheUl = function (content) {
+    const newUl = document.createElement(`li`);
+    newUl.innerText = content;
+   const uls = document.querySelector(`ul`);
+     uls.appendChild(newUl);
+  };
+// 40
+  const removeLi = function(){
+    document.querySelector(`ul`).style.display = `none`;
+
+}
+// 41
+const overLink = function (){
+const alinks = document.querySelectorAll(`a`);
+    for(const ali of alinks)
+    {
+        ali.addEventListener(`mouseover`, overLink);
+         alert("Questo è il link:");
+    }
+    alinks.innerText = 
+    return alinks;
+}
