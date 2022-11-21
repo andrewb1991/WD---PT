@@ -27,22 +27,15 @@ function randomArrInt(lenght) {
 }
 console.log(randomArrInt(100));
 
-
-// let max = -Infinity;
-// let min = Infinity;
-
-// for(let number of randomArrInt.length){
-//     if(number > max){
-//         max = number;
-
-// if(number < min){
-//  min = number;
-// }   
-//  }
-// }
-
 // 27
+const myArr = randomArrInt(100);
+console.log(myArr);
+console.log("Min:", Math.min(...myArr));
+console.log("Max:", Math.max(...myArr));
 // 28
+
+
+
 // 29
 // 30
 
@@ -80,10 +73,10 @@ const addClass = function (cla) {
 };
 
 // 37
-const addColoLink = function (link) {
+const addColoLink = function (links) {
     const newLink = document.querySelectorAll(`a`);
     for (const link of newLink) {
-        link.style.color = `red`;
+        links.style.color = `red`;
     }
 }
 
@@ -100,17 +93,56 @@ const addToTheUl = function (content) {
     uls.appendChild(newUl);
 };
 // 40
-const removeLi = function () {
+const removeLi = function() {
     document.querySelector(`ul`).style.display = `none`;
-
-}
+const tables = document.querySelector(`table tr`).parentNode;
+    const newRow = document.createElement(`tr`);
+    tables.appendChild(newRow);
+};
 // 41
 // const seeLink = funcion (alink){
 
+// // }
+// const seeLink = function (ali) {
+//     const alinks = document.querySelectorAll(`a`);
+//     for (i = 0; i < alinks.length; i++) {
+//         alinks[i].addEventListener(onmouseover,event =>))
+//     };
 // }
-const seeLink = function (ali) {
-    const alinks = document.querySelectorAll(`a`);
-    for (i = 0; i < alinks.length; i++) {
-        alinks[i].addEventListener(onmouseover,event =>))
+
+//42
+
+const addButton = function(content) {
+    const newButton = document.createElement(`button`);
+    newButton.innerText = content;
+    newButton.innerHTML = `Elimina Immagini`;
+    const btns = document.querySelector(`table`);
+    btns.appendChild(newButton);
+    btns.addEventListener("click", function imageToRemove() {
+        const imagesRem = document.querySelectorAll(`img`);
+        for(img of imagesRem){
+        img.style.display = `none`;
+        }
+    });
     };
+// 43
+const addButtonTab = function(content) {
+    const newButtonTab = document.createElement(`button`);
+    newButtonTab.innerText = content;
+    newButtonTab.innerHTML = `Elimina Tabella`;
+    const btnsTab = document.querySelector(`table`);
+    btnsTab.appendChild(newButtonTab);
+    btnsTab.addEventListener("click", function TabToRemove(){
+    const tabsRem = document.querySelectorAll(`table`);
+    for(tab of tabsRem){
+    tab.style.display = `none`;
+    }
+    });
+};
+
+//44
+const calcSum = function (number){
+    const elem = document.querySelectorAll(`td`);
+
+
 }

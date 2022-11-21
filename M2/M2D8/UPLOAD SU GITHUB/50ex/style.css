@@ -1,5 +1,6 @@
 body {
     width: 600px;
+    text-align: center;
     font-size: 14pt;
     font-weight: bold;
 }
@@ -17,19 +18,32 @@ a {
     color: green;
 }
 
-.tabm2{
-    border:1px solid blue;
-    border-radius: 18px;
+/* table{
+border: 1px solid red;
+border-radius: 20px;
+} */
+td{
+    border: 2px solid green;
+    border-bottom: 1px dotted red;
+    border-top:  1px dotted red;
+    border-collapse: collapse;
+}
+td:not(:first-child):not(:last-child){
+    border-right: none;
+    border-right: none;
+}
+td.first-child{
+border-right: none;
+}
+td.last-child{
+    border-right: none;
+} */
+
+ tr{
+outline: 3px dotted red;
 }
 
 /* p{
 margin: 30px;
 display: none;
 } */
-td{
-    border: 1px solid green;
-    border-bottom: 1px dotted red;
-    border-top:  1px dotted red;
-    border-collapse: separate;
-}
-
