@@ -33,6 +33,19 @@ let questions = [];
       btn.value = answer;
       btn.onclick = onAnswered;
       btn.value = answer;
+      btn.style.margin = `20px`;
+      btn.style.border = `3px solid orange`;
+      btn.style.height = `100px`;
+      btn.style.width = `200px`;
+      btn.style.fontSize = `16pt`;
+      btn.style.color = `red`;
+      btn.addEventListener(`mouseover` , () => btn.style.border = `6px dotted orange`);
+      // btn.addEventListener(`mouseleave`, () => btn.style.margin = `20px`;
+      // btn.style.border = `3px solid orange`);
+      // btn.style.height = `100px`;
+      // btn.style.width = `200px`;
+      // btn.style.fontSize = `16pt`;
+      // btn.style.color = `red`;)
       section.appendChild(btn);
     }
     };
@@ -52,7 +65,7 @@ let questions = [];
 
   
 const displayScore = () => {
-  document.getElementById(`score`).innerHTML = score;
+  document.getElementById(`score`).innerHTML = "Il tuo punteggio parziale è: " + score;
   };
 
   const resetQuiz = async () => {
