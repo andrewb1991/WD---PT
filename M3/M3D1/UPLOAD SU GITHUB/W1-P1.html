@@ -9,18 +9,18 @@ IMPORTANTE: NON PUOI inserire classi o id aggiuntivi nell'HTML, devi usare solo 
 
 Per testare i Selettori CSS puoi cambiare all'elemento che stai cercando di selezionare il colore, colore di sfondo, aggiungere un bordo colorato ecc. Se il selettore è corretto vedrai applicare quello stile all'elemento, se non succede significa che il selettore non è corretto o qualche altra regola CSS sta prevalendo. Controlla sempre dall'inspector del browser.
 
-ESERCIZIO 1) Crea un selettore per selezionare l'<h1> nella sezione "hero", ovvero nel jumbotron
-ESERCIZIO 2) Crea un selettore per selezionare tutti i figli dell'elemento navbar
-ESERCIZIO 3) Crea un selettore per selezionare il link "Continua a leggere" del jumbotron
-ESERCIZIO 4) Crea un selettore per selezionare il primo blog post
-ESERCIZIO 5) Crea un selettore per selezionare l'<hr> del primo blog post e colorarlo di rosso
-ESERCIZIO 6) Crea un selettore per selezionare i link pari della navbar
-ESERCIZIO 7) Crea un selettore per selezionare tutti gli <li> della prima "ordered-list" della sidebar ("Archivio")
-ESERCIZIO 8) Crea un selettore per selezionare l'autore del secondo blog post
-ESERCIZIO 9) Crea un selettore per selezionare il secondo <li> della lista del terzo blog post
-ESERCIZIO 10) Crea un selettore per selezionare il link "Torna su" che trovi a fondo pagina nell'angolo in basso a destra
-ESERCIZIO 11) Crea un selettore per selezionare il bottone "Nuovi" che trovi in basso
-ESERCIZIO 12) Crea un selettore per selezionare il secondo link del footer
+ESERCIZIO 1) Crea un selettore per selezionare l'<h1> nella sezione "hero", ovvero nel jumbotron FATTO
+ESERCIZIO 2) Crea un selettore per selezionare tutti i figli dell'elemento navbar FATTO
+ESERCIZIO 3) Crea un selettore per selezionare il link "Continua a leggere" del jumbotron FATTO
+ESERCIZIO 4) Crea un selettore per selezionare il primo blog post FATTO
+ESERCIZIO 5) Crea un selettore per selezionare l'<hr> del primo blog post e colorarlo di rosso FATTO
+ESERCIZIO 6) Crea un selettore per selezionare i link pari della navbar FATTO
+ESERCIZIO 7) Crea un selettore per selezionare tutti gli <li> della prima "ordered-list" della sidebar ("Archivio") FATTO
+ESERCIZIO 8) Crea un selettore per selezionare l'autore del secondo blog post FATTO
+ESERCIZIO 9) Crea un selettore per selezionare il secondo <li> della lista del terzo blog post FATTO
+ESERCIZIO 10) Crea un selettore per selezionare il link "Torna su" che trovi a fondo pagina nell'angolo in basso a destra FATTO
+ESERCIZIO 11) Crea un selettore per selezionare il bottone "Nuovi" che trovi in basso FATTO
+ESERCIZIO 12) Crea un selettore per selezionare il secondo link del footer FATTO
 
 ...scorri in fondo fino allo <script> per trovare gli esercizi di JavaScript
 
@@ -61,6 +61,69 @@ ESERCIZIO 12) Crea un selettore per selezionare il secondo link del footer
                 font-size: 3.5rem;
             }
         }
+/* 1 */
+        .jumbotron > div h1 {
+        color: blue;
+        }
+
+/* 2 */
+nav  > span {
+    color: purple;
+
+}
+
+/* 3 */
+.jumbotron p > a {
+color: orange;
+
+}
+/* 4  */
+
+.blog-main .blog-post:first-of-type
+{
+background-color: grey;
+}
+
+/* 5 */
+
+.blog-main hr{
+border-color: red;
+}
+/* 6 */
+nav > span:nth-child(even){
+font-size: 1.5em; }
+/* 7 */
+.p-4 > ol:first-of-type{
+background-color: orange;}
+/* 8 */
+.blog-main .blog-post:nth-child(3)  > p.blog-post-meta a {
+color: violet;
+
+}
+/* 9 */
+.blog-main .blog-post:nth-child(4) > ul > li:nth-child(2){
+color: purple;
+}
+
+/* 10 */
+.float-right {
+color: red;
+}
+
+/* 11 */
+
+.blog-pagination > .btn-outline-secondary.disabled {
+background-color: white;
+}
+/* 12 */
+ 
+.blog-footer > p > a:last-of-type{
+color: purple;
+}
+
+
+
+
     </style>
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
 </head>
@@ -392,8 +455,22 @@ ESERCIZIO 12) Crea un selettore per selezionare il secondo link del footer
     <script>
         /* JS Exercises should go here */
 
-        // EXTRA Crea con JavaScript la funzionalità per rimuovere il link "twitter" sotto alla sezione "Altro" nell'elemento "aside". Deve avvenire al caricamento della pagina, automticamente.
+        // EXTRA Crea con JavaScript la funzionalità per rimuovere il link "twitter" sotto alla sezione "Altro" nell'elemento "aside". Deve avvenire al caricamento della pagina, automticamente. FATTO!
+        document.addEventListener("DOMContentLoaded", ()=> {
+        const deleteTwitter = document.getElementsByClassName(`list-unstyled`)[1].children[1];
+        deleteTwitter.remove();
+        console.log(deleteTwitter);
+
+        
+        }); //ASPETTA CHE SI CARICHI TUTTA LA PAGINA;
+
         // EXTRA Crea con JavaScript la funzionalità per rimuovere il corrispondente elemento padre dal DOM cliccando sul link "Continua a leggere".
+    document.addEventListener("click", () => {
+        const remLeggere = document.querySelector("jumbotron").children[4];
+        remLeggere.remove();
+    });
+
+
         // EXTRA Crea con JavaScript la funzionalità per creare un alert col nome dell'autore ogni volta che il cursore passa sopra l'autore del post.
 
     </script>
