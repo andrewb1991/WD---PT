@@ -465,13 +465,29 @@ color: purple;
         }); //ASPETTA CHE SI CARICHI TUTTA LA PAGINA;
 
         // EXTRA Crea con JavaScript la funzionalità per rimuovere il corrispondente elemento padre dal DOM cliccando sul link "Continua a leggere".
-    document.addEventListener("click", () => {
-        const remLeggere = document.querySelector("jumbotron").children[4];
-        remLeggere.remove();
-    });
+        // document.addEventListener("click", ()=>{
+        //     const readMoreEl = document.querySelector(`.mb-0`).children;
+            
 
+        // })
+        const readMoreEl = document.querySelector("div .jumbotron.p-4.p-md-5.rounded > div > p.lead.mb-0 > a");
+        const delElem = document.querySelector("div .jumbotron.p-4.p-md-5.rounded");
+        readMoreEl.addEventListener("click", ()=>{
+        delElem.remove();
+        });
+        
 
         // EXTRA Crea con JavaScript la funzionalità per creare un alert col nome dell'autore ogni volta che il cursore passa sopra l'autore del post.
+
+        const elDel = document.querySelector("div > div:nthchild(2) > p.blog-post-meta");
+        const aut = document.querySelectorAll(".blog-post-meta > a");
+
+        aut.forEach(element) => {
+        element.addEventListener("mouseover", () =>{
+        alert(element.innerText)
+        })
+        
+        }
 
     </script>
 </body>
