@@ -1,0 +1,39 @@
+body{
+margin: 0;
+padding: 0;
+}
+
+nav{
+width: 100vw;
+height: 80px;
+background-color: red;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px;
+box-sizing: border-box;
+position: relative;
+}
+
+#menu ul{
+list-style-type: none;
+border: 1px solid black;
+display: flex;
+padding: 0;
+justify-content: space-evenly;
+width:100%;
+}
+
+#menu li{
+float: left;
+
+}
+
+#menuBtn {
+/* display: none; */
+}
+
+img{
+width: 200px;
+height: 100px;
+}
