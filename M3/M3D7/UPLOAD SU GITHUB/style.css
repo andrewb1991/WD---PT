@@ -1,6 +1,6 @@
 
 .box{
-width: 500px;
+width: 450px;
 height: 500px;
 border: 1px solid grey;
 background-color: rgb(114, 180, 180);
@@ -18,7 +18,8 @@ box-shadow: none;
 animation-name: rimbalza;
 animation-duration: 1s;
 animation-iteration-count: infinite;
-z-index: 1;
+z-index: 3;
+position: relative;
 }
 
 @keyframes rimbalza {
@@ -48,7 +49,7 @@ z-index: 1;
     animation-name: ombra;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-    z-index: 0;
+    z-index: 1;
 }
 @keyframes ombra {
     to, from {
