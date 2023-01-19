@@ -13,7 +13,7 @@ const createEl = (type, attributes, ...children) => {
 const cardContainer = document.getElementById("cardContainer");
 const cardManeskin = document.getElementById("cardManeskin");
 const cardMamhood = document.getElementById("cardMamhood");
-
+const cardAlbum = document.getElementById("cardAlbum")
 const getData = async (url) => {
     try {
         const data = await fetch(url)
@@ -35,6 +35,11 @@ const createCard = (data, container) => {
     container.appendChild(card)
 }
 
+const createList = (data, container)=>{
+    const list = createEl("li", {id: "cardAlbum"}, `${data.album.title}`)
+    container.appendChild(list)
+}
+
 getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=pinguini%20tattici%20nucleari")
     .then((response) => {
         const albums = response.data.map(album => album.album.title);
@@ -48,7 +53,32 @@ getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin").t
     console.log(response)
 });
 
-getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=mahmood").then((response) => {
+getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin").then((response) => {
     response.data.slice(0, 3).map((artist) => createCard(artist, cardMamhood))
 });
+
+getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=pinguini%20tattici%20nucleari")
+.then((response) => {
+    const albums = response.data.map(album => album.album.title);
+    console.log(albums)
+   const artists = 
+response.data.slice(0, 3).map((cardContainer) => createList(cardContainer, cardAlbum))
+});
+
+getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin")
+.then((response) => {
+    const albums = response.data.map(album => album.album.title);
+    console.log(albums)
+   const artists = 
+response.data.slice(0, 3).map((cardContainer) => createList(cardContainer, cardAlbum))
+});
+
+getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin")
+.then((response) => {
+    const albums = response.data.map(album => album.album.title);
+    console.log(albums)
+   const artists = 
+response.data.slice(0, 3).map((cardContainer) => createList(cardContainer, cardAlbum))
+});
+
 

@@ -20,7 +20,9 @@ L’obbiettivo dell’esercizio è di ottenere i dati dall’API menzionato sott
 Assicurati che l’API venga chiamato durante il caricamento della pagina.
 
 – Aggiungi un pulsante “Tutti gli album”. Quando premuto, dovrebbe mostrare in un modal tutti i titoli degli album presenti sulla pagina.
-– Aggiungi un pulsante “conta unici”. Quando premuto, stampa a console il numero di album UNICI nella pagina. -->
+– Aggiungi un pulsante “conta unici”. FATTO!
+
+Quando premuto, stampa a console il numero di album UNICI nella pagina. -->
 
 <head>
   <!-- Required meta tags -->
@@ -91,29 +93,7 @@ Assicurati che l’API venga chiamato durante il caricamento della pagina.
       <!--END SIDEBAR VERTICAL-->
 
       <!--MAIN-->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
       <div class="col-12 mb-5 col-md-9 offset-md-3 mainPage">
         <div class="row">
           <div class="col-9 col-lg-11 mainLinks d-none d-md-flex">
@@ -122,6 +102,30 @@ Assicurati che l’API venga chiamato durante il caricamento della pagina.
             <a href="#">MOODS AND GENRES</a>
             <a href="#">NEW RELEASES</a>
             <a href="#">DISCOVER</a>
+            <a class=" mainLinks m-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              TUTTI GLI ALBUM
+            </a>
+            <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title fs-5 text-success" id="staticBackdropLabel">TUTTI GLI ALBUM</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cardAlbum">
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
         <div class="row">
@@ -229,6 +233,7 @@ Assicurati che l’API venga chiamato durante il caricamento della pagina.
   </div>
   <!--END NAVBAR BOTTOM-->
   <script src="./main.js" type="module"></script>
+  <script src="./js/bootstrap.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
