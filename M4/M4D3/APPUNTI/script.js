@@ -11,26 +11,24 @@ const createEl = (type, attributes, ...children) => {
 };
 
 
-const getData = async (url) => {
-    // try {
-        const data = await fetch(url)
-        return await data.json();
-    }
-    // catch (error) {
-    //     console.log(error)
-    // }
-// };
+// const getData = async (url) => {
+//     // try {
+//         const data = await fetch(url)
+//         return await data.json();
+//     }
+//     // catch (error) {
+//     //     console.log(error)
+//     // }
+// // };
 
 
-getData("https://dummyjson.com/#:~:text=GET-,/products,-//%20get%20all%20products").then((response) =>{
-response.data.map(product => products.title);
-console.log(response);
-});
+// getData("https://dummyjson.com/#:~:text=GET-,/products,-//%20get%20all%20products").then((response) =>{
+// response.data.map(product => products.title);
+// console.log(response);
+// });
+
+fetch('https://dummyjson.com/products')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
 
-
-
-
-
-
-// 

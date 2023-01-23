@@ -57,7 +57,7 @@ getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin").t
     console.log(response)
 });
 
-getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin").then((response) => {
+getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=mahmood`").then((response) => {
     response.data.slice(0, 3).map((artist) => createCard(artist, cardMamhood))
 });
 
@@ -69,7 +69,7 @@ getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=pinguini%20t
 response.data.slice(0, 3).map((cardContainer) => createList(cardContainer, cardAlbum))
 });
 
-getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin")
+getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=mahmood`")
 .then((response) => {
     const albums = response.data.map(album => album.album.title);
     console.log(albums)
@@ -85,7 +85,15 @@ getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin")
 response.data.slice(0, 3).map((cardContainer) => createList(cardContainer, cardAlbum))
 });
 
+const cardCount = document.getElementsByClassName("card-container");
+
+const count = cardCount.length;
+console.log(count)
 
 uniqueBtn.addEventListener("click", event => {
-    console.log("ciao")});
+    console.log(`Gli album unici presenti in questa pagina sono:`+ ` ` + `${cardCount.length}`)});
 
+// window.onload = (event) => {
+//     console.log(`${cardCount.length}`);
+//   };
+  
