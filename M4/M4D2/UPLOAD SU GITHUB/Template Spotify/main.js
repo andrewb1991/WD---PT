@@ -14,6 +14,10 @@ const cardContainer = document.getElementById("cardContainer");
 const cardManeskin = document.getElementById("cardManeskin");
 const cardMamhood = document.getElementById("cardMamhood");
 const cardAlbum = document.getElementById("cardAlbum")
+const uniqueBtn = document.getElementById("unique");
+console.log(uniqueBtn);
+
+
 const getData = async (url) => {
     try {
         const data = await fetch(url)
@@ -81,4 +85,7 @@ getData("https://striveschool-api.herokuapp.com/api/deezer/search?q=maneskin")
 response.data.slice(0, 3).map((cardContainer) => createList(cardContainer, cardAlbum))
 });
 
+
+uniqueBtn.addEventListener("click", event => {
+    console.log("ciao")});
 
