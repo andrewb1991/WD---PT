@@ -165,9 +165,22 @@ else {
 
 // 15. Crea una funzione per controllare che due numeri (passati come parametri) siano uno positivo e uno negativo. Ritorna `true` se la condizione è applicata, `false` se non lo è.
 
+// const checkNeg = (a, b) => {
+// if (a < 0 && b > 0) {
+//   return true
+//   } else if (a > 0 && b < 0) {
+// return true  } else {
+// return false }};
 
 
 // 16. Crea una funzione per creare e ritornare una nuova stringa che abbia i primi tre caratteri in minuscolo e gli altri in maiuscolo. Se la stringa è più corta di tre caratteri, tutta la stringa deve essere in maiuscolo. La stringa originale deve essere passata come parametro.
+
+// let threeChar = `coglioncello`;
+// const  checkChar = (threeChar) =>{
+//     console.log(threeChar.toUpperCase().slice(0,3)+threeChar.slice(3,));
+
+// };
+
 // 17. Crea una funzione che calcoli la somma di due numeri passati come parametri. Se la loro somma è compresa tra 50 e 80, ritorna `65`, altrimenti ritorna `80`.
 // 18. Crea una funzione per convertire un numero (passato come parametro) in una stringa basandoti su questi criteri:
 // Il numero è divisibile per 3 ⇒ ritorna “Diego”

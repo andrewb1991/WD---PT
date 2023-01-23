@@ -93,7 +93,3 @@ console.log(count)
 uniqueBtn.addEventListener("click", event => {
     console.log(`Gli album unici presenti in questa pagina sono:`+ ` ` + `${cardCount.length}`)});
 
-// window.onload = (event) => {
-//     console.log(`${cardCount.length}`);
-//   };
-  
