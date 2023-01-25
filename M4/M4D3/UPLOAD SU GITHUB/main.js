@@ -65,9 +65,9 @@
 }
  
 const div = document.getElementById("pexContainer");
-const card = document.createElement("div")
-card.classList.add("card", "col-4");
-card.append(div);
+div.classList.add("card")
+// const card = document.createElement("div")
+// card.classList.add("card", "col-4");
 
 
   fetch(api, options)
@@ -85,6 +85,8 @@ card.append(div);
     title.classList.add("card-title")
     let author = document.createElement("h5");
     author.classList.add("card-text")
+    const ids = document.getElementById("photoId");
+    ids.innerText = `${photo.id}`;
 
     console.log(`${photo.src.small}`);
     title.innerHTML = `${photo.alt}`;
@@ -92,12 +94,21 @@ card.append(div);
     author.innerHTML = `${photo.photographer}`;
     console.log(`${photo.photographer}`);
 
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(author);
-    div.appendChild(card);
+document.body.appendChild(div)
+    div.appendChild(img);
+    div.appendChild(title);
+    div.appendChild(author);
 
 
     })
-    })
+    });
 
+
+
+const btnClose = document.getElementById("btnClose");
+
+btnClose.addEventListener("click", event =>{
+div.style.display = `none`;
+console.log(btnClose);
+
+})
