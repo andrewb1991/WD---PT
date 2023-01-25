@@ -10,13 +10,18 @@ const options = {
     }
 
 }
+const getData = async (url, param) => {
+    try {
+        const data = await fetch(url)
+        return await data.json();
+    }
+    catch (error) {
+        console.log(error)
+    }
+};
 
-async function getPhotos() {
-    return fetch(api, options).then(res => res.json()).then((res) => {
-        let data = res.photos
-        const cards = res.photos.map(card => card.src.tiny)
-        console.log(cards)
-        
-        })
-}
-console.log(getPhotos())
+getData(api, options).then((response)=>{
+    const titles = response.photos.map(title => title.alt)
+    console.log(titles)
+
+})
