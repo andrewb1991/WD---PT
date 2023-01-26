@@ -36,14 +36,15 @@ autore.innerHTML = `${author}`;
 console.log(`${photo.photographer}`);
 const div = document.getElementById("pexContainer");
 const container = document.getElementsByClassName("container")
-
-div.append(container)    
-div.appendChild(immagine);
-div.appendChild(titolo);
-div.appendChild(autore);
+  div.appendChild(immagine);
+  div.appendChild(titolo);
+  div.appendChild(autore);
+  container.append(div
+    )
 })
-
+  
 });
+
 
 
 
@@ -53,10 +54,8 @@ div.appendChild(autore);
 
 
 
-const btnClose = document.getElementById("btnClose");
+// const btnClose = document.getElementById("btnClose");
 
-btnClose.addEventListener("click", event =>{
-div.style.display = `none`;
-console.log(btnClose);
-
-})
+// btnClose.addEventListener("click", event =>{
+// div.style.display = `none`;
+// console.log(btnClose);
