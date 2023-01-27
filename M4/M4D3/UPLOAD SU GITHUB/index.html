@@ -126,15 +126,20 @@ DOCUMENTAZIONE: `[https://www.pexels.com/api/documentation/?language=javascript#
         <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
           etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          <button id="loadBTN" class="btn btn-primary my-2">Load Images</button>
+        <button id="loadSecondaryBTN" class="btn btn-secondary my-2">Load Secondary Images</button>
+      </p>
         </p>
       </div>
     </section>
 
   
 <div class="container">
-
+  <div class="row" id="mainContent">
+   
+  </div>
+</div>
+</div>
   <div class="container" id="pexContainer" style="width: 18rem;">
   </div>
   <div class="d-flex justify-content-between align-items-center">
@@ -147,6 +152,25 @@ DOCUMENTAZIONE: `[https://www.pexels.com/api/documentation/?language=javascript#
 </div>
 </div>
   </main>
+
+  <div id="imageModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="" alt="" id="modalImg">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <footer class="text-muted">
     <div class="container">

@@ -40,8 +40,10 @@ fetch(api, options)
   console.log(authors);
 
 const createCard = (data, div)=>{
-    const card = createEl("div", {
-    class:"card-container",}, createEl("img", {class: "card-img-top", style: `background-image: url(${img})` }), createEl("h4", {class: "card-title"}, `${title}`),createEl("h5", {class:"card-title"}, `${author}`) )
+    const card = 
+    createEl("div", {
+    class:"card-container",},
+     createEl("img", {class: "card-img-top", style: `background-image: url(${img})` }), createEl("h4", {class: "card-title"}, `${title}`),createEl("h5", {class:"card-title"}, `${author}`) )
     card.appendChild(cardContainer)
     }
 
