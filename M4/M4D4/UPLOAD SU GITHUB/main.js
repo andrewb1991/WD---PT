@@ -1,29 +1,36 @@
-const firstApi = "https://striveschool-api.herokuapp.com/books"
-
 const getData = async (url) => {
-    try{
-        const data = await fetch(url);
-    return await data.json();
+    try {
+        const data = await fetch(url)
+        return await data.json();
     }
-    catch(error){
-    console.log(error)
+    catch (error) {
+        console.log(error)
     }
 };
 
-  
-getData(firstApi).then((response)=>{
-    const books = response.data.slice(0,49).map(books => album.data.title);
-    console.log(books)
+getData("https://striveschool-api.herokuapp.com/books").then((res)=>{
+console.log(res)
+const titles = res.map((e)=>{
+return e.title
+})
+const imgs = res.map((e)=>{
+    return e.img;
+})
+const prices = res.map((e)=>{
+    return e.price;
+})
+console.log(titles)
+console.log(imgs)
+console.log(prices)
+const immagine = document.getElementById("imgs")
+immagine.src = `${imgs}`
+const titolo = document.getElementById("title")
+titolo.innerHTML = `${titles}`
+const prezzo = document.getElementById("price")
+prezzo.innerText = `${prices}`
+const div = document.getElementsByClassName("card-body")
+
+div.appendChild(immagine, titolo, prezzo)
 
 })
-console.log(getData("https://striveschool-api.herokuapp.com/books"))
-console.log(books.title)
 
-// fetch(firstApi)
-// .then((response) => {
-//   return response.json();
-// })
-// .then((data) => {
-//   const books = book.title;
-//   console.log(books)
-//   const img = books.map(photo => book.src.medium)
