@@ -8,34 +8,29 @@ const getData = async (url) => {
     }
 };
 
-getData("https://striveschool-api.herokuapp.com/books").then((res)=>{
+getData("https://striveschool-api.herokuapp.com/books").then((responseData)=>{
+console.log(responseData)
+const books = responseData;
+    books.forEach(title => {
+        books.title
+        console.log(title.title)
+        const titles = document.getElementById("title")
+        titles.innerText = "Titolo:" + " " + title.title
+        })
+        books.forEach(image =>{
+        image.img
+        console.log(image.img)
+        const imgs = document.getElementById("imgs")
+        imgs.src = image.img
+        })
+        books.forEach(price =>{
+        price.price
+        console.log(price.price)
+        const prezzo = document.getElementById("price")
+        prezzo.innerText = "Prezzo:"+ " " + price.price
 
-res.map(function(book){
-const titolo = book.title;
-const immagine = book.img;
-const prezzo = book.price;
-console.log(titolo)
-console.log(immagine)
-console.log(prezzo)
-const imma = document.getElementById("imgs")
-imma.src = `${immagine}`
-const tit = document.getElementById("title")
-tit.innerHTML = "Titolo:"+" "+`${titolo}`
-const prez = document.getElementById("price")
-prez.innerText = "Prezzo:"+" "+`${prezzo}`
-const div = document.getElementsByClassName("card-body")
-titolo.forEach(element => {
-    div.appendChild(tit)
-});
-immagine.forEach(element=>{
-    div.appendChild(imma)
-});
-prezzo.forEach(element =>{
-div.appendChild(prez)
-})
-// div.appendChild(immagine, titolo, prezzo)
-})
-console.log(res)
-
-})
-
+        
+        })
+    
+    })
+  
