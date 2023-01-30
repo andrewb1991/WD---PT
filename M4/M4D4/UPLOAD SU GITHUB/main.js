@@ -28,9 +28,6 @@ const books = responseData;
         console.log(price.price)
         const prezzo = document.getElementById("price")
         prezzo.innerText = "Prezzo:"+ " " + price.price
-
-        
-        })
-    
     })
-  
+})
+    
