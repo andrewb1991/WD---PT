@@ -36,10 +36,10 @@ Per raggiungere questo risultato, segui queste istruzioni:
 – Renderizza tutti i libri usando i template literars and .forEach o .map fatto
 – Aggiungi il pulsante “aggiungi al carrello” a tutte le card fatto
 – Quando il pulsante viene cliccato…
-1. Aggiungi il libro alla lista del carrello
-2. cambia lo stile della card per mostrare che è già stata aggiunta (un bordo colorato o un badge vanno bene)
+1. Aggiungi il libro alla lista del carrello fatto
+2. cambia lo stile della card per mostrare che è già stata aggiunta (un bordo colorato o un badge vanno bene) fatto
 – Aggiungi un bottone “salta” a tutte le card
-– Quando cliccato, questo bottone dovrebbe far sparire la card corrispondente.
+– Quando cliccato, questo bottone dovrebbe far sparire la card corrispondente. fatto
 – Aggiungi un input di testo che funzioni come una barra di ricerca. Quando l’utente scrive più di 3 caratteri, filtra il risultato dell’API per renderizzare solo i libri con un titolo che corrisponda, anche parzialmente, al contenuto dell’input. SUGGERIMENTO: usa .filter()
 – Dai la possibilità all’utente di cancellare libri dal loro carrello
 – Conta gli elementi nel carrello usando “.reduce()” e mostra il risultato nella sezione carrello
@@ -63,6 +63,10 @@ Per raggiungere questo risultato, segui queste istruzioni:
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
+          <form id="searchbar">
+            <input type="text" id="search">
+            <button type="submit" id="buttonsearch">cerca</button>
+            </form>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
