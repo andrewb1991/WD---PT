@@ -6,7 +6,8 @@ const getData = async (url) => {
     catch (error) {
         console.log(error)
     }
-};
+}
+
 
 getData("https://striveschool-api.herokuapp.com/books").then((res) => {
     console.log(res)
@@ -47,9 +48,30 @@ getData("https://striveschool-api.herokuapp.com/books").then((res) => {
             const newUl = document.createElement("ul")
             const newLi = document.createElement("li")
             newLi.innerText = `${data.title} ${data.price}` + "€"
-            cart.append(newUl)
+            const emptyCart = document.createElement("button")
+            emptyCart.classList.add("btn", "btn-light")
+            emptyCart.innerText = "Delete Item"
+            newLi.style.display = "inline"
+            emptyCart.addEventListener("click", e =>{
+            newLi.style.display = "none"
+            emptyCart.style.display = "none"
+            })
+            cart.append(newUl, emptyCart)
             newUl.appendChild(newLi)
+
         })
+            // const BigCart = document.getElementById("navbarDropdownMenuLink")
+            // const emptyAll = document.createElement("button")
+            // emptyAll.classList.add("btn", "btn-light")
+            // emptyAll.innerText = "Delete All"
+            // emptyAll.addEventListener("click", e =>{
+            //     cart.style.display = "none"                
+            //     emptyAll.style.display = "none"
+            // })
+
+            // cart.append(emptyAll)
+            
+            
 
 
 
@@ -76,7 +98,6 @@ getData("https://striveschool-api.herokuapp.com/books").then((res) => {
 
 
 
-
 const searchClick = document.getElementById("buttonsearch")
 searchClick.addEventListener("click", (e) => {
     getData("https://striveschool-api.herokuapp.com/books").then((res) => {
@@ -89,6 +110,5 @@ searchClick.addEventListener("click", (e) => {
                 console.log(result)
             const results = data.filter(resu => data.title.includes(searchValue))
                 
-            });
-
+            })
         })})})
