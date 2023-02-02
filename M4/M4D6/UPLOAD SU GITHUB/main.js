@@ -27,7 +27,8 @@ addEmail.innerText = `${data.email}`
 const mainCard = document.getElementById("mainCard")
 const div = document.createElement("div")
 div.style.border = "2px solid yellow"
-div.style.width = "200px"
+div.style.width = "16rem"
+div.style.margin = "2rem"
 mainCard.append(div)
 div.append(card, addName, addUsername, addEmail)
 });
