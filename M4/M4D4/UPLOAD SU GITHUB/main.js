@@ -9,7 +9,12 @@ const getData = async (url) => {
 }
 
 
-getData("https://striveschool-api.herokuapp.com/books").then((res) => {
+
+const getBooks = "https://striveschool-api.herokuapp.com/books"
+const searchBar = document.getElementById("searchBar")
+let result = []
+
+getData(getBooks).then((res) => {
     console.log(res)
     res.map(data => {
         const titles = data.title
@@ -60,6 +65,16 @@ getData("https://striveschool-api.herokuapp.com/books").then((res) => {
             newUl.appendChild(newLi)
 
         })
+
+        searchBar.addEventListener("input", (e) =>{
+            const searchString = e.target.value
+            console.log(searchString)
+            result.filter(book =>{
+            const resultsFinal = book.data.title.includes(searchString)
+            console.log(resultsFinal) 
+            })                           
+        
+    })
             // const BigCart = document.getElementById("navbarDropdownMenuLink")
             // const emptyAll = document.createElement("button")
             // emptyAll.classList.add("btn", "btn-light")
@@ -71,8 +86,7 @@ getData("https://striveschool-api.herokuapp.com/books").then((res) => {
 
             // cart.append(emptyAll)
             
-            
-
+             
 
 
         const btnSkip = document.createElement("div")
@@ -94,21 +108,20 @@ getData("https://striveschool-api.herokuapp.com/books").then((res) => {
 
 
     })
+
 })
 
-
-
-const searchClick = document.getElementById("buttonsearch")
-searchClick.addEventListener("click", (e) => {
-    getData("https://striveschool-api.herokuapp.com/books").then((res) => {
-        res.map(data => {
-            const searchValue = document.getElementById("search").value
-            const search = `${data.title}`
-            console.log(search)
-            res.forEach(element => {
-                const result = data.title
-                console.log(result)
-            const results = data.filter(resu => data.title.includes(searchValue))
+// const searchClick = document.getElementById("buttonsearch")
+// searchClick.addEventListener("click", (e) => {
+//     getData("https://striveschool-api.herokuapp.com/books").then((res) => {
+//         res.map(data => {
+//             const searchValue = document.getElementById("search").value
+//             const search = `${data.title}`
+//             console.log(search)
+//             res.forEach(element => {
+//                 const result = data.title
+//                 console.log(result)
+//             const results = data.filter(resu => data.title.includes(searchValue))
                 
-            })
-        })})})
+//             })
+//         })})})
