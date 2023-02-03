@@ -13,7 +13,7 @@
     crossorigin="anonymous" />
   <link rel="stylesheet" type="text/css" href="style.css" />
 
-  <title>Document</title>
+  <title>Book Shop</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@ Per raggiungere questo risultato, segui queste istruzioni:
 2. cambia lo stile della card per mostrare che è già stata aggiunta (un bordo colorato o un badge vanno bene) fatto
 – Aggiungi un bottone “salta” a tutte le card
 – Quando cliccato, questo bottone dovrebbe far sparire la card corrispondente. fatto
-– Aggiungi un input di testo che funzioni come una barra di ricerca. Quando l’utente scrive più di 3 caratteri, filtra il risultato dell’API per renderizzare solo i libri con un titolo che corrisponda, anche parzialmente, al contenuto dell’input. SUGGERIMENTO: usa .filter()
+– Aggiungi un input di testo che funzioni come una barra di ricerca. Quando l’utente scrive più di 3 caratteri, filtra il risultato dell’API per renderizzare solo i libri con un titolo che corrisponda, anche parzialmente, al contenuto dell’input. SUGGERIMENTO: usa .filter() fatto
 – Dai la possibilità all’utente di cancellare libri dal loro carrello fatto
 – Conta gli elementi nel carrello usando “.reduce()” e mostra il risultato nella sezione carrello
 
@@ -63,10 +63,8 @@ Per raggiungere questo risultato, segui queste istruzioni:
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-          <form id="searchbar">
             <input type="text" id="searchBar">
-            <button type="submit" id="buttonsearch">cerca</button>
-            </form>
+            <button type="" id="buttonsearch">cerca</button>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -80,22 +78,14 @@ Per raggiungere questo risultato, segui queste istruzioni:
             </div>
           </li>
         </ul>
-      </div>
+      </div class="">
     </nav>
-
-    <div class="container d-flex flex-wrap" id="contenitore">
+  </div>
+    <div id="contenitore">
 
     </div>
 
 
-    <!-- <div class="card" id="card" style="width: 18rem;">
-    <img src="..." class="card-img-top " alt="..." id="imgs">
-    <div class="card-body">
-      <h5 class="card-title" id="title">Card title</h5>
-      <p class="card-text" id="price">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Aggiungi al Carrello</a>
-      <a href="#" class="btn btn-primary">Salta</a> -->
-
   </div>
 
   </div>
@@ -103,7 +93,7 @@ Per raggiungere questo risultato, segui queste istruzioni:
   </div>
 
 
-  <script src="main2.js"></script>
+  <script src="./main.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
