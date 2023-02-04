@@ -1,18 +1,24 @@
+const mainCard = document.getElementById("mainCard")
+const div = document.createElement("div")
+mainCard.style.border = "2px solid yellow"
+div.style.width = "16rem"
+div.style.margin = "1rem"
+const card = document.getElementById("newCard")
+
+
 const createCard = (data) => {
+    
     const addName = document.createElement("h5")
-    addName.innerText = `${data.name}`
-    const card = document.getElementById("newCard")
     const addUsername = document.createElement("h5")
-    addUsername.innerText = `${data.username}`
     const addEmail = document.createElement("h5")
+    addName.innerText = `${data.name}`
+    addUsername.innerText = `${data.username}`
     addEmail.innerText = `${data.email}`
-    const mainCard = document.getElementById("mainCard")
-    const div = document.createElement("div")
-    div.style.border = "2px solid yellow"
-    div.style.width = "16rem"
-    div.style.margin = "1rem"
-    mainCard.append(div)
-    div.append(card, addName, addUsername, addEmail)
+    mainCard.append(card)
+    card.append(div)
+    div.append(addName)
+    div.append(addUsername)
+    div.append(addEmail)
 }
 
 
@@ -37,22 +43,50 @@ getData("https://jsonplaceholder.typicode.com/users").then((res) => {
         console.log(username)
         console.log(email)
         createCard(data)
-        const searchBar = document.getElementById("inputSearch")
-        searchBar.addEventListener("input", e => {
-            const research = e.target.value
-            console.log(research)
-            getData("https://jsonplaceholder.typicode.com/users").then((res) => {
-                res.filter(data => {
-                    const resultName = data.name.includes(research)
-                    const buttonSearch = document.getElementById("buttonSearch")
-                    buttonSearch.addEventListener("click", (e)=>{
-                    createCard(resultName)
-                    
-                })
 
-})
-            })
-
-        })
     })
 })
+
+
+const GetFilteredName = (array, element) => {
+    return array.filter(user => user.name.toLowerCase().includes(element.value.toLowerCase()))
+
+}
+
+const GetFiltereUsername = (array, element) => {
+    return array.filter(user => user.username.toLowerCase().includes(element.value.toLowerCase()))
+
+}
+
+const GetFilteredEmail = (array, element) => {
+    return array.filter(user => user.email.toLowerCase().includes(element.value.toLowerCase()))
+
+}
+
+const buttonSearch = document.getElementById("buttonSearch")
+    buttonSearch.addEventListener("click", (e) => {
+        e.preventDefault()
+        const reSearch = document.getElementById("inputSearch")
+        console.log(reSearch.value)
+        getData("https://jsonplaceholder.typicode.com/users").then((res) => {
+            const filter = GetFilteredName(res, reSearch)
+            return filter
+        }).then((data) => {
+            data.map((singleTitle) => {
+                div.innerHTML = ""
+                mainCard.innerHTML = ""
+                createCard(singleTitle)
+            }
+            )
+        })
+    })
+    
+
+
+
+
+
+
+
+
+

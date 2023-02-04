@@ -118,3 +118,4 @@ searchBar.addEventListener("click", (e) => {
         })
     })
 })
+
