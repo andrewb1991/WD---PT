@@ -1,0 +1,14 @@
+#main {
+text-align: center;
+
+}
+#mainContainer {
+    background-color: beige;
+    border-radius: 30px 30px;
+    min-height: 350px;
+}
+
+#nameBrand #nameProduct {
+color: blue
+
+}
