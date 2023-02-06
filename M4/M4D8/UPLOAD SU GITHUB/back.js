@@ -50,38 +50,6 @@ const getData = async (url, credentialPost) => {
 //       console.log(error)
 //   }
 // }
-// const createEl = (type, attributes, ...children) => {
-//   const element = document.createElement(type)
-
-//   Object.keys(attributes).forEach((key) => {
-//       element.setAttribute(key, attributes[key])
-//   })
-
-//   children.forEach(child => {
-//       typeof child === 'string'
-//           ? element.appendChild(document.createTextNode(child))
-//           : element.appendChild(child)
-//   })
-
-//   return element
-// }
-// const createCard = (data, container) =>{
-//   const cardWithText = createEl('li', {},
-//   createEl('a', {class: 'card', href: '#'},
-//       createEl('p', {class: 'card-category'}, `${data.category}`),
-//       createEl('h3', {class: 'card-title'}, `${data.title}`),
-//       createEl('div', {class: 'card-img-cont'},
-//           createEl('img', {
-//               class: 'card-img',
-//               alt: 'alt text',
-//               src: 'https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-iPhone-14-Plus-hero-220907-geo_Full-Bleed-Image.jpg.large.jpg'
-//           })
-//       ),
-//       createEl('p', {}, `${data.description}`)
-//   )
-// )
-// container.appendChild(cardWithText);
-// }
 
 
 getData(url, credentialGet).then((res) => {
