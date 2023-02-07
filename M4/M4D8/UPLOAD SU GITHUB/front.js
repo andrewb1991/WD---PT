@@ -57,22 +57,26 @@ const mainCard = document.getElementById("mainContainer")
 
 const createCard = (data) =>{
     const card = document.createElement("div")
-    card.classList.add("card")
-    card.style.add = "width:18rem"
+    card.classList.add("card", "col-lg-2", "col-md-5", "col-sm-6", "m-2")
+    // card.style.add = "width:6rem"
+    const cardBody = document.createElement("div")
+    cardBody.classList.add("card-body")
     const immagine = document.createElement("img")
-    immagine.classList.add("card-img")
+    immagine.classList.add("card-img-top")
     immagine.src = `${data.imageUrl}`
-    const titolo = document.createElement("h3")
+    const titolo = document.createElement("h5")
+    titolo.classList.add("card-title")
     titolo.innerText = `${data.name}`
     const brand = document.createElement("h4")
     brand.innerText = `${data.brand}`
     const descr = document.createElement("p")
     descr.innerText = `${data.description}`
+    descr.classList.add("card-text")
     const prezzo = document.createElement("h4")
     prezzo.innerText = `${data.price}` + "€"
-    mainCard.appendChild(card)
-    card.appendChild(immagine)
-    card.append(titolo, brand, descr, prezzo)
+    mainCard.append(card)
+    card.append(immagine, cardBody)
+    cardBody.append(titolo, brand, descr, prezzo)
 }
 
   
