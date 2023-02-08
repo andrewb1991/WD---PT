@@ -15,46 +15,40 @@ const url = "https://striveschool-api.herokuapp.com/api/product/";
 
 const username = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzU1MzEzODQsImV4cCI6MTY3Njc0MDk4NH0.pwa6emp1MRUP-Wx5bV08IMYPckaUd6LUmoamuRlFok4";
 
-// const dataImage = document.getElementById("dataImage")
-// const dataTitle = document.getElementById("dataTitle")
-// const dataBrand = document.getElementById("dataBrand")
-// const dataId = document.getElementById("dataId")
-const credentialPost = {method:'POST',
-headers: {'Authorization': username}, 
+const credentialPost = {
+  method: 'POST',
+  headers: { 'Authorization': username },
 }
-const credentialGet = {method:'GET',
-headers: {'Authorization': username}, 
+const credentialGet = {
+  method: 'GET',
+  headers: { 'Authorization': username },
 }
 
-const credentialDelete = {method:'DELETE',
-headers: {'Authorization': username}, 
+const credentialDelete = {
+  method: 'DELETE',
+  headers: { 'Authorization': username },
+}
+
+const credentialPut = {
+  method: 'PUT',
+  headers: { 'Authorization': username },
 }
 
 const getData = async (url, credentialPost) => {
   try {
-      const data = await fetch(url, credentialPost)
-      return await data.json();
+    const data = await fetch(url, credentialPost)
+    return await data.json();
   }
   catch (error) {
-      console.log(error)
+    console.log(error)
   }
 }
 
-// const deleteData = async ("https://striveschool-api.herokuapp.com/api/product/"+`${dataId}`, credentialDelete) => {
-//   try {
-//       const data = await fetch("https://striveschool-api.herokuapp.com/api/product/"+`${dataId}`, credentialDelete)
-//       return await data.json();
-//   }
-//   catch (error) {
-//       console.log(error)
-//   }
-// }
 const mainCard = document.getElementById("mainContainer")
 const editCard = document.getElementById("editContainer")
-const rowBtn = document.createElement("div")
-const editBtn = document.createElement("div")
-const deleteBtn = document.createElement("div")
-const createManageCard = (data) =>{
+
+
+const createManageCard = (data) => {
   const card = document.createElement("div")
   card.classList.add("card", "col-lg-3", "col-md-6", "col-sm-6", "m-1")
   const cardBody = document.createElement("div")
@@ -65,77 +59,138 @@ const createManageCard = (data) =>{
   const titolo = document.createElement("h5")
   titolo.classList.add("card-title")
   titolo.innerText = `${data.name}`
-  const brand = document.createElement("h4")
+  const brand = document.createElement("h5")
   brand.innerText = `${data.brand}`
-  const prezzo = document.createElement("h4")
+  const prezzo = document.createElement("h5")
   prezzo.innerText = `${data.price}` + "€"
-  editBtn.classList.add("btn", "btn-danger")
-  editBtn.innerText = "Edit Product"
-  deleteBtn.classList.add("btn", "btn-danger")
+  let id = document.createElement("h5")
+  id.innerText = `${data._id}`
+  id.id = "dataID"
+  const deleteBtn = document.createElement("button")
+  deleteBtn.classList.add("btn", "btn-danger", "m-2")
   deleteBtn.innerText = "Delete Product"
-  rowBtn.classList.add("row", "d-flex", "justify-content-around")
+  deleteBtn.id = "deleteBtn"
+  const editBtn = document.createElement("button")
+  editBtn.classList.add("btn", "btn-secondary", "m-2",)
+  editBtn.innerText = "Edit Product"
+  editBtn.id = "editBtn"
   editCard.append(card)
-  card.append(immagine, cardBody, rowBtn)
-  cardBody.append(titolo, brand, prezzo, rowBtn)
-  rowBtn.appendChild(editBtn, deleteBtn)
+  card.append(immagine, cardBody)
+  cardBody.append(titolo, brand, prezzo, id)
+  card.append(deleteBtn, editBtn)
+  deleteBtn.addEventListener("click", e =>{
+    e.preventDefault()
+    confirm("Are you sure to delete this product?")
+    if(confirm === true){
+      deleteData(id)
+    }
+  })
+  editBtn.addEventListener("click", e =>{
+  $('#myModal').modal(`toggle`)
+  e.preventDefault()
+  confirm("Are you sure to edit this product? The action is irreversible!")
+  if (confirm === true){
+  // form modifica prodotto con modale
+  }
+  return false
+  })
 }
 
 getData(url, credentialGet).then((res) => {
   console.log(res)
-  res.map(data =>{
-  const savedTitle = data.name
-  console.log(savedTitle)
-  const savedImg = data.imageUrl
-  console.log(savedImg)
-  const savedBrand = data.brand
-  console.log(savedBrand)
-  const savedId = data._id
-  console.log(savedId)
-  // dataImage.src = savedImg
-  // dataTitle.innerText = `${savedTitle}`  
-  // dataBrand.innerText = `${savedBrand}`
-  createManageCard(data)
+  res.map(data => {
+    const savedTitle = data.name
+    console.log(savedTitle)
+    const savedImg = data.imageUrl
+    console.log(savedImg)
+    const savedBrand = data.brand
+    console.log(savedBrand)
+    const savedId = data._id
+    console.log(savedId)
+    createManageCard(data)
   })
-  })
+})
 
 const nameProduct = document.getElementById("nameProduct")
 const nameBrand = document.getElementById("nameBrand")
 const nameDescr = document.getElementById("nameDescr")
 const nameImg = document.getElementById("nameImg")
 const namePrice = document.getElementById("namePrice")
+const editName = document.getElementById("editName").value
+const editBrand = document.getElementById("editBrand").value
+const editDescr = document.getElementById("editDescr").value
+const editImg = document.getElementById("editImg").value
+const editPrice = document.getElementById("editPrice").value
 const submitProduct = document.getElementById("submitProduct")
-const deleteProduct = document.getElementById("deleteProduct")
+const editProduct = document.getElementById("editProduct")
 
 
-const getDataForm = async (e) =>{
-const newName = nameProduct.value
-const newBrand = nameBrand.value
-const newDescr = nameDescr.value
-const newImg = nameImg.value
-const newPrice = namePrice.value
-const products = {
-  "name": newName, 
-  "brand": newBrand,
-  "description":newDescr,
-  "imageUrl":newImg,
-  "price": newPrice,
+const getDataForm = async (e) => {
+  const newName = nameProduct.value
+  const newBrand = nameBrand.value
+  const newDescr = nameDescr.value
+  const newImg = nameImg.value
+  const newPrice = namePrice.value
+  const products = {
+    "name": newName,
+    "brand": newBrand,
+    "description": newDescr,
+    "imageUrl": newImg,
+    "price": newPrice,
   };
   console.log(products)
+  fetch("https://striveschool-api.herokuapp.com/api/product/", {
+    method: `POST`, headers: {
+      "Authorization": username,
+      "Content-type": "application/json"
 
-  fetch("https://striveschool-api.herokuapp.com/api/product/", {method: `POST`, headers: {
-  "Authorization": username,
-  "Content-type": "application/json"
+    }, body: JSON.stringify(products)
+  })
+}
+
+const deleteData = async () =>{
+  let id = document.getElementById("dataID").value
+fetch("https://striveschool-api.herokuapp.com/api/product/"+ `${id}`,  {
+  method: `DELETE`, headers: {
+    "Authorization": username,
+    "Content-type": "application/json"
+
+  }, body: null
+  
+}).then((res)=>{
+console.log(res)
+})
+} 
 
 
-}, body: JSON.stringify(products)
-})};
-
-
-submitProduct.addEventListener("click", e =>{
-getDataForm()
+submitProduct.addEventListener("click", e => {
+  getDataForm()
 })
 
-// deleteProduct.addEventListener("click", e =>{
-// deleteData()
+const editData = async () =>{
+  const editProducts = {
+    "name": editName,
+    "brand": editBrand,
+    "description": editDescr,
+    "imageUrl": editImg,
+    "price": editPrice,
+  }
+fetch("https://striveschool-api.herokuapp.com/api/product/"+`${id}`, {
+method: `PUT`, headers:{
+"Authorization": username,
+"Content-type": "application/json"
+}
+, body: JSON.stringify(editProducts)
+}).then((res)=>{
+console.log(res)
+})
 
-// })
+}
+
+editProduct.addEventListener("click", e =>{
+e.preventDefault()
+confirm("Edit this product?")
+if(confirm === true){
+editData()
+}
+})

@@ -37,21 +37,6 @@ const createEl = (type, attributes, ...children) => {
   return element
 }
 
-  getData(url, credentialGet).then((res) => {
-    console.log(res)
-    res.map(data =>{
-    const savedTitle = data.name
-    console.log(savedTitle)
-    const savedImg = data.imageUrl
-    console.log(savedImg)
-    const savedBrand = data.brand
-    console.log(savedBrand)
-    const savedDescr = data.description
-    console.log(savedDescr)
-    createCard(data)
-    })
-})
-
 const mainCard = document.getElementById("mainContainer")
 
 
@@ -79,4 +64,17 @@ const createCard = (data) =>{
     cardBody.append(titolo, brand, descr, prezzo)
 }
 
-  
+getData(url, credentialGet).then((res) => {
+  console.log(res)
+  res.map(data =>{
+  const savedTitle = data.name
+  console.log(savedTitle)
+  const savedImg = data.imageUrl
+  console.log(savedImg)
+  const savedBrand = data.brand
+  console.log(savedBrand)
+  const savedDescr = data.description
+  console.log(savedDescr)
+  createCard(data)
+  })
+})
