@@ -81,9 +81,7 @@ const createManageCard = (data) => {
   deleteBtn.addEventListener("click", e =>{
     e.preventDefault()
     confirm("Are you sure to delete this product?")
-    if(confirm === true){
-      deleteData(id)
-    }
+      deleteData()
   })
   editBtn.addEventListener("click", e =>{
   $('#myModal').modal(`toggle`)
@@ -116,11 +114,11 @@ const nameBrand = document.getElementById("nameBrand")
 const nameDescr = document.getElementById("nameDescr")
 const nameImg = document.getElementById("nameImg")
 const namePrice = document.getElementById("namePrice")
-const editName = document.getElementById("editName").value
-const editBrand = document.getElementById("editBrand").value
-const editDescr = document.getElementById("editDescr").value
-const editImg = document.getElementById("editImg").value
-const editPrice = document.getElementById("editPrice").value
+const editName = document.getElementById("editName")
+const editBrand = document.getElementById("editBrand")
+const editDescr = document.getElementById("editDescr")
+const editImg = document.getElementById("editImg")
+const editPrice = document.getElementById("editPrice")
 const submitProduct = document.getElementById("submitProduct")
 const editProduct = document.getElementById("editProduct")
 
@@ -149,7 +147,7 @@ const getDataForm = async (e) => {
 }
 
 const deleteData = async () =>{
-  let id = document.getElementById("dataID").value
+  let id = document.getElementById("dataID").textContent
 fetch("https://striveschool-api.herokuapp.com/api/product/"+ `${id}`,  {
   method: `DELETE`, headers: {
     "Authorization": username,
@@ -167,14 +165,21 @@ submitProduct.addEventListener("click", e => {
   getDataForm()
 })
 
-const editData = async () =>{
+const editData = async (e) =>{
+  const editNames = editName.value
+  const editBrands = editBrand.value
+  const editDescrs = editDescr.value
+  const editImgs = editImg.value
+  const editPrices = editPrice.value
   const editProducts = {
-    "name": editName,
-    "brand": editBrand,
-    "description": editDescr,
-    "imageUrl": editImg,
-    "price": editPrice,
+    "name": editNames,
+    "brand": editBrands,
+    "description": editDescrs,
+    "imageUrl": editImgs,
+    "price": editPrices,
   }
+  console.log(editProducts)
+  let id = document.getElementById("dataID").textContent
 fetch("https://striveschool-api.herokuapp.com/api/product/"+`${id}`, {
 method: `PUT`, headers:{
 "Authorization": username,
@@ -184,13 +189,9 @@ method: `PUT`, headers:{
 }).then((res)=>{
 console.log(res)
 })
-
 }
 
 editProduct.addEventListener("click", e =>{
-e.preventDefault()
 confirm("Edit this product?")
-if(confirm === true){
 editData()
-}
 })
