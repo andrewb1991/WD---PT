@@ -63,6 +63,7 @@ const createManageCard = (data, id) => {
   const prezzo = document.createElement("h5")
   prezzo.innerText = `${data.price}` + "€"
   let newid = document.createElement("h5")
+  newid.id = "dataID"
   newid.innerText = `${data._id}`
   const deleteBtn = document.createElement("button")
   deleteBtn.classList.add("btn", "btn-danger", "m-2")
@@ -82,8 +83,8 @@ const createManageCard = (data, id) => {
   });
   const editProduct = document.getElementById("editProduct")
   editProduct.addEventListener("click", (e =>{
-    e.preventDefault()
     confirm("Edit this product?")
+    e.preventDefault()
       editData(id)
     }
   ))
