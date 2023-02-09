@@ -46,8 +46,7 @@ const getData = async (url, credentialPost) => {
 
 const mainCard = document.getElementById("mainContainer")
 const editCard = document.getElementById("editContainer")
-
-
+let id;
 const createManageCard = (data) => {
   const card = document.createElement("div")
   card.classList.add("card", "col-lg-3", "col-md-6", "col-sm-6", "m-2")
@@ -64,8 +63,8 @@ const createManageCard = (data) => {
   const prezzo = document.createElement("h5")
   prezzo.innerText = `${data.price}` + "€"
   let id = document.createElement("h5")
-  id.innerText = `${data._id}`
   id.id = "dataID"
+  id.innerText = `${data._id}`
   const deleteBtn = document.createElement("button")
   deleteBtn.classList.add("btn", "btn-danger", "m-2")
   deleteBtn.innerText = "Delete Product"
@@ -76,8 +75,7 @@ const createManageCard = (data) => {
   editBtn.id = "editBtn"
   editCard.append(card)
   card.append(immagine, cardBody)
-  cardBody.append(titolo, brand, prezzo)
-  card.append(deleteBtn, editBtn)
+  cardBody.append(titolo, brand, prezzo, id, deleteBtn, editBtn)
   deleteBtn.addEventListener("click", e =>{
     e.preventDefault()
     confirm("Are you sure to delete this product?")
@@ -156,8 +154,8 @@ fetch("https://striveschool-api.herokuapp.com/api/product/"+ `${id}`,  {
   }, body: null
   
 }).then((res)=>{
-console.log(res)
-})
+  console.log(res)
+  })
 } 
 
 
@@ -196,5 +194,5 @@ console.log(res)
 
 editProduct.addEventListener("click", e =>{
 confirm("Edit this product?")
-editData()
-})
+  editData()
+  })
