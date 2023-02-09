@@ -50,7 +50,7 @@ const editCard = document.getElementById("editContainer")
 
 const createManageCard = (data) => {
   const card = document.createElement("div")
-  card.classList.add("card", "col-lg-3", "col-md-6", "col-sm-6", "m-1")
+  card.classList.add("card", "col-lg-3", "col-md-6", "col-sm-6", "m-2")
   const cardBody = document.createElement("div")
   cardBody.classList.add("card-body")
   const immagine = document.createElement("img")
@@ -76,7 +76,7 @@ const createManageCard = (data) => {
   editBtn.id = "editBtn"
   editCard.append(card)
   card.append(immagine, cardBody)
-  cardBody.append(titolo, brand, prezzo, id)
+  cardBody.append(titolo, brand, prezzo)
   card.append(deleteBtn, editBtn)
   deleteBtn.addEventListener("click", e =>{
     e.preventDefault()
@@ -162,7 +162,10 @@ console.log(res)
 
 
 submitProduct.addEventListener("click", e => {
-  getDataForm()
+  e.preventDefault()
+  if(confirm("Add this Item?")){
+      getDataForm()
+  }
 })
 
 const editData = async (e) =>{

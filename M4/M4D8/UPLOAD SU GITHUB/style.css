@@ -12,6 +12,8 @@ text-align: center;
 background-color: beige;
 border-radius: 20px 20px;
 height: auto;
+display: flex;
+flex-wrap: wrap;
 
 }
 #nameBrand #nameProduct {
@@ -19,3 +21,10 @@ color: blue
 
 }
 
+
+#cards {
+    background-color:  rgb(166, 200, 228);
+    color: rgb(80, 80, 236)
+    border: 2px solid blue;
+
+}

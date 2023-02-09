@@ -43,6 +43,7 @@ const mainCard = document.getElementById("mainContainer")
 const createCard = (data) =>{
     const card = document.createElement("div")
     card.classList.add("card", "col-lg-2", "col-md-5", "col-sm-6", "m-2")
+    card.id = "cards"
     // card.style.add = "width:6rem"
     const cardBody = document.createElement("div")
     cardBody.classList.add("card-body")
@@ -59,9 +60,12 @@ const createCard = (data) =>{
     descr.classList.add("card-text")
     const prezzo = document.createElement("h4")
     prezzo.innerText = `${data.price}` + "€"
+    const btnProd = document.createElement("a")  
+    btnProd.classList.add("btn", "btn-primary")
+    btnProd.innerText = "More Details"
     mainCard.append(card)
     card.append(immagine, cardBody)
-    cardBody.append(titolo, brand, descr, prezzo)
+    cardBody.append(titolo, brand, descr, prezzo, btnProd)
 }
 
 getData(url, credentialGet).then((res) => {
@@ -75,6 +79,8 @@ getData(url, credentialGet).then((res) => {
   console.log(savedBrand)
   const savedDescr = data.description
   console.log(savedDescr)
+  const savedID = data._id
+  console.log(savedID)
   createCard(data)
   })
 })
