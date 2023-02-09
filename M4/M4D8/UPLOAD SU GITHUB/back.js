@@ -46,7 +46,7 @@ const getData = async (url, credentialPost) => {
 
 const mainCard = document.getElementById("mainContainer")
 const editCard = document.getElementById("editContainer")
-let id;
+
 const createManageCard = (data) => {
   const card = document.createElement("div")
   card.classList.add("card", "col-lg-3", "col-md-6", "col-sm-6", "m-2")
