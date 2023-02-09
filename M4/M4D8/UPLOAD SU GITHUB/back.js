@@ -47,7 +47,7 @@ const getData = async (url, credentialPost) => {
 const mainCard = document.getElementById("mainContainer")
 const editCard = document.getElementById("editContainer")
 
-const createManageCard = (data) => {
+const createManageCard = (data, id) => {
   const card = document.createElement("div")
   card.classList.add("card", "col-lg-3", "col-md-6", "col-sm-6", "m-2")
   const cardBody = document.createElement("div")
@@ -62,9 +62,9 @@ const createManageCard = (data) => {
   brand.innerText = `${data.brand}`
   const prezzo = document.createElement("h5")
   prezzo.innerText = `${data.price}` + "€"
-  let id = document.createElement("h5")
-  id.id = "dataID"
-  id.innerText = `${data._id}`
+  let newid = document.createElement("h5")
+  newid.id = "dataID"
+  newid.innerText = `${data._id}`
   const deleteBtn = document.createElement("button")
   deleteBtn.classList.add("btn", "btn-danger", "m-2")
   deleteBtn.innerText = "Delete Product"
@@ -79,18 +79,25 @@ const createManageCard = (data) => {
   deleteBtn.addEventListener("click", e =>{
     e.preventDefault()
     confirm("Are you sure to delete this product?")
-      deleteData()
-  })
+      deleteData(id)
+  });
+  const editProduct = document.getElementById("editProduct")
+  editProduct.addEventListener("click", e =>{
+    e.preventDefault()
+    confirm("Edit this product?")
+      editData(id)
+    }
+  )
   editBtn.addEventListener("click", e =>{
   $('#myModal').modal(`toggle`)
   e.preventDefault()
   confirm("Are you sure to edit this product? The action is irreversible!")
-  if (confirm === true){
-  // form modifica prodotto con modale
-  }
-  return false
   })
+
 }
+
+
+
 
 getData(url, credentialGet).then((res) => {
   console.log(res)
@@ -103,7 +110,7 @@ getData(url, credentialGet).then((res) => {
     console.log(savedBrand)
     const savedId = data._id
     console.log(savedId)
-    createManageCard(data)
+    createManageCard(data, data._id)
   })
 })
 
@@ -118,10 +125,9 @@ const editDescr = document.getElementById("editDescr")
 const editImg = document.getElementById("editImg")
 const editPrice = document.getElementById("editPrice")
 const submitProduct = document.getElementById("submitProduct")
-const editProduct = document.getElementById("editProduct")
 
 
-const getDataForm = async (e) => {
+const getDataForm = async (id) => {
   const newName = nameProduct.value
   const newBrand = nameBrand.value
   const newDescr = nameDescr.value
@@ -144,14 +150,13 @@ const getDataForm = async (e) => {
   })
 }
 
-const deleteData = async () =>{
-  let id = document.getElementById("dataID").textContent
-fetch("https://striveschool-api.herokuapp.com/api/product/"+ `${id}`,  {
+const deleteData = async (id) =>{
+await fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`,  {
   method: `DELETE`, headers: {
     "Authorization": username,
     "Content-type": "application/json"
 
-  }, body: null
+  },
   
 }).then((res)=>{
   console.log(res)
@@ -166,8 +171,8 @@ submitProduct.addEventListener("click", e => {
   }
 })
 
-const editData = async (e) =>{
-  const editNames = editName.value
+const editData = async (id) =>{
+   const editNames = editName.value
   const editBrands = editBrand.value
   const editDescrs = editDescr.value
   const editImgs = editImg.value
@@ -180,8 +185,7 @@ const editData = async (e) =>{
     "price": editPrices,
   }
   console.log(editProducts)
-  let id = document.getElementById("dataID").textContent
-fetch("https://striveschool-api.herokuapp.com/api/product/"+`${id}`, {
+await fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
 method: `PUT`, headers:{
 "Authorization": username,
 "Content-type": "application/json"
@@ -191,8 +195,3 @@ method: `PUT`, headers:{
 console.log(res)
 })
 }
-
-editProduct.addEventListener("click", e =>{
-confirm("Edit this product?")
-  editData()
-  })
