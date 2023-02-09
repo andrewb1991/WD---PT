@@ -67,33 +67,47 @@ const createManageCard = (data, id) => {
   newid.innerText = `${data._id}`
   const deleteBtn = document.createElement("button")
   deleteBtn.classList.add("btn", "btn-danger", "m-2")
-  deleteBtn.innerText = "Delete Product"
+  deleteBtn.innerText = "Delete This Product"
   deleteBtn.id = "deleteBtn"
   const editBtn = document.createElement("button")
-  editBtn.classList.add("btn", "btn-secondary", "m-2",)
-  editBtn.innerText = "Edit Product"
+  editBtn.classList.add("btn", "btn-info", "m-2",)
+  editBtn.style.color = "white"
+  editBtn.innerText = `Edit Products`
   editBtn.id = "editBtn"
   editCard.append(card)
   card.append(immagine, cardBody)
   cardBody.append(titolo, brand, prezzo, id, deleteBtn, editBtn)
   deleteBtn.addEventListener("click", e =>{
     e.preventDefault()
-    confirm("Are you sure to delete this product?")
+    if(confirm("Are you sure to delete this product?")){
       deleteData(id)
-  });
-  const editProduct = document.getElementById("editProduct")
-  editProduct.addEventListener("click", (e =>{
-    confirm("Edit this product?")
-    e.preventDefault()
-      editData(id)
+
     }
-  ))
-  editBtn.addEventListener("click", e =>{
-  $('#myModal').modal(`toggle`)
-  e.preventDefault()
-  confirm("Are you sure to edit this product? The action is irreversible!")
   })
 
+  // <button type="button" class="btn btn-primary" data-dismiss="modal" id="editProduct">Confirm</button>
+  const editProduct = document.createElement("button")
+  editProduct.classList.add("btn", "btn-danger")
+  editProduct.innerText = `Edit: ${data._id} - ${data.name}`
+  const modalButton = document.getElementById("modalfooter")
+  modalButton.append(editProduct)
+  editBtn.addEventListener("click", e =>{
+  e.preventDefault()
+  if(confirm("Are you sure to edit products? The action is irreversible!")){
+    $('#myModal').modal(`toggle`)
+
+  }
+  else return false;
+  })
+
+editProduct.addEventListener("click", e =>{
+    e.preventDefault()
+    if(confirm("Edit this product?")){
+      editData(id)
+    }
+else return false;
+    }
+  )
 }
 
 
@@ -127,7 +141,7 @@ const editPrice = document.getElementById("editPrice")
 const submitProduct = document.getElementById("submitProduct")
 
 
-const getDataForm = async (id) => {
+const getDataForm = async () => {
   const newName = nameProduct.value
   const newBrand = nameBrand.value
   const newDescr = nameDescr.value
@@ -170,6 +184,8 @@ submitProduct.addEventListener("click", e => {
       getDataForm()
   }
 })
+
+
 
 const editData = async (id) =>{
    const editNames = editName.value
