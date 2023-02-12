@@ -1,6 +1,5 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
 function NewCard(props) {
   return (
     <Card style={{ width: '18rem' }}>
@@ -11,7 +10,6 @@ function NewCard(props) {
           {props.description}
         </Card.Text>
 
-       <Link to='/about'><Button variant="primary">Go somewhere</Button></Link>
       </Card.Body>
     </Card>
   );
