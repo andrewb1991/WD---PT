@@ -4,7 +4,6 @@ import MyNavbar from './components/MyNavbar';
 import MyFooter from './components/MyFooter';
 import Welcome from './components/Welcome';
 import LatestRelease from './components/LatestRelease';
-import NewCard from './components/NewCard';
 function App() {
   return (
     <div className="App">
