@@ -6,7 +6,7 @@ function MyNavbar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">EpiBooks</Navbar.Brand>
+        <Navbar.Brand href="#home" className='text-primary'>EpiBooks</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Nav className="me-auto">
             <Nav.Link href="#">Home</Nav.Link>

@@ -3,8 +3,8 @@ import React from 'react'
 const Welcome = () => {
   return (
     <>
-    <h1>Welcome to EpiBooks</h1>
-    <h6>Welcome to EpiBooks, see and watch your favorite Books inside this awesome App</h6>
+    <h1 className='text-primary'>Welcome to EpiBooks</h1>
+    <h3 className='text-info'>Welcome to EpiBooks, see and watch your favorite Books inside this awesome App!</h3>
     </>
   )
 }
