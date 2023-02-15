@@ -1,13 +1,11 @@
 import Badge from 'react-bootstrap/Badge';
 import React from 'react'
 
-const MyBadge = () => {
+const MyBadge = (props) => {
 
 
   return (
-    <div>MyBadge
-
-    </div>
+    <Badge bg={props.bg}>{props.text}</Badge>
   )
 }
 
