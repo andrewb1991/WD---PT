@@ -14,35 +14,31 @@ const BookList = () => {
     <div className='container'>
       <Form>
           <InputGroup className='my-3'>
-
-            {/* onChange for search */}
             <Form.Control
               onChange={(e) => setSearch(e.target.value)}
               placeholder='Search Books'
             />
           </InputGroup>
         </Form>
-    <div className='d-flex row justify-between'>
-  
-    {/* { !loading && data && data.map((u)=> */}
+      <div className='d-flex row justify-between'>
 
     { !loading && data && data.filter((item)=>{
-    return search.toLowerCase() === ''
-    ? item
-    : item.title.toLowerCase().includes(search); 
+        return search.toLowerCase() === ''
+         ? item
+         : item.title.toLowerCase().includes(search); 
   })
   .map((item, index) =>
-    (<Card className="m-2" style={{ width: '12rem' } }>
-    <Card.Body>
-    <Card.Img variant="top" src={item.img}/>
-    <Card.Title >Title: {item.title}</Card.Title>
-    </Card.Body>
-  </Card>
+    (<Card className="m-2" style={{ width: '16rem' } }>
+      <Card.Body>
+        <Card.Img variant="top" src={item.img}/>
+        <Card.Title >Title: {item.title}</Card.Title>
+      </Card.Body>
+    </Card>
     ))}
 
 
-    </div>
-    </div> 
+     </div>
+   </div> 
 )
 }  
 ;
