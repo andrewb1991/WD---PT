@@ -1,44 +1,51 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 import Card from 'react-bootstrap/Card';
 import useFetch from './useFetch';
-import {useState} from 'react'
-
 
 const BookList = () => {
   const {data, loading, error} = useFetch("https://striveschool-api.herokuapp.com/books")
   console.log(data, loading, error)
-
-  const [titolo, setTitolo] = useState('')
-  const avviaRicerca = (e) =>{
-    e.preventDefault()
-    console.log(titolo)
-  }
-
-  const result = (e) =>{
-    setTitolo(e.target.value)
-  }
-
-
+  const [books, setBooks] = useState(data);
+  const [search, setSearch] = useState('');
 
   return (
     <div className='container'>
-      <form onSubmit={avviaRicerca}> 
-      <input type='text/' required value ={titolo} onChange={result}/>
-    <button type='submit' onChange={result}>Esegui Ricerca</button>
-      </form>
+      <Form>
+          <InputGroup className='my-3'>
+
+            {/* onChange for search */}
+            <Form.Control
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder='Search Books'
+            />
+          </InputGroup>
+        </Form>
     <div className='d-flex row justify-between'>
   
-    { !loading && data && data.map((u)=>(<Card className="m-2" style={{ width: '12rem' } }>
-        <Card.Body>
-        <Card.Img variant="top" src={u.img}/>
-        <Card.Title >Title: {u.title}</Card.Title>
-        </Card.Body>
-      </Card>
-        ))}
+    {/* { !loading && data && data.map((u)=> */}
 
-    {/* { !loading && data && data.filter((item)=> item.title.toLowerCase().includes(titolo.toLowerCase()))} */}
+    { !loading && data && data.filter((item)=>{
+    return search.toLowerCase() === ''
+    ? item
+    : item.title.toLowerCase().includes(search); 
+  })
+  .map((item, index) =>
+    (<Card className="m-2" style={{ width: '12rem' } }>
+    <Card.Body>
+    <Card.Img variant="top" src={item.img}/>
+    <Card.Title >Title: {item.title}</Card.Title>
+    </Card.Body>
+  </Card>
+    ))}
+
+
     </div>
-    </div>
-  );
-}
+    </div> 
+)
+}  
+;
+  
+
 export default BookList
