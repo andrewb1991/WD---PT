@@ -12,14 +12,10 @@ const BookList = () => {
   const avviaRicerca = (e) =>{
     e.preventDefault()
     console.log(titolo)
-   
   }
-
-
 
   const result = (e) =>{
     setTitolo(e.target.value)
-     // console.log(e.target.value)
   }
 
 
