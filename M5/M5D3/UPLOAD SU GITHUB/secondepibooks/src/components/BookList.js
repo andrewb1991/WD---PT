@@ -1,14 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Card from 'react-bootstrap/Card';
 import useFetch from './useFetch';
-
+import Button from 'react-bootstrap/esm/Button';
 const BookList = () => {
   const {data, loading, error} = useFetch("https://striveschool-api.herokuapp.com/books")
   console.log(data, loading, error)
   const [books, setBooks] = useState(data);
   const [search, setSearch] = useState('');
+  const [click, setClick] = useState(false)
+  const CardClick = () => {setClick(current => !current)}
+  useEffect( () => {
+    console.log(click);
+}, []);
+
 
   return (
     <div className='container'>
@@ -28,11 +34,13 @@ const BookList = () => {
          : item.title.toLowerCase().includes(search); 
   })
   .map((item, index) =>
-    (<Card className="m-2" style={{ width: '16rem' } }>
+    (<Card border={click ? "danger" : "primary"} className="m-2" style={{ width: '16rem' } } >
       <Card.Body>
         <Card.Img variant="top" src={item.img}/>
         <Card.Title >Title: {item.title}</Card.Title>
       </Card.Body>
+      <Button variant='outline-warning mb-2' onClick={CardClick}
+      >Selected</Button>
     </Card>
     ))}
 
