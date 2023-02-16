@@ -39,7 +39,7 @@ const BookList = () => {
         <Card.Img variant="top" src={item.img}/>
         <Card.Title >Title: {item.title}</Card.Title>
       </Card.Body>
-      <Button variant='outline-warning mb-2' onClick={CardClick}
+      <Button variant='outline-danger mb-2' onClick={CardClick}
       >Selected</Button>
     </Card>
     ))}
