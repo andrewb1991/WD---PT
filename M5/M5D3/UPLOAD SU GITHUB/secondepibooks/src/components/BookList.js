@@ -37,10 +37,10 @@ const BookList = () => {
     (<Card border={click ? "danger" : "primary"} className="m-2" style={{ width: '16rem' } } >
       <Card.Body>
         <Card.Img variant="top" src={item.img}/>
-        <Card.Title >Title: {item.title}</Card.Title>
+        <Card.Title onClick={CardClick}>Title: {item.title}</Card.Title>
       </Card.Body>
-      <Button variant='outline-danger mb-2' onClick={CardClick}
-      >Selected</Button>
+      {/* <Button variant='outline-danger mb-2' onClick={CardClick} */}
+      {/* >Selected</Button> */}
     </Card>
     ))}
 
