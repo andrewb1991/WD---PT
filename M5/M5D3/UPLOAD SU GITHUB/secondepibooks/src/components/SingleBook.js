@@ -30,10 +30,10 @@ const SingleBook = (props) => {
         <Card.Img variant="top" src={props.img} />
         <Card.Title>{props.title}</Card.Title>
       </Card.Body>
-      <Button onClick={toggleSelection} variant="info">
+      <Button onClick={toggleSelection} variant="outline-success" size="sm" className="mb-1">
         Seleziona
       </Button>
-      <Button onClick={toggleModal} variant="info">
+      <Button onClick={toggleModal} variant="outline-dark" size="sm" className="mb-1">
         Commenti
       </Button>
     </Card>

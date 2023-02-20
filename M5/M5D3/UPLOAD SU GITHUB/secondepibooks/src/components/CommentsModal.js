@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, {useState, useEffect} from 'react'
+import PostComments from './PostComments'
 
 function CommentsModal(props) {
 const [comments, setComments] = useState([]);
@@ -38,10 +39,11 @@ console.log(comments)
         return (
         <>
          <Modal.Header closeButton>
-          <Modal.Title>{singleComment.author}</Modal.Title>
+          <Modal.Title>Comment</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
+        <p>{singleComment.author}</p>
           <p>{singleComment.comment}</p>
           <p>Voto: {singleComment.rate}</p>
         </Modal.Body>
@@ -52,7 +54,8 @@ console.log(comments)
     
     })}
         <Modal.Footer>
-          <Button onClick={()=> props.close(false)} variant="secondary">Close</Button>
+          <Button onClick={()=> props.close(false)} variant="outline-secondary">Close</Button>
+          <PostComments/>
         </Modal.Footer>
       </Modal.Dialog>
     </div>

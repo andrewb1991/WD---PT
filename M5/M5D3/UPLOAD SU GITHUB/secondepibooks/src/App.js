@@ -10,7 +10,6 @@ function App() {
     <div className="App">
      <MyBadge text={'Andrea'} bg={'primary'}/>
      <MyBadge text={'Andrea'} bg={'secondary'}/>
-     {/* <SingleBook props={Filtered[0]}></SingleBook> */}
     <BookList/>
      </div>
   );
