@@ -55,7 +55,6 @@ console.log(comments)
       (res)=>{
           let newcomments = [comments, newcomment]
           setNewComment(newcomments)
-          //pulisco il form
           e.target[0].value = ""
       },
       (err)=>{}
