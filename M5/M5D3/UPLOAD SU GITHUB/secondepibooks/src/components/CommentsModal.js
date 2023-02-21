@@ -6,6 +6,7 @@ import React, {useState, useEffect} from 'react'
 function CommentsModal(props) {
 const [comments, setComments] = useState([]);
 const [loading, setLoading] = useState(false);
+const [newcomments, setNewComment] = useState({})
 
 
 console.log(comments)
@@ -40,7 +41,7 @@ console.log(comments)
         
     }
     console.log(newcomment);
-    fetch(`https://striveschool-api.herokuapp.com/api/comments/${props.asin}`,
+    fetch(`https://striveschool-api.herokuapp.com/api/comments/`,
     {
       method: "POST",
       headers: {
@@ -52,8 +53,8 @@ console.log(comments)
     }).then(res=>res.json()            
       .then(
       (res)=>{
-          let newcomments = [...this.comments, newcomment]
-          // this.setComments(newcomments)
+          let newcomments = [comments, newcomment]
+          setNewComment(newcomments)
           //pulisco il form
           e.target[0].value = ""
       },
