@@ -18,10 +18,6 @@ function PostComments(props) {
     const value = Math.max(min, Math.min(max, Number(event.target.value)));
     setValue(value);
   };
-  const newcomment = {
-"comment": post_comment,
-"rate": post_rate,
-"elementId": props.asin}
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,7 +28,7 @@ function PostComments(props) {
         "Content-type": "application/json",
         "Authorization":
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzY2NTk0MzksImV4cCI6MTY3Nzg2OTAzOX0.SnRLThri9Aj6geIHDb98_cw0D1yxJHTx0dlPtdTvsPs"
-      },body: JSON.stringify(newcomment)})
+      },body: JSON.stringify()})
 
       useEffect(() =>{
         PostComments()
