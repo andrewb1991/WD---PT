@@ -59,7 +59,6 @@ function PostComments(props) {
           </Button>
           <Button variant="primary" onClick={PostComments}>
             Submit Comment
-            {/* invierà il post del form per aggiungere il commento */}
           </Button>
         </Modal.Footer>
       </Modal>

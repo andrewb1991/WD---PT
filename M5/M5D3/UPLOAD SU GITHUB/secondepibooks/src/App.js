@@ -8,8 +8,9 @@ function App() {
   // console.log(Filtered[0])
   return (
     <div className="App">
-     <MyBadge text={'Andrea'} bg={'primary'}/>
-     <MyBadge text={'Andrea'} bg={'secondary'}/>
+     {/* <MyBadge text={'Andrea'} bg={'primary'}/>
+     <MyBadge text={'Andrea'} bg={'secondary'}/> */}
+     <h1 className='text-danger'>EpiBooks</h1>
     <BookList/>
      </div>
   );

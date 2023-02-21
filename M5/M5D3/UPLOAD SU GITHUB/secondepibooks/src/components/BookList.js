@@ -5,6 +5,9 @@ import Card from 'react-bootstrap/Card';
 import useFetch from './useFetch';
 import Button from 'react-bootstrap/esm/Button';
 import SingleBook from './SingleBook'
+import MoonLoader from 'react-spinners/MoonLoader'
+import AlertBook from './AlertBook';
+
 const BookList = () => {
   const {data, loading, error} = useFetch("https://striveschool-api.herokuapp.com/books")
   // console.log(data, loading, error)
@@ -28,7 +31,8 @@ const BookList = () => {
           </InputGroup>
         </Form>
       <div className='d-flex row justify-between'>
-
+{loading && <MoonLoader/>}
+{error && <AlertBook/> }
     { !loading && data && data.filter((item)=>{
         return search.toLowerCase() === ''
          ? item
