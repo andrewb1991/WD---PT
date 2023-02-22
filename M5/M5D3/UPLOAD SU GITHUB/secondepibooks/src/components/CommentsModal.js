@@ -22,7 +22,7 @@ console.log(comments)
         headers: {
           "Content-type": "application/json",
           "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwMDYwMDksImV4cCI6MTY3ODIxNTYwOX0.WlUxzv7J52r_mi47zAgZNns8jtXwC1C8gQeQwUXKLXA"
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwNzgyNDQsImV4cCI6MTY3ODI4Nzg0NH0.-HTVvi3LFVVzAJWW0LZWiM2fk5zZOFIKAXw_TKmRZ9M"
         },
       }
     );
@@ -51,7 +51,7 @@ console.log(comments)
       headers: {
         "Content-type": "application/json",
         "Authorization":
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwMDYwMDksImV4cCI6MTY3ODIxNTYwOX0.WlUxzv7J52r_mi47zAgZNns8jtXwC1C8gQeQwUXKLXA"
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwNzkzNjMsImV4cCI6MTY3ODI4ODk2M30.GdZSHpJhk4wtW20cf_fP-WNvRU7Lyc2QIuJu5r0OnCo"
       },
         body: JSON.stringify(newcomment)
     }).then(res=>res.json()            
@@ -85,7 +85,7 @@ try{
       headers: {
         "Content-type": "application/json",
         "Authorization":
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwMDYwMDksImV4cCI6MTY3ODIxNTYwOX0.WlUxzv7J52r_mi47zAgZNns8jtXwC1C8gQeQwUXKLXA"
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwNzkzNjMsImV4cCI6MTY3ODI4ODk2M30.GdZSHpJhk4wtW20cf_fP-WNvRU7Lyc2QIuJu5r0OnCo"
       }
     }
     )
@@ -116,6 +116,8 @@ try{
         <p className='text-primary'>Autore: {singleComment.author}</p>
           <p>{singleComment.comment}</p>
           <p className='text-info'>Voto: {singleComment.rate}</p>
+          <p>Voto: {singleComment.elementId}</p>
+
           <Button variant='outline-danger' onClick={() => deleteComment(singleComment._id)}>Delete</Button>
         </Modal.Body>
         </>    
