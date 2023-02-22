@@ -6,7 +6,7 @@ import SingleProduct from './SingleProduct'
 const Products = () => {
     const {data, loading, error} = useFetch("https://epicode-crud-api.onrender.com/products/")
   const [products, setProducts] = useState(data);
-  console.log(data)
+  console.log(data)}
   return (
     <div className='container'>
     {!loading && data && data.filter((products) =>

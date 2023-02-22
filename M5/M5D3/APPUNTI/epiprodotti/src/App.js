@@ -8,8 +8,8 @@ import SingleProduct from './components/SingleProduct';
 function App() {
   
   return (
-   <Products/>
-        );
+<Products/>
+      );
 }
 
 export default App;

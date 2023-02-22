@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 function SingleProduct(props) {
     return (
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>
