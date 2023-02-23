@@ -21,8 +21,7 @@ console.log(comments)
       {
         headers: {
           "Content-type": "application/json",
-          "Authorization":
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwNzgyNDQsImV4cCI6MTY3ODI4Nzg0NH0.-HTVvi3LFVVzAJWW0LZWiM2fk5zZOFIKAXw_TKmRZ9M"
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcxNzIxMjQsImV4cCI6MTY3ODM4MTcyNH0.gm2F0EMXOrPwx3tq-mKWx0fg6cY5D6O6lnUoGP4MmyU"
         },
       }
     );
@@ -50,8 +49,7 @@ console.log(comments)
       method: "POST",
       headers: {
         "Content-type": "application/json",
-        "Authorization":
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwNzkzNjMsImV4cCI6MTY3ODI4ODk2M30.GdZSHpJhk4wtW20cf_fP-WNvRU7Lyc2QIuJu5r0OnCo"
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcxNzIxMjQsImV4cCI6MTY3ODM4MTcyNH0.gm2F0EMXOrPwx3tq-mKWx0fg6cY5D6O6lnUoGP4MmyU"
       },
         body: JSON.stringify(newcomment)
     }).then(res=>res.json()            
@@ -84,8 +82,7 @@ try{
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
-        "Authorization":
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcwNzkzNjMsImV4cCI6MTY3ODI4ODk2M30.GdZSHpJhk4wtW20cf_fP-WNvRU7Lyc2QIuJu5r0OnCo"
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcxNzIxMjQsImV4cCI6MTY3ODM4MTcyNH0.gm2F0EMXOrPwx3tq-mKWx0fg6cY5D6O6lnUoGP4MmyU"
       }
     }
     )

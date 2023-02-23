@@ -9,9 +9,7 @@ const Products = () => {
   console.log(data)}
   return (
     <div className='container'>
-    {!loading && data && data.filter((products) =>
-    (<SingleProduct title={products.props.title} description={products.props.description} category={products.category} price={products.price} />
-    ))}
+   
 </div>
 )
 }
