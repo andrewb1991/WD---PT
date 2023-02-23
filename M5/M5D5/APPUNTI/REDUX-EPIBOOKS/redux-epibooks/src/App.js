@@ -9,8 +9,8 @@ function App() {
   // const commentsLoading = useSelector(commentsStateLoading)
   return (
     <div className="App">
-      <div>PROVA!</div>
-   <BookList></BookList>
+   <BookList>
+   </BookList>
     </div>
   );
 }
