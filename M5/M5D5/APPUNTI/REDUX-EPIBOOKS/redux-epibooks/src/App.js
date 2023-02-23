@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux'
 
 function App() {
   const booksLoading = useSelector(booksStateLoading)
-  const commentsLoading = useSelector(commentsStateLoading)
+  // const commentsLoading = useSelector(commentsStateLoading)
   return (
     <div className="App">
       <div>PROVA!</div>
