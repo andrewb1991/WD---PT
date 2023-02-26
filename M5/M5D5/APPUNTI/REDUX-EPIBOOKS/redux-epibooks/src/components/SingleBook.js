@@ -11,6 +11,8 @@ function SingleBook(props) {
 
   return (
     <>
+
+  
       <Card className='m-2' style={{ width: '18rem' }}>
         <Card.Img className='card-img-top' variant="top" src={props.img} />
         <Card.Body>
@@ -24,7 +26,7 @@ function SingleBook(props) {
       </Button>
 
         </Card.Body>
-        <>
+    
 
       <Modal
         show={show}
@@ -49,7 +51,7 @@ function SingleBook(props) {
           <Button variant="primary">Add Comment</Button>
         </Modal.Footer>
       </Modal>
-    </>
+  
       </Card>
       </>
       )

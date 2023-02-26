@@ -9,7 +9,7 @@
 // export const getComments = createAsyncThunk('comments/getComments', async () =>{
 //     try {
 //         const data = await fetch(
-//         `https://striveschool-api.herokuapp.com/api/comments/${books.asin}`,
+//         `https://striveschool-api.herokuapp.com/api/comments/`,
 // // props.asin
     
 //         {
@@ -35,7 +35,7 @@
 //     .addCase(getComments.pending, (state) => {
 //     state.isLoading = true
 //     })
-//     .addCase(getComments.fullfilled, (state) =>{
+//     .addCase(getComments.fulfilled, (state, action) =>{
 //     state.isLoading = false
 //     state.comments = action.payload
 //     })
