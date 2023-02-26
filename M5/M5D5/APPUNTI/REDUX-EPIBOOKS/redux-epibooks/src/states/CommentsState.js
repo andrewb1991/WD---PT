@@ -9,7 +9,7 @@
 // export const getComments = createAsyncThunk('comments/getComments', async () =>{
 //     try {
 //         const data = await fetch(
-//         `https://striveschool-api.herokuapp.com/api/comments/`,
+//         `https://striveschool-api.herokuapp.com/api/comments/${props.asin}`,
 // // props.asin
     
 //         {
