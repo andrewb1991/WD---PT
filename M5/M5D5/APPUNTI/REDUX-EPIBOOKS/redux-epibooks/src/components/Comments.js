@@ -1,25 +1,27 @@
-import React, {useState, useEffect} from 'react'
-import { useSelector, useDispatch } from "react-redux";
-import {
-  commentsState,
-  commentsStateLoading,
-  commentsStateError,
-} from "../states/CommentsState";
-import { getComments } from "../states/CommentsState";
-const Comments = (props) => {    
+import Card from "react-bootstrap/Card";
+import React, { useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
+
+
+const Comments = (props) => {
   return (
-    <div>
-    
-            <p>{props.author}</p>
-            
-            
-            
-            
-            
-            
-    
-</div>
- 
+    <>
+<Card className="m-2" style={{ width: "18rem" }}>
+
+        <Card.Body>
+          <Card.Text className="text-primary">Author: {props.author}</Card.Text>
+          <Card.Text className="text-secondary">
+            Comment: {props.comment}
+          </Card.Text>
+          <Card.Text className="text-secondary">
+            Rate: {props.rate}
+          </Card.Text>
+          <Card.Text className="text-secondary">
+            elementId: {props.elementId}
+          </Card.Text>
+      </Card.Body>
+      </Card>
+    </>
   )
 }
 
