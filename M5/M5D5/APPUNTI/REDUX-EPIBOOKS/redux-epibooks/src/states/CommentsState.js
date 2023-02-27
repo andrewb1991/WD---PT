@@ -8,11 +8,12 @@ error: null
 export const getComments = createAsyncThunk('comments/getComments', async (props) =>{
     try {
         const data = await fetch(
-        `https://striveschool-api.herokuapp.com/api/comments/${props.elementId}`,
+        `https://striveschool-api.herokuapp.com/api/comments/0425264041`,
         {
           headers: {
             "Content-type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2NzcxNzIxMjQsImV4cCI6MTY3ODM4MTcyNH0.gm2F0EMXOrPwx3tq-mKWx0fg6cY5D6O6lnUoGP4MmyU"
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2Nzc1MjI0MjMsImV4cCI6MTY3ODczMjAyM30.oQ2LN3saWm4tg7NG3lhGlQtpdNuUzJbbzOvLG2FRiVY"
+
           },
         }
       )

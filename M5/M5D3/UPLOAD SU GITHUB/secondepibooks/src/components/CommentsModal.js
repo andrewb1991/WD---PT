@@ -41,10 +41,11 @@ console.log(comments)
     let newcomment = {
       comment: e.target[0].value,
       rate: e.target[1].value,
+      elementId: e.target[2].value
         
     }
     console.log(newcomment);
-    return await fetch(`https://striveschool-api.herokuapp.com/api/comments/${props.asin}`,
+    return await fetch(`https://striveschool-api.herokuapp.com/api/comments/`,
     {
       method: "POST",
       headers: {
@@ -61,9 +62,9 @@ console.log(comments)
       },
       (err)=>{}
   )
-  // .then((res)=> {
-  //   window.location.reload(true)
-  // })
+  .then((res)=> {
+    window.location.reload(true)
+  })
   )
 
 }
@@ -106,7 +107,7 @@ try{
         return (
         <>
          <Modal.Header>
-          <Modal.Title>Comment</Modal.Title>
+          <Modal.Title>Commento</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -128,6 +129,7 @@ try{
           <h3>Add New Comment</h3>
           <input type="text" name="comment" placeholder='New comment' required />
           <input type="number" name="rate" placeholder='Rate' value={value} onChange={handleChange} required />
+          <input type="numer" name="elementId" value={props.asin}/>
           <Button variant='outline-primary' type='submit'>Add</Button>
         </form>
           <Button onClick={()=> props.close(false)} variant="outline-secondary">Close</Button>

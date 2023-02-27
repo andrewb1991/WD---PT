@@ -47,15 +47,8 @@ function SingleBook(props) {
         <Modal.Header closeButton>
           <Modal.Title>Comments of {props.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          {isCommentsLoading && allComments && allComments.map((com)=>{
-            return (
-              <Comments author={com.author} comment={com.comment} rate={com.rate}/>
-              
-              
-              
-              )        
-          })}
+        <Modal.Body>   
+    <Comments/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
