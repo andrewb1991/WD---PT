@@ -1,12 +1,26 @@
 import Card from "react-bootstrap/Card";
 import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
+import {useSelector, useDispatch } from 'react-redux'
+import {
+  commentsState,
+  commentsStateLoading,
+  commentsStateError,
+} from "../states/CommentsState";
+import { getComments } from '../states/CommentsState'
 
 
 const Comments = (props) => {
+    const dispatch = useDispatch()
+    const isCommentsLoading = useSelector(commentsStateLoading);
+      const allComments = useSelector(commentsState);
+      const CommentsError = useSelector(commentsStateError);
+    
+      useEffect(() => {
+        dispatch(getComments());
+      }, [dispatch]);
+  
   return (
-    <>
-<Card className="m-2" style={{ width: "18rem" }}>
+       <Card className="m-2" style={{ width: "18rem" }}>
 
         <Card.Body>
           <Card.Text className="text-primary">Author: {props.author}</Card.Text>
@@ -21,8 +35,13 @@ const Comments = (props) => {
           </Card.Text>
       </Card.Body>
       </Card>
-    </>
-  )
+        
+  
+)
 }
+
+
+  
+
 
 export default Comments
