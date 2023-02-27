@@ -88,7 +88,8 @@ try{
     }
     )
     .then((res)=>{
-      window.location.reload(true)
+      window.confirm("Are you sure to delete this comment? The action is irreversible.")
+        window.location.reload(true)
     })
   }
     catch(error){
