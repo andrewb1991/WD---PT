@@ -10,7 +10,7 @@ import AlertBook from './AlertBook';
 
 const BookList = () => {
   const {data, loading, error} = useFetch("https://striveschool-api.herokuapp.com/books")
-  // console.log(data, loading, error)
+  console.log(data, loading, error)
   const [books, setBooks] = useState(data);
   const [search, setSearch] = useState('');
   const [click, setClick] = useState(false)
@@ -39,7 +39,7 @@ const BookList = () => {
          : item.title.toLowerCase().includes(search); 
   })
   .map((item, index) =>
-    (<SingleBook key={index} title={item.title} img={item.img} asin={item.asin} />
+    (<SingleBook key={index} title={item.title} price={item.price} img={item.img} asin={item.asin} />
     ))}
 
 

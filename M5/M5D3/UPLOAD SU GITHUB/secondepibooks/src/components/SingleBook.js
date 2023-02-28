@@ -24,11 +24,12 @@ const SingleBook = (props) => {
     <Card
       className="m-2"
       style={{ width: "12rem" }}
-      border={selected === true ? "danger" : "dark"}
+      border={selected === true ? "danger border border-4" : "dark border border-4"}
     >
       <Card.Body>
         <Card.Img variant="top" src={props.img} />
-        <Card.Title>{props.title}</Card.Title>
+        <Card.Title className="text-primary">{props.title}</Card.Title>
+        <Card.Text className="text-warning">Price: {props.price}€</Card.Text>
       </Card.Body>
       <Button onClick={toggleSelection} variant="outline-success" size="sm" className="mb-1">
         Seleziona
