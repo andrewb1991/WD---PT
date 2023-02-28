@@ -1,4 +1,5 @@
 import Card from "react-bootstrap/Card";
+import Form from 'react-bootstrap/Form';
 import React, { useState, useEffect } from "react";
 
 
@@ -7,8 +8,9 @@ const Comments = (props) => {
 
   return (
   
-      <Card className="m-2" style={{ width: "18rem" }}>
 
+
+      <Card className="m-2" style={{ width: "18rem" }}>
         <Card.Body>
           <Card.Text className="text-primary">Author: {props.author}</Card.Text>
           <Card.Text className="text-secondary">
@@ -22,6 +24,7 @@ const Comments = (props) => {
           </Card.Text>
       </Card.Body>
       </Card>
+
       
       
        

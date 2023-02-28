@@ -5,10 +5,10 @@ isLoading: false,
 error: null
 }
 
-export const getComments = createAsyncThunk('comments/getComments', async (props) =>{
+export const getComments = createAsyncThunk('comments/getComments', async () =>{
     try {
         const data = await fetch(
-        `https://striveschool-api.herokuapp.com/api/comments/${props.asin}`,
+        `https://striveschool-api.herokuapp.com/api/comments/`,
         {
           headers: {
             "Content-type": "application/json",

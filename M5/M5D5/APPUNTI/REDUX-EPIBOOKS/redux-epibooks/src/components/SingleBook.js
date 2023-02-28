@@ -7,20 +7,16 @@ function SingleBook(props) {
 
   return (
     <>
-      <Card className="m-2" style={{ width: "18rem" }}>
-        <Card.Img className="card-img-top" variant="top" src={props.img} />
+      <Card className="m-2 max-h-3" style={{ width: "16rem", height: "38rem", background: "#CFCFCF" }}>
+        <Card.Img className="img-fluid" variant="top" src={props.img} />
         <Card.Body>
-          <Card.Text className="text-primary">Title: {props.title}</Card.Text>
-          <Card.Text className="text-secondary">
+          <Card.Text className="text-dark">Title: {props.title}</Card.Text>
+          <Card.Text className="text-dark">
             Category: {props.category}
           </Card.Text>
           <Card.Text className="text-secondary">
             Price: {props.price}€
           </Card.Text>
-          <Card.Text className="text-secondary">
-            Asin: {props.asin}
-          </Card.Text>
-          <Button>//</Button>
       </Card.Body>
       </Card>
       </>
