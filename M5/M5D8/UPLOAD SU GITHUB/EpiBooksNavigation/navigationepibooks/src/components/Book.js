@@ -38,6 +38,7 @@ const Book = (props) => {
         </Card.Text>
     </Card.Body>
     </Card>
+    
     </>
     
     /* <Card className="w-full max-w-[26rem] shadow-lg">
