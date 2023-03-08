@@ -28,7 +28,7 @@ router.post("/books", async(req, res)=>{
     try {
         const newbook = await books.save()
         res.status(200).send({
-            message: "utente salvato con successo",
+            message: "Libro salvato con successo",
             payload: newbook,
         })
         
