@@ -9,7 +9,7 @@ import MoonLoader from 'react-spinners/MoonLoader'
 import AlertBook from './AlertBook';
 
 const BookList = () => {
-  const {data, loading, error} = useFetch("https://striveschool-api.herokuapp.com/books")
+  const {data, loading, error} = useFetch("http://localhost:3030/books")
   console.log(data, loading, error)
   const [books, setBooks] = useState(data);
   const [search, setSearch] = useState('');

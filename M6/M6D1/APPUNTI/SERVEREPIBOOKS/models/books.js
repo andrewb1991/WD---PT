@@ -2,16 +2,21 @@ const mongoose = require("mongoose")
 
 const BooksSchema = new mongoose.Schema({
     title: {
-        type: String
+        type: String,
+        required: true,
     },
     author: {
-    type: String
+    type: String,
+    required: true,
     },
     category: {
-    type: String
+    type: String,
+    required: true,
     },
     price: {
-    type: String
+    type: Number,
+    decimal: true,
+    required: true,
     },
 }, {timestamps: true, strict: true})
 
