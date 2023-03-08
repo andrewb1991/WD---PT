@@ -5,11 +5,11 @@ GET https://striveschool-api.herokuapp.com/books
 POST http://localhost:3030/books HTTP/1.1
 content-type: application/json
 
-  {
-    "asin": "0425264041",
-    "title": "Shards of Hope (Psy-Changeling Novel, A)",
-    "img": "https://images-na.ssl-images-amazon.com/images/I/91ku%2B0LppPL.jpg",
-    "price": 7.59,
+{
+    "asin": "1772265535",
+    "title": "The Time Machine (100 Copy Limited Edition)",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/71KncO7sFzL.jpg",
+    "price": 34.61,
     "category": "scifi"
   }
   
