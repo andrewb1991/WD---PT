@@ -40,4 +40,55 @@ router.post("/books", async(req, res)=>{
     }
 })
 
+router.delete("/books/:id", async(req, res)=>{
+    const {id} = req.params
+try{
+    const book = await Books.findById(id).deleteOne()
+    if(!book){
+    return res.status(404).send({
+        message: "Book not found",
+    })
+    }
+res.status(200).send({
+    message: "Book deleted!",
+})
+}
+catch (error){
+    res.status(500).send({
+        message: "Internal server error",
+        error: error,
+    })
+
+}
+
+})
+
+router.patch("/books/:id", async(req, res)=>{
+    const {id} = req.params
+    const bookExist = await Books.findById(id)
+    if(!bookExist){
+        res.status(404).send({
+            message: "Book not found!"
+        })
+    }
+    try {
+        const bookToUpdate = req.body
+        const options ={
+        new: true
+        }
+    const result = await Books.findByIdAndUpdate(id, bookToUpdate, options)
+    res.status(200).send({
+        message: "Book updated!",
+        payload: result
+    })
+    } catch (error) {
+    res.status(500).send({
+    message: "Internal server error",
+    error: error
+    })
+    }
+
+
+})
+
 module.exports = router

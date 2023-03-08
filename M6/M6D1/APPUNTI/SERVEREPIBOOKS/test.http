@@ -5,12 +5,24 @@ GET https://striveschool-api.herokuapp.com/books
 POST http://localhost:3030/books HTTP/1.1
 content-type: application/json
 
-{
-    "asin": "1772265535",
-    "title": "The Time Machine (100 Copy Limited Edition)",
-    "img": "https://images-na.ssl-images-amazon.com/images/I/71KncO7sFzL.jpg",
-    "price": 34.61,
+  {
+    "asin": "0987575422",
+    "title": "The Battle of Evernight - Special Edition: The Bitterbynde Book #3 (The Bitterbynde Trilogy)",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51vw%2Bn7xZCL.jpg",
+    "price": 9.6,
     "category": "scifi"
   }
   
 #####
+
+PATCH http://localhost:3030/books/64088f44f4397b16dd790bb5
+content-type: application/json
+
+{
+    "title": "Pandemic (The Extinction Files, Book 2",
+    "category": "new generation"
+}
+
+#####
+
+DELETE http://localhost:3030/books/6408a8e4d98fe62ce04d6881/
