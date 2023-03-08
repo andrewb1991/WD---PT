@@ -19,31 +19,18 @@ import {
   TvIcon,
   FireIcon,
 } from "@heroicons/react/24/solid";
-
+import { useParams } from "react-router-dom";
 import Comments from "./Comments";
 import { Link } from "react-router-dom";
 
 const Book = (props) => {
-  return (
-    /* <Card className="m-2" style={{ width: "18rem" }}>
-      <Card.Img className="card-img-top" variant="top" src={props.img} />
-      <Card.Body>
-        <Card.Text className="text-primary">Title: {props.title}</Card.Text>
-        <Card.Text className="text-secondary">
-          Category: {props.category}
-        </Card.Text>
-        <Card.Text className="text-secondary">
-          Price: {props.price}€
-        </Card.Text>
-        <Card.Text className="text-secondary">
-          Asin: {props.asin}
-        </Card.Text>
-    </Card.Body>
-    </Card> */
+  const bookID = useParams()
+  console.log(bookID)
 
+  return (
     <>
             <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4">
-              <Link to={`/comments/comment/${props.asin}`}>
+              <Link to={`/comments/${props.asin}`}>
               <a
                 href=""
                 class="c-card block bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden"

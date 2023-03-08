@@ -18,7 +18,7 @@ function App() {
     <div className="App">
 <Routes>
 <Route path="/" element={<BookList><Book/></BookList>}/>
-<Route path="/comments/" element={<Comments/>}/>
+<Route path="/comments/:bookId" element={<Comments/>}/>
 
 </Routes>
 </div>

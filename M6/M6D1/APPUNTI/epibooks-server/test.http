@@ -1,0 +1,28 @@
+GET http://localhost:3030/users 
+
+
+#####
+
+POST http://localhost:3030/users HTTP/1.1
+content-type: application/json
+
+{
+    "email": "andrea.bramucci@gmail.com",
+    "password": "Cicciobello",
+    "name": "Pippo",
+    "surname": "Pluto"
+}
+
+#####
+
+DELETE http://localhost:3030/users/6407906f614691ffb50ec3f4
+
+#####
+
+PATCH http://localhost:3030/users/640795917a2f8e040297b0b3
+content-type: application/json
+
+{
+    "password": "Pippo2023",
+    "name": "Topolino"
+}
