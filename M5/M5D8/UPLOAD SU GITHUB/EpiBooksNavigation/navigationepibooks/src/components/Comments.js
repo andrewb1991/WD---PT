@@ -13,11 +13,10 @@ import {
   Link
 } from "react-router-dom";
 import Comments2 from "./Comments2";
-
-const Comments = (props) => {
+const Comments = (rops) => {
 
 const dispatch = useDispatch()
-  const isCommentsLoading = useSelector(commentsStateLoading)
+  const isCommentLoading = useSelector(commentsStateLoading)
   const allComments = useSelector(commentsState)
   const commentsStateError = useSelector(commentsStateError)
 
@@ -25,14 +24,16 @@ const dispatch = useDispatch()
     dispatch(getComments())
   }, [dispatch])
 
+  const {id} = useParams()
+
 
   return (
     <>
-  {!isCommentsLoading && allComments && allComments.map((com)=>{
+  {!isCommentLoading && allComments && allComments.map((com)=>{
   
   return (
-    <Comments2 key={com.elementId} author={com.author} rate={com.rate} comment={com.comment}/>
-    
+    <Comments2 key={com.elementId} author={com.author} comment={com.comment} rate={com.rate}/>
+
     )
   
   })}

@@ -2,10 +2,8 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 const initialState= {
 comments: [],
 isLoading: false,
-error: null
+error: null,
 }
-import { useParams } from 'react-router'
-
 export const getComments = 
 createAsyncThunk('comments/getComments', async (props) =>{
     try {
