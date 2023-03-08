@@ -1,10 +1,5 @@
 import Card from "react-bootstrap/Card";
-import Form from 'react-bootstrap/Form';
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router";
-import { useDispatch, useSelector} from "react-redux";
-import {commentsStateError, commentsStateLoading, commentsState} from "../states/CommentsState"
-import {getComments} from "../states/CommentsState"
 import {
   BrowserRouter as Router,
   Switch,
