@@ -26,3 +26,43 @@ content-type: application/json
 #####
 
 DELETE http://localhost:3030/books/6408a8e4d98fe62ce04d6881/
+
+
+#####
+
+GET http://localhost:3030/authors/
+
+#####
+
+GET http://localhost:3030/authors/
+640a353dcda4eac9c05799f5
+
+#####
+
+POST http://localhost:3030/authors HTTP/1.1
+Content-Type: application/json
+
+{
+  "nome": "Mario",
+  "cognome": "Rossi",
+  "email": "mario.bramucci@gmail.com",
+  "birthdate": "02/11/1971",
+  "avatar": "https://ui-avatars.com/api/?name=Mario+Rossi"
+}
+
+#####
+
+PATCH http://localhost:3030/authors/640a3b545a42babd656a6602
+content-type: application/json
+
+{
+  "nome": "Pippo",
+  "cognome": "Plutos",
+  "email": "pippo.plutos@gmail.com",
+  "birthdate": "09/11/1982",
+  "avatar": "https://ui-avatars.com/api/?name=Pippo+Pluto"
+}
+
+#####
+
+DELETE http://localhost:3030/authors/640a3e5fdaa811d5abdf8118
