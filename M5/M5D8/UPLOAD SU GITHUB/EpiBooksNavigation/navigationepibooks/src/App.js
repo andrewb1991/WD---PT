@@ -21,7 +21,8 @@ function App() {
 <Routes>
 <Route path="/login" element={<Login><NavBar/></Login>}/>
 <Route path="/" element={<BookList><NavBar/><Book/></BookList>}/>
-<Route path="/comments/:bookId" element={<Comments><Comments2 path="bookId"/></Comments>}/>
+<Route path="/comments/:bookId" element={<Comments>{<Comments2 />}
+</Comments>}/>
 </Routes>
 </div>
   );

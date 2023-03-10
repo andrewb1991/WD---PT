@@ -13,7 +13,6 @@ import { useParams } from "react-router-dom";
 
 const Comments2 = (props) => {
   
-  const {id} = useParams()
   return (
     <>
       <Card className="m-2" style={{ width: "18rem" }}>
@@ -25,9 +24,6 @@ const Comments2 = (props) => {
         <Card.Text className="text-secondary">
           Rate: {props.rate}
         </Card.Text>
-        {/* <Card.Text className="text-secondary">
-          elementId: {props.elementId}
-        </Card.Text> */}
     </Card.Body>
     </Card>  
     </>

@@ -1,31 +1,11 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-// import {
-//   Card,
-//   CardHeader,
-//   CardBody,
-//   CardFooter,
-//   Typography,
-//   Button,
-//   Tooltip,
-//   IconButton,
-// } from "@material-tailwind/react";
-// import {
-//   BanknotesIcon,
-//   StarIcon,
-//   HeartIcon,
-//   WifiIcon,
-//   HomeIcon,
-//   TvIcon,
-//   FireIcon,
-// } from "@heroicons/react/24/solid";
 import { useParams } from "react-router-dom";
 import Comments from "./Comments";
 import { Link } from "react-router-dom";
 
 const Book = (props) => {
-  const {bookId} = useParams()
 
   return (
     <>
