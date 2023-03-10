@@ -6,10 +6,12 @@ const authorsRoute = require("./routes/authors")
 const port = 3030
 const app = express()
 const cors = require("cors")
+const logMiddlewares = require("./middlewares/logMiddlewares")
 
 
 app.use(express.json())
 app.use(cors())
+app.use(logMiddlewares)
 app.use("/", booksRoute)
 app.use("/", commentsRoute)
 app.use("/", authorsRoute)

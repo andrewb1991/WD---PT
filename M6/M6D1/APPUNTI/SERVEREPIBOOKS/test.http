@@ -30,12 +30,12 @@ DELETE http://localhost:3030/books/6408a8e4d98fe62ce04d6881/
 
 #####
 
-GET http://localhost:3030/authors/
+GET http://localhost:3030/books/bytitle/
 
 #####
 
-GET http://localhost:3030/authors/
-640a353dcda4eac9c05799f5
+GET http://localhost:3030/books/
+
 
 #####
 
