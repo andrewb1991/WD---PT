@@ -7,12 +7,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import {commentsStateError, commentsStateLoading, commentsState} from "../states/CommentsState"
+import {getComments} from "../states/CommentsState"
+import { useParams } from "react-router-dom";
 
 const Comments2 = (props) => {
-
-
-
   
+  const {id} = useParams()
   return (
     <>
       <Card className="m-2" style={{ width: "18rem" }}>
