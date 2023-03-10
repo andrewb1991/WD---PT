@@ -11,23 +11,23 @@ import {commentsStateError, commentsStateLoading, commentsState} from "../states
 import {getComments} from "../states/CommentsState"
 import { useParams } from "react-router-dom";
 
-const Comments2 = (props) => {
+const Comments2 = (bookId) => {
   
-  const {id} = useParams()
   return (
+   
     <>
       <Card className="m-2" style={{ width: "18rem" }}>
       <Card.Body>
-        <Card.Text className="text-primary">Author: {props.author}</Card.Text>
+        <Card.Text className="text-primary">Author: {bookId.author}</Card.Text>
         <Card.Text className="text-secondary">
-          Comment: {props.comment}
+          Comment: {bookId.comment}
         </Card.Text>
         <Card.Text className="text-secondary">
-          Rate: {props.rate}
+          Rate: {bookId.rate}
         </Card.Text>
-        {/* <Card.Text className="text-secondary">
-          elementId: {props.elementId}
-        </Card.Text> */}
+        <Card.Text className="text-secondary">
+          elementId: {bookId.elementId}
+        </Card.Text>
     </Card.Body>
     </Card>  
     </>

@@ -1,6 +1,4 @@
-import Card from "react-bootstrap/Card";
-import Form from 'react-bootstrap/Form';
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import { useDispatch, useSelector} from "react-redux";
 import {commentsStateError, commentsStateLoading, commentsState} from "../states/CommentsState"
@@ -14,37 +12,41 @@ import {
 } from "react-router-dom";
 import NavBar from './NavBar';
 import Comments2 from "./Comments2";
-const Comments = (rops) => {
+const Comments = (props) => {
+
+const id = useParams()
+
 const dispatch = useDispatch()
   const isCommentsLoading = useSelector(commentsStateLoading)
   const allComments = useSelector(commentsState)
 
   useEffect(()=>{
     dispatch(getComments())
-  }, [dispatch])
+    console.log(id)
+  }, [dispatch, id])
 
-  const {bookId} = useParams()
 
 
   return (
     <>
     <NavBar/>
-
-  {!isCommentsLoading && bookId && allComments && allComments.map((com)=>{
+    {isCommentsLoading && <h3 className="text-dark ">Carimento Commenti...</h3>}
+    <div className="d-flex flex-wrap justify-content-center align-items-center">
+  {!isCommentsLoading && allComments && allComments.map((com, id)=>{
   return (
     <>
-    <Comments2 author={com.author} comment={com.comment} rate={com.rate}/>
+    <Comments2 key={id} author={com.author} comment={com.comment} rate={com.rate} elementId={com.elementId}/>
     </>
     )
   
   })}
+  <div/>
   
-  </>
 
-      
        
         
-  
+  </div>
+  </>
 )
 
 }

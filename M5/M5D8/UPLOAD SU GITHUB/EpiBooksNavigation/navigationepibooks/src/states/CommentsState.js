@@ -1,4 +1,6 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import { useLocation, useParams } from 'react-router'
+import Book from '../components/Book'
 const initialState= {
 comments: [],
 isLoading: false,
@@ -6,6 +8,8 @@ error: null,
 }
 export const getComments = 
 createAsyncThunk('comments/getComments', async (props) =>{
+  
+
     try {
         const data = await fetch(
         `https://striveschool-api.herokuapp.com/api/comments/`,
