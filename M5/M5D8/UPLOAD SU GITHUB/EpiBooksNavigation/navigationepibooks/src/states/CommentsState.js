@@ -7,10 +7,10 @@ error: null,
 }
 
 export const getComments = 
-createAsyncThunk('comments/getComments/', async () =>{
+createAsyncThunk('comments/getComments/', async (id) =>{
     try {
         const data = await fetch(
-        `https://striveschool-api.herokuapp.com/api/comments/`,
+        `https://striveschool-api.herokuapp.com/api/comments/${id}`,
         {
           headers: {
             "Content-type": "application/json",

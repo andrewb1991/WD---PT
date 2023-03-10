@@ -14,16 +14,17 @@ import {
 } from "react-router-dom";
 import NavBar from './NavBar';
 import Comments2 from "./Comments2";
-const Comments = (props) => {
+const Comments = () => {
+const {id} = useParams()
+
 const dispatch = useDispatch()
   const isCommentsLoading = useSelector(commentsStateLoading)
   const allComments = useSelector(commentsState)
-  const {bookId} = useParams()
-  console.log(bookId)
+  console.log(id)
   
   useEffect(()=>{
-    dispatch(getComments())
-  }, [dispatch])
+    dispatch(getComments(id))
+  }, [dispatch, id])
 
   return (
     <>
