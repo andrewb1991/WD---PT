@@ -66,3 +66,26 @@ content-type: application/json
 #####
 
 DELETE http://localhost:3030/authors/640a3e5fdaa811d5abdf8118
+
+#####
+
+POST  http://localhost:3030/blogPosts HTTP/1.1
+Content-Type: application/json
+
+{
+"category": "TECH",
+"title": "L'iPhone migliore di sempre",
+"cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61XO4bORHUL._AC_SL1500_.jpg",
+"readTime": {
+  "value": "4",
+  "unit": "minuti"
+},
+"author": {
+  "name": "Carlo Cracco",
+  "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
+},
+"content": "HTML"
+
+
+
+}
