@@ -1,14 +1,16 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import { useParams } from 'react-router'
 const initialState= {
 comments: [],
 isLoading: false,
 error: null,
 }
+
 export const getComments = 
-createAsyncThunk('comments/getComments', async (props) =>{
+createAsyncThunk('comments/getComments/', async (id) =>{
     try {
         const data = await fetch(
-        `https://striveschool-api.herokuapp.com/api/comments/${props.id}`,
+        `https://striveschool-api.herokuapp.com/api/comments/${id}`,
         {
           headers: {
             "Content-type": "application/json",

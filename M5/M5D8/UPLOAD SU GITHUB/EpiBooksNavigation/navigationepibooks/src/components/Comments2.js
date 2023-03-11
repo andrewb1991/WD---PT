@@ -7,11 +7,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import {commentsStateError, commentsStateLoading, commentsState} from "../states/CommentsState"
+import {getComments} from "../states/CommentsState"
+import { useParams } from "react-router-dom";
 
 const Comments2 = (props) => {
-
-
-
   
   return (
     <>
@@ -24,9 +24,6 @@ const Comments2 = (props) => {
         <Card.Text className="text-secondary">
           Rate: {props.rate}
         </Card.Text>
-        {/* <Card.Text className="text-secondary">
-          elementId: {props.elementId}
-        </Card.Text> */}
     </Card.Body>
     </Card>  
     </>

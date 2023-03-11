@@ -14,13 +14,15 @@ import Book from './components/Book';
 import Comments from './components/Comments'
 import Comments2 from './components/Comments2';
 import Login from './components/Login';
+import NavBar from './components/NavBar'
 function App() {
   return (
     <div className="App">
 <Routes>
-<Route path="/login" element={<Login/>}/>
-<Route path="/" element={<BookList><Book/></BookList>}/>
-<Route path="/comments/:id" element={<Comments><Comments2/></Comments>}/>
+<Route path="/login" element={<Login><NavBar/></Login>}/>
+<Route path="/" element={<BookList><NavBar/><Book/></BookList>}/>
+<Route path="/comments/:id" element={<Comments>{<Comments2 />}
+</Comments>}/>
 </Routes>
 </div>
   );
