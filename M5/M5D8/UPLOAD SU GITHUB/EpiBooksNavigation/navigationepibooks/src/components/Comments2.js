@@ -17,7 +17,7 @@ const Comments2 = (props) => {
     <>
       <Card className="m-2" style={{ width: "18rem" }}>
       <Card.Body>
-        <Card.Text className="text-primary">Author: {props.author}</Card.Text>
+        <Card.Text className="text-success">Author: {props.author}</Card.Text>
         <Card.Text className="text-secondary">
           Comment: {props.comment}
         </Card.Text>

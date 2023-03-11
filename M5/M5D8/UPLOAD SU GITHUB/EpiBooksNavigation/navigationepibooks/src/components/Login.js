@@ -21,12 +21,16 @@ alert("Login Confirmed")
 <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+</svg>
+
             <img
               className="mx-auto h-12 w-auto"
               src="https://ui-avatars.com/api/?name=Epi+Books"
               alt="Workflow"
             />
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-green-700">Sign in to EpiBooks</h2>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-green-700">Welcome to EpiBooks</h2>
             <p className="mt-2 text-center text-sm text-gray-600">
             </p>
           </div>
@@ -37,6 +41,7 @@ alert("Login Confirmed")
                 <label htmlFor="email-address" className="sr-only">
                   Email address
                 </label>
+                
                 <input
                   id="email-address"
                   name="email"
@@ -93,6 +98,8 @@ alert("Login Confirmed")
             </div>
 
             <div>
+              <>
+              <Link  to={`/booklist/`}>
               <button onClick={clickOk}
                 type="submit"
                 className="group relative w-full flex justify-center
@@ -105,6 +112,8 @@ alert("Login Confirmed")
                 </span>
                 Sign in
               </button>
+              </Link>
+              </>
             </div>
           </form>
         </div>
