@@ -5,7 +5,7 @@ import {
   Switch,
   Routes,
   Route,
-  Link
+  Link 
 } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,8 +19,8 @@ function App() {
   return (
     <div className="App">
 <Routes>
-<Route path="/login" element={<Login><NavBar/></Login>}/>
-<Route path="/" element={<BookList><NavBar/><Book/></BookList>}/>
+<Route path="/" element={<Login><NavBar/></Login>}/>
+<Route path="/booklist" element={<BookList><NavBar/><Book/></BookList>}/>
 <Route path="/comments/:id" element={<Comments>{<Comments2 />}
 </Comments>}/>
 </Routes>

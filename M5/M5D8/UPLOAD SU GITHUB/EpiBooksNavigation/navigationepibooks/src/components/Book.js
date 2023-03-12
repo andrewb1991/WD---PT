@@ -9,11 +9,11 @@ const Book = (props) => {
 
   return (
     <>
-    <Card className="hover-shadow" style={{ width: '18rem' }} id="CardBook">
-      <Card.Img variant="top" src={props.img} />
+    <Card className="hover-shadow m-2" style={{ width: '14rem' }} id="CardBook">
+      <Card.Img variant="top" src={props.img} id="CardImg" />
       <Card.Body>
-        <Card.Title variant="text-info">{props.title}</Card.Title>
-        <Card.Text>{props.category}</Card.Text>
+            <span className="text-gray-500">{props.category}</span>
+        <Card.Title className="text-success">{props.title}</Card.Title>
         <Card.Text>{props.price} €</Card.Text>
         <Link  to={`/comments/${props.asin}`}>
         <Button variant="success text-white">

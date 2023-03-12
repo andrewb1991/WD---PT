@@ -16,6 +16,11 @@ code {
 @tailwind components;
 @tailwind utilities;
 
-#CardBook:hover {
+#CardBook {
+max-height: 500px;
+}
+
+#CardImg {
+max-height: 180px;
 
 }

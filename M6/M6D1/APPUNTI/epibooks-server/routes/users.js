@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const Users = require("../models/users")
+const bcrypt = require("bcrypt")
+
 
 router.get("/users", async(req, res)=>{
     try{
@@ -17,9 +19,11 @@ router.get("/users", async(req, res)=>{
 
 
 router.post("/users", async(req, res)=>{
+    const salt = await bcrypt.genSalt(10)
+    const hashpassword = await bcrypt.hash(req.body.password, salt)
     const users = new Users({
         email: req.body.email,
-        password: req.body.password,
+        password: hashpassword,
         name: req.body.name,
         surname: req.body.surname
     })

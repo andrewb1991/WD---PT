@@ -1,27 +1,22 @@
-import Card from "react-bootstrap/Card";
-import Form from 'react-bootstrap/Form';
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useDispatch, useSelector} from "react-redux";
 import {commentsStateError, commentsStateLoading, commentsState} from "../states/CommentsState"
 import {getComments} from "../states/CommentsState"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
 import NavBar from './NavBar';
 import Comments2 from "./Comments2";
+import PulseLoader from 'react-spinners/MoonLoader'
+
 const Comments = () => {
 const {id} = useParams()
 
 const dispatch = useDispatch()
+
   const isCommentsLoading = useSelector(commentsStateLoading)
   const allComments = useSelector(commentsState)
   console.log(id)
   
+
   useEffect(()=>{
     dispatch(getComments(id))
   }, [dispatch, id])
@@ -29,7 +24,12 @@ const dispatch = useDispatch()
   return (
     <>
     <NavBar/>
-
+    {isCommentsLoading && <div className='container d-flex flex-col align-items-center mt-5'>
+      <h1 className="text-success ">
+      Loading Books...</h1>
+      <PulseLoader className="content-center"color="#1deb4b"/>
+      </div>}
+      <div className='d-flex flex-wrap justify-content-center align-items-center'>
   {!isCommentsLoading && allComments && allComments.map((com)=>{
   return (
     <>
@@ -38,7 +38,7 @@ const dispatch = useDispatch()
     )
   
   })}
-  
+  </div>
   </>
 
       
