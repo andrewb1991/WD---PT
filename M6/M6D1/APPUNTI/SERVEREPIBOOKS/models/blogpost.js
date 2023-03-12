@@ -29,4 +29,4 @@ const BlogPostSchema = new mongoose.Schema({
     }
 }, {timestamps: true, strict: true})
 
-module.esports = mongoose.model("BlogPostModel", BlogPostSchema, "blogposts")
+module.esports = mongoose.model("BlogPostModel", BlogPostSchema, "BlogPosts")
