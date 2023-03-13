@@ -44,7 +44,7 @@ router.post("/BlogPosts", async(req, res)=>{
 
     })
 
-router.get("BlogPosts/:id", async(req, res)=>{
+router.get("BlogPosts/:_id", async(req, res)=>{
     const {_id} = req.params
     try {
         const blogpost = await BlogPosts.findById(_id)
