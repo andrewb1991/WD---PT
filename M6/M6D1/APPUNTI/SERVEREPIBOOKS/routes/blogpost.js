@@ -14,18 +14,22 @@ router.get("/BlogPosts", async(req, res)=>{
         }
 })
 
-router.post("/blogPosts", async(req, res)=>{
+router.post("/BlogPosts", async(req, res)=>{
     const blogpost = new BlogPosts({
         category: req.body.category,
         title: req.body.title,
         cover: req.body.cover,
         readTime: {
-        value: req.body.readTime.value,
-        unit: req.body.readTime.unit,
+            metadata: {
+                value: req.body.readTime.value,
+                unit: req.body.readTime.unit,  
+            }
         },
         author: {
-        name: req.body.author.name,
-        avatar: req.body.author.avatar,
+            metadata: {
+                name: req.body.author.name,
+                avatar: req.body.author.avatar,
+            }
         },
         content: req.body.content
     })

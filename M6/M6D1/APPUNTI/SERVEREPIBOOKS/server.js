@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const booksRoute = require("./routes/books")
 const commentsRoute = require("./routes/comments")
 const authorsRoute = require("./routes/authors")
-const blogPostsRoute = require("./routes/blogpost")
+const BlogPostsRoute = require("./routes/BlogPost")
 const port = 3030
 const app = express()
 const cors = require("cors")
@@ -16,7 +16,7 @@ app.use(logMiddlewares)
 app.use("/", booksRoute)
 app.use("/", commentsRoute)
 app.use("/", authorsRoute)
-app.use("/", blogPostsRoute)
+app.use("/", BlogPostsRoute)
 
 mongoose.connect("mongodb+srv://andreabramucci:yyJH5ugMl17X6zvA@cluster0.sf1v3sj.mongodb.net/test")
 const db = mongoose.connection

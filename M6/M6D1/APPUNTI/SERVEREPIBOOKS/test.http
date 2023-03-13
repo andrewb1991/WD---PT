@@ -73,7 +73,7 @@ GET http://localhost:3030/BlogPosts
 
 #####
 
-POST  http://localhost:3030/blogposts/ HTTP/1.1
+POST  http://localhost:3030/BlogPosts/ HTTP/1.1
 Content-Type: application/json
 
 {
@@ -81,12 +81,16 @@ Content-Type: application/json
 "title": "L'iPhone migliore di sempre",
 "cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61XO4bORHUL._AC_SL1500_.jpg",
 "readTime": {
+"metadata":{
   "value": "4",
-  "unit": "minuti"
+  "unit": "minuti",
+},
 },
 "author": {
+"metadata": {
   "name": "Carlo Cracco",
-  "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
+  "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco",
+},
 },
 "content": "HTML"
 }
