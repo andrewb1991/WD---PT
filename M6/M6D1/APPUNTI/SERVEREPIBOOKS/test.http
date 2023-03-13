@@ -83,13 +83,13 @@ Content-Type: application/json
 "readTime": {
 "metadata":{
   "value": "4",
-  "unit": "minuti",
+  "unit": "minuti"
 },
 },
 "author": {
 "metadata": {
   "name": "Carlo Cracco",
-  "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco",
+  "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
 },
 },
 "content": "HTML"
