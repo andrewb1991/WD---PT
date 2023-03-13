@@ -17,7 +17,7 @@ const BlogPostsSchema = new mongoose.Schema({
         max: 2000,
     },
     readTime: {
-            value: String,
+            value: Number,
             unit: String,
             },
     author: { 

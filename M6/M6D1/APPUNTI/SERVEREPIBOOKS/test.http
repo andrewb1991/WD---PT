@@ -78,7 +78,7 @@ Content-Type: application/json
 
 {
 "category": "TECH",
-"title": "L'iPhone migliore di sempre",
+"title": "L'iPhon migliore di sempre",
 "cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61XO4bORHUL._AC_SL1500_.jpg",
 "readTime":{
   "value": "4",
@@ -91,4 +91,8 @@ Content-Type: application/json
 },
 "content": "HTML"
 }
+
+#####
+
+GET  http://localhost:3030/test/BlogPosts/640f73d9399ee1c323208acd
 
