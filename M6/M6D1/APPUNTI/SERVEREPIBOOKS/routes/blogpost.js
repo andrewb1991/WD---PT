@@ -19,17 +19,13 @@ router.post("/BlogPosts", async(req, res)=>{
         category: req.body.category,
         title: req.body.title,
         cover: req.body.cover,
-        readTime: {
-            metadata: {
-                value: req.body.readTime.metadata.value,
-                unit: req.body.readTime.metadata.unit,  
+        readTime:{
+            value: req.body.readTime.value,
+            unit: req.body.readTime.unit   
             },
-        },
         author: {
-            metadata: {
-                name: req.body.author.metadata.name,
-                avatar: req.body.author.metadata.avatar,
-            },
+                name: req.body.author.name,
+                avatar: req.body.author.avatar
         },
         content: req.body.content
     })
@@ -37,7 +33,7 @@ router.post("/BlogPosts", async(req, res)=>{
         const newblogpost = await blogpost.save()
         res.status(200).send({
             message: "Blog Added",
-            payload: newblogpost
+            payload: newblogpost,
             })
     } catch (error) {
         res.status(500).send({

@@ -80,17 +80,14 @@ Content-Type: application/json
 "category": "TECH",
 "title": "L'iPhone migliore di sempre",
 "cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61XO4bORHUL._AC_SL1500_.jpg",
-"readTime": {
-"metadata":{
+"readTime":{
   "value": "4",
   "unit": "minuti"
-},
+
 },
 "author": {
-"metadata": {
   "name": "Carlo Cracco",
   "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
-},
 },
 "content": "HTML"
 }
