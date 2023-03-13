@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
+import useFetch from "../../components/useFetch";
 import BlogAuthor from "../../components/blog/blog-author/BlogAuthor";
 import BlogLike from "../../components/likes/BlogLike";
 import posts from "../../data/posts.json";
@@ -10,6 +11,7 @@ const Blog = props => {
   const [loading, setLoading] = useState(true);
   const params = useParams();
   const navigate = useNavigate();
+  
   useEffect(() => {
     const { id } = params;
     const blog = posts.find(post => post._id.toString() === id);
