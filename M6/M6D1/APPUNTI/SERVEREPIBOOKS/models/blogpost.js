@@ -17,12 +17,24 @@ const BlogPostsSchema = new mongoose.Schema({
         max: 2000,
     },
     readTime: {
-            value: Number,
-            unit: String,
+            time: {
+                type: String,
+                required: true
+            },
+            unit: {
+                type: String,
+                required: true
+            },
             },
     author: { 
-            name: String,
-            avatar: String,
+            name: {
+                type: String,
+                required: true
+            },
+            avatar: {
+                type: String,
+                required: true
+            },
 
     },
     content: {

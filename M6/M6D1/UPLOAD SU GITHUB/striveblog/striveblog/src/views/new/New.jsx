@@ -3,78 +3,142 @@ import { Button, Container, Form } from "react-bootstrap";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "./styles.css";
-const NewBlogPost = props => {
-  const [newtitle, setTitle] = useState("");
-  const [newcategory, setCategory] = useState("");
-  const [newcover, setCover] = useState("");
-  const [newcontent, setContent] = useState("");
-  const [message, setMessage] = useState("");
-  const [readTimeValue, setReadTimeValue] = useState("");
-  const [readTimeUnit, setReadTimeUnit] = useState("");
-  const [authorName, setAuthorName] = useState("");
-  const [authorAvatar, setAuthorAvatar] = useState("");
-
-  const handleChange = useCallback(value => {
-    setContent(value);
-    setTitle(value);
-    setCategory(value)
-    setCover(value)
-    setReadTimeValue(value)
-    setReadTimeUnit(value)
-    setAuthorName(value)
-    setAuthorAvatar(value)
+const NewBlogPost = (props) => {
+  const [text, setText] = useState("");
+  const [formData, setFormData] = useState({});
+  const handleChange = useCallback((value) => {
+    setText(value);
   });
 
-  let handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      let res = await fetch("http://localhost:3030/BlogPosts/", {
-        method: "POST",
-        body: JSON.stringify({
-          title: newtitle,
-          category: newcategory,
-          cover: newcover,
-          content: newcontent,
-          // readTimeValue: readTimeValue,
-          // readTimeUnit: readTimeUnit,
-          // authorName: authorName,
-          // authorAvatar: authorAvatar,
-        }),
-      });
-      let resJson = await res.json();
-      if (res.status === 200) {
-        setTitle("");
-        setCategory("");
-        setCover("");
-        setContent("");
-      } else {
-        setMessage("Some error occured");
-      }
-    } catch (err) {
-      console.log(err);
-    }
+  const dataToPost = {
+    category: formData.category,
+    title: formData.title,
+    cover: formData.cover,
+    readTime: {
+      unit: formData.unit,
+      time: formData.time,
+    },
+    author: {
+      name: formData.name,
+      avatar: formData.avatar,
+    },
+    content: formData.content,
   };
+  console.log(dataToPost)
 
+  const fetchPost = async(e)=>{
+    e.preventDefault();
+    await fetch("http://localhost:3030/BlogPosts/", {
+    method: "POST", 
+    headers: {
+    "Content-Type": "application/json"
+    },
+    body: JSON.stringify(dataToPost)
+  })
+  }
 
+  const handleContentChange = (value) =>{
+    setFormData({
+    ...formData,
+    content: value
+    })
+  }
   return (
     <Container className="new-blog-container">
-      <Form className="mt-5">
+      <Form className="mt-5" onSubmit={fetchPost}>
         <Form.Group controlId="blog-form" className="mt-3">
           <Form.Label>Titolo</Form.Label>
-          <Form.Control type="text" value={newtitle} onChange={(e)=> setTitle(e.target.value)} size="lg" placeholder="Inserisci Titolo..." />
-          <Form.Label>Categoria</Form.Label>
-          <Form.Control type="text" value={newcategory} onChange={(e)=> setCategory(e.target.value)} size="lg" placeholder="inserisci Categoria..." /> <Form.Label>Cover</Form.Label>
-          <Form.Control type="text" value={newcover} onChange={(e)=> setCover(e.target.value)} size="lg" placeholder="Inserisci URL Immagine" />
-          {/* <Form.Label>Lettura in: </Form.Label>
-          <Form.Control type="text" value={readTimeValue} onChange={(e)=> setReadTimeValue(e.target.value)} size="lg" placeholder="inserisci Categoria..." />          <Form.Label>Unità</Form.Label>
-          <Form.Control type="text" value={readTimeUnit} onChange={(e)=> setReadTimeUnit(e.target.value)} size="lg" placeholder="inserisci Categoria..." />          <Form.Label>Nome dell'Autore</Form.Label>
-          <Form.Control type="text" value={authorName} onChange={(e)=> setAuthorName(e.target.value)} size="lg" placeholder="inserisci Categoria..." />          <Form.Label>Avatar dell'autore</Form.Label>
-          <Form.Control type="text" value={authorAvatar} onChange={(e)=> setAuthorAvatar(e.target.value)} size="lg" placeholder="inserisci Categoria..." /> */}
-          <Form.Control type="text" value={newcontent} onChange={(e)=> setContent(e.target.value)} size="lg" placeholder="Inserisci il contenuto del BlogPost" />
-          
+          <Form.Control
+            size="lg"
+            placeholder="Title"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                title: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group controlId="blog-form" className="mt-3">
+          <Form.Label>Cover</Form.Label>
+          <Form.Control
+            size="lg"
+            placeholder="Cover"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                cover: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group controlId="blog-form" className="mt-3">
+          <Form.Label>Category</Form.Label>
+          <Form.Control
+            size="lg"
+            placeholder="Category"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                category: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group controlId="blog-form" className="mt-3">
+          <Form.Label>Time</Form.Label>
+          <Form.Control
+            size="lg"
+            placeholder="Time"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                time: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group controlId="blog-form" className="mt-3">
+          <Form.Label>Unit</Form.Label>
+          <Form.Control
+            size="lg"
+            placeholder="Title"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                unit: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group controlId="blog-form" className="mt-3">
+          <Form.Label>Author Name</Form.Label>
+          <Form.Control
+            size="lg"
+            placeholder="Title"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                name: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group controlId="blog-form" className="mt-3">
+          <Form.Label>Author Avatar</Form.Label>
+          <Form.Control
+            size="lg"
+            placeholder="Title"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                avatar: e.target.value,
+              })
+            }
+          />
         </Form.Group>
 
-        {/* <Form.Group controlId="blog-category" className="mt-3">
+        <Form.Group controlId="blog-category" className="mt-3">
           <Form.Label>Categoria</Form.Label>
           <Form.Control size="lg" as="select">
             <option>Categoria 1</option>
@@ -86,13 +150,16 @@ const NewBlogPost = props => {
         </Form.Group>
         <Form.Group controlId="blog-content" className="mt-3">
           <Form.Label>Contenuto Blog</Form.Label>
-          <ReactQuill value={content} onChange={(e)=> setContent(e.target.value)} className="new-blog-content" />
-        </Form.Group> */}
+          <ReactQuill
+            onChange={handleContentChange}
+            className="new-blog-content"
+          />
+        </Form.Group>
         <Form.Group className="d-flex mt-3 justify-content-end">
           <Button type="reset" size="lg" variant="outline-dark">
             Reset
           </Button>
-          <Button onClick={handleSubmit}
+          <Button
             type="submit"
             size="lg"
             variant="dark"

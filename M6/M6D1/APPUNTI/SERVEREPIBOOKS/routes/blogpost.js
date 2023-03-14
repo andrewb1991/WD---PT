@@ -15,28 +15,21 @@ router.get("/BlogPosts", async(req, res)=>{
 })
 
 router.post("/BlogPosts", async(req, res)=>{
-    // const readTimeValue = req.body.readTime.value
-    // const readTimeUnit = req.body.readTime.unit
-    // const authorName = req.body.author.name
-    // const authorAvatar = req.body.author.avatar
+    console.log(req.body)
     const blogpost = new BlogPosts({
         category: req.body.category,
         title: req.body.title,
         cover: req.body.cover,
-        // readTimeValue: req.body.readTime.value,
-        // readTimeUnit: req.body.readTime.unit,
-        // authorName: req.body.author.name,
-        // authorAvatar: req.body.author.avatar,
-        // readTime:{
-        //     value: req.body.readTime.value,
-        //     unit: req.body.readTime.unit   
-        //     },
-        // author: {
-        //         name: req.body.author.name,
-        //         avatar: req.body.author.avatar
-        // },
+        readTime:{
+            time: req.body.readTime.time,
+            unit: req.body.readTime.unit   
+            },
+        author: {
+                name: req.body.author.name,
+                avatar: req.body.author.avatar
+        },
         content: req.body.content
-    })
+    }) 
     try {
         const newblogpost = await blogpost.save()
         res.status(200).send({
