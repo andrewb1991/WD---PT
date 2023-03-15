@@ -4,12 +4,17 @@ import Footer from "./components/footer/Footer";
 import Home from "./views/home/Home";
 import Blog from "./views/blog/Blog";
 import NewBlogPost from "./views/new/New";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+  Link 
+} from "react-router-dom";
 function App() {
   return (
     <Router>
-      <NavBar />
+      <NavBar/>
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/blog/:id" element={<Blog />} />
