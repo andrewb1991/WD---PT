@@ -98,7 +98,7 @@ GET  http://localhost:3030/BlogPosts/640f73d9399ee1c323208acd
 
 #####
 
-PATCH http://localhost:3030/BlogPosts/640f71e3bea275c3f3b27013
+PATCH http://localhost:3030/BlogPosts/6410c1d8fa82f861c63abbb8
 content-type: application/json
 
 {
@@ -119,4 +119,4 @@ content-type: application/json
 
 #####
 
-DELETE http://localhost:3030/BlogPosts/64109fdd6eee86b5a3cb5fb0
+DELETE http://localhost:3030/BlogPosts/6410c60817608c5c3efa19d8

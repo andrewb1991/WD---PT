@@ -1,7 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import BlogAuthor from "../blog-author/BlogAuthor";
+import useFetch from "../blog-item/useFetch"
 import "./styles.css";
 const BlogItem = (props) => {
   const { title, cover, author, _id } = props;
