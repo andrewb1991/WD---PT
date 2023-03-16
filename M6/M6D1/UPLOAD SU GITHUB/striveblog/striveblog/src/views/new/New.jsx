@@ -28,7 +28,7 @@ const NewBlogPost = (props) => {
 
   const fetchPost = async(e)=>{
     e.preventDefault();
-    await fetch("http://localhost:3030/BlogPosts/", {
+    await fetch("http://localhost:4040/BlogPosts/", {
     method: "POST", 
     headers: {
     "Content-Type": "application/json"
@@ -102,7 +102,7 @@ const NewBlogPost = (props) => {
           <Form.Label>Unit</Form.Label>
           <Form.Control
             size="lg"
-            placeholder="Title"
+            placeholder="Unit"
             onChange={(e) =>
               setFormData({
                 ...formData,
@@ -115,7 +115,7 @@ const NewBlogPost = (props) => {
           <Form.Label>Author Name</Form.Label>
           <Form.Control
             size="lg"
-            placeholder="Title"
+            placeholder="author name"
             onChange={(e) =>
               setFormData({
                 ...formData,
@@ -128,7 +128,7 @@ const NewBlogPost = (props) => {
           <Form.Label>Author Avatar</Form.Label>
           <Form.Control
             size="lg"
-            placeholder="Title"
+            placeholder="author avatar"
             onChange={(e) =>
               setFormData({
                 ...formData,
@@ -136,17 +136,6 @@ const NewBlogPost = (props) => {
               })
             }
           />
-        </Form.Group>
-
-        <Form.Group controlId="blog-category" className="mt-3">
-          <Form.Label>Categoria</Form.Label>
-          <Form.Control size="lg" as="select">
-            <option>Categoria 1</option>
-            <option>Categoria 2</option>
-            <option>Categoria 3</option>
-            <option>Categoria 4</option>
-            <option>Categoria 5</option>
-          </Form.Control>
         </Form.Group>
         <Form.Group controlId="blog-content" className="mt-3">
           <Form.Label>Contenuto Blog</Form.Label>
