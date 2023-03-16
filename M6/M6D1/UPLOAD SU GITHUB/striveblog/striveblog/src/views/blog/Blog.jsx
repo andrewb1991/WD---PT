@@ -30,7 +30,7 @@ const Blog = (props) => {
               </div>
               <div className="blog-details-info">
                 <div>{allBlogs.createdAt}</div>
-                <div>{`lettura da ${allBlogs.readTime.value} ${allBlogs.readTime.unit}`}</div>
+                {/* <div>{`lettura da ${allBlogs.readTime.time} ${allBlogs.readTime.unit}`}</div> */}
                 <div
                   style={{
                   marginTop: 20,
