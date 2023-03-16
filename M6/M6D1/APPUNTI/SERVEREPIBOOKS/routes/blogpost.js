@@ -48,7 +48,7 @@ router.post("/BlogPosts", async(req, res)=>{
 router.get("/BlogPosts/:id", async(req, res)=>{
     const {id} = req.params
     try {
-        const blogpost = await BlogPosts.findById(id)
+        const blogpost = await BlogPosts.findById({_id:id})
         if(!blogpost){
         return res.status(404).send({ message: "BlogPost non trovato"})
         }

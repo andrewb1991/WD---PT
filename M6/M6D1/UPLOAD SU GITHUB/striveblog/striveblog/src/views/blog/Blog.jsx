@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router";
 import { useDispatch, useSelector} from "react-redux";
 import BlogAuthor from "../../components/blog/blog-author/BlogAuthor";
 import BlogLike from "../../components/likes/BlogLike";
@@ -14,27 +14,33 @@ const Blog = () => {
   const isBlogsLoading = useSelector(blogsStateLoading)
   const allBlogs = useSelector(blogsState)
   console.log(id)
+  console.log(allBlogs)
   useEffect(()=>{
-  dispatch(getBlogs())
+  dispatch(getBlogs(id))
   }, [dispatch, id])
 
   return (
     <>
-    {!isBlogsLoading && allBlogs && allBlogs.map((blog)=>{
-        return (
-          <>
-          <div className="blog-details-root">
+    {/* <div className="blog-details-root m">
+{!isBlogsLoading && allBlogs && allBlogs.blogs && allBlogs.blogs.title
+}
+
+    </div> */}
+    </>
+    
+  
+          /* <div className="blog-details-root">
             <Container>
-              <Image className="blog-details-cover" src={blog.cover} fluid />
-              <h1 className="blog-details-title">{blog.title}</h1>
+              <Image className="blog-details-cover" src={allBlogs.cover} fluid />
+              <h1 className="blog-details-title">{allBlogs.title}</h1>
     
               <div className="blog-details-container">
                 <div className="blog-details-author">
-                  <BlogAuthor {...blog.author} />
+                  <BlogAuthor {...allBlogs.author} />
                 </div>
                 <div className="blog-details-info">
-                  <div>{blog.createdAt}</div>
-                  <div>{`lettura da ${blog.readTime.value} ${blog.readTime.unit}`}</div>
+                  <div>{allBlogs.createdAt}</div>
+                  <div>{`lettura da ${allBlogs.readTime.time} ${allBlogs.readTime.unit}`}</div>
                   <div
                     style={{
                       marginTop: 20,
@@ -47,14 +53,14 @@ const Blog = () => {
     
               <div
                 dangerouslySetInnerHTML={{
-                  __html: blog.content,
+                  __html: allBlogs.content,
                 }}
               ></div>
             </Container>
           </div>
-        </>
+        </> */
           
-        )})}</>);
+        );
       
     
     

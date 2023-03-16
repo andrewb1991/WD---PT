@@ -7,7 +7,7 @@ import BlogItem from "../blog-item/BlogItem";
 import useFetch from "../blog-item/useFetch";
 
 const BlogList = (props) => {
-  const {data, loading, error} = useFetch("http://localhost:3030/BlogPosts/")
+  const {data, loading, error} = useFetch("http://localhost:4040/BlogPosts/")
 console.log(data)
 
   return (
@@ -23,9 +23,9 @@ console.log(data)
             marginBottom: 50,
           }}
         >
-          {/* <Link to={`/blog/${post._id}`}> */}
+          <Link to={`/blog/${post._id}`}>
           <BlogItem key={post._id} {...post} />
-          {/* </Link> */}
+          </Link>
         </Col>
       ))}
     </Row>

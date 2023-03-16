@@ -1,5 +1,4 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import { useParams } from 'react-router'
 const initialState= {
 blogs: [],
 isLoading: false,
@@ -8,8 +7,14 @@ error: null,
 
 export const getBlogs = createAsyncThunk('blogs/getBlogs/', async (id) =>{
     try {
-        const data = await fetch(`http://localhost:3030/BlogPosts/${id}`)
-        return data.json()
+        const data = await fetch(`http://localhost:4040/BlogPosts/${id}`, {
+        headers: {
+            "Content-Type": "application/json"
+            }
+    
+    }
+       )
+        return await data.json()
     } catch (error) {
         if(error) throw error
     }
