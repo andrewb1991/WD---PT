@@ -20,6 +20,8 @@ const Blog = (props) => {
   }, [dispatch, id])
 
   return (
+    <>
+    <div className="blog-details-root">
           <Container>
             <Image className="blog-details-cover" src={allBlogs.cover} fluid />
             <h1 className="blog-details-title">{allBlogs.title}</h1>
@@ -30,7 +32,7 @@ const Blog = (props) => {
               </div>
               <div className="blog-details-info">
                 <div>{allBlogs.createdAt}</div>
-                {/* <div>{`lettura da ${allBlogs.readTime.time} ${allBlogs.readTime.unit}`}</div> */}
+                 {/* <div>{lettura da `${...allBlogs.readTime.time}` `${...allBlogs.readTime.unit}`}</div>  */}
                 <div
                   style={{
                   marginTop: 20,
@@ -47,6 +49,8 @@ const Blog = (props) => {
               }}
               ></div>
           </Container>
+          </div>
+    </>
           )
 }
 export default Blog;
