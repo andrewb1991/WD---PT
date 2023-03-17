@@ -109,18 +109,20 @@ router.delete("/BlogPosts/:id", async(req, res)=>{
     }
 })
 
-router.get('/BlogPosts/author/:id', async (req, res) => {
+router.get('/author', async (req, res) => {
+    const {name} = req.query
     try {
-      const blogpost = await BlogPosts.find({ author: req.params.name });
-      if (!blogpost) {
-        return res.status(404).json({ error: 'Blog posts not found' });
-      }
-      res.status(200).send(blogpost);
-    } catch (error) {
-        res.status(500).send({
-            message: "Internal server error",
-            error: error
+        const blogpost = await BlogPosts.find({
+        "author.name": {
+        $regex: new RegExp(name, "i")
+        }
         })
+    if(blogpost.length === 0){
+    return res.status(404).send("Autore non trovato")
+    }
+    res.status(200).send(blogpost)
+    } catch (error) {
+    res.status(500).send("errore interno del server")
     }
   });
   

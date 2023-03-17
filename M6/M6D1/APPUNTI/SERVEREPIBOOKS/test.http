@@ -124,4 +124,6 @@ DELETE http://localhost:4040/BlogPosts/6410c1d8fa82f861c63abbb8
 
 #####
 
-GET http://localhost:4040/BlogPosts/armando+Calandrelli
+GET http://localhost:4040/author?name=Armando
+
+#####
