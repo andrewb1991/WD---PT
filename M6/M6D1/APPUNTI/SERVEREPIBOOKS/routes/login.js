@@ -11,7 +11,7 @@ if(!token){
 return res.status(401).send("Accesso non autorizzato o token mancante")
 try {
     const verified = jwt.verify(token, process.send.JWTSECRET)
-    req.user = verified
+    req.User = verified
     next()
 } catch (error) {
     res.status(400).send("token non valido o scaduto")
@@ -20,7 +20,7 @@ try {
 }
 
 router.post("/login", async(req, res)=>{
-const user = await Users.find({
+const user = await User.find({
 email: req.body.email
 })
 if(!user){

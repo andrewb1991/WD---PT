@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const BlogPosts = require("../models/blogpost")
+const Authors = require("../models/authors")
 
 router.get("/BlogPosts", async(req, res)=>{
     try {
@@ -107,4 +108,19 @@ router.delete("/BlogPosts/:id", async(req, res)=>{
         })
     }
 })
+
+router.get("/authors/blogPosts/", async(req, res)=>{
+    const {id} = req.params
+    try {
+        const author = await Authors.findById(id).populate(BlogPosts)
+        if(!author){
+        return res.status(404).send("User not found!")
+        }
+    res.status(200).send(author)
+    } catch (error) {
+        res.status(500).send("Internal server error")
+    }
+
+})
+
 module.exports = router
