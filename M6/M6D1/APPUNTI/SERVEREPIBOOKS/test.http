@@ -98,7 +98,7 @@ GET  http://localhost:3030/BlogPosts/640f73d9399ee1c323208acd
 
 #####
 
-PATCH http://localhost:4040/BlogPosts/64137506cdaf6108ff90d6ef
+PATCH http://localhost:4040/BlogPosts/641206f5db32a284b81fc8fb
 content-type: application/json
 
 {
@@ -110,12 +110,13 @@ content-type: application/json
 #   "unit": "minuti"
 
 # },
-# "author": {
-#   "name": "Paoli Paoli",
-#   "avatar": "https://ui-avatars.com/api/?name=Paolo+Paoli"
-# },
-"content": "Oppo Find N2 Flip è indubbiamente uno degli smartphone <a più avanzati e completi disponibili sul mercato, grazie alla ricca dotazione e all'elevata multimedialità. Dispone di un grande display da <b>6.8</b> pollici con una risoluzione di <b>2520x1080</b> pixel. Le funzionalità offerte da questo Oppo Find N2 Flip sono veramente tante e all'avanguardia. A cominciare dal modulo <b>5G</b> che permette un trasferimento dati e una navigazione in internet eccellente. <br>Questo Oppo Find N2 Flip è un prodotto con pochi competitor per ciò che riguarda la multimedialità grazie alla fotocamera da ben <b>50</b> megapixel che permette al Oppo Find N2 Flip di scattare foto di alta qualità con una risoluzione di <b>8165x6124</b> pixel e di registrare video in <b>4K</b> alla risoluzione di <b>3840x2160</b> pixel. Lo spessore di <b>7.5mm</b> è veramente contenuto e rende questo Oppo Find N2 Flip ancora più spettacolare. "
+"author": {
+"id": "003",
+  "name": "Armando Calandrelli",
+  "avatar": "https://ui-avatars.com/api/?name=Armando+Calandrelli"
 }
+# "content": "Oppo Find N2 Flip è indubbiamente uno degli smartphone <a più avanzati e completi disponibili sul mercato, grazie alla ricca dotazione e all'elevata multimedialità. Dispone di un grande display da <b>6.8</b> pollici con una risoluzione di <b>2520x1080</b> pixel. Le funzionalità offerte da questo Oppo Find N2 Flip sono veramente tante e all'avanguardia. A cominciare dal modulo <b>5G</b> che permette un trasferimento dati e una navigazione in internet eccellente. <br>Questo Oppo Find N2 Flip è un prodotto con pochi competitor per ciò che riguarda la multimedialità grazie alla fotocamera da ben <b>50</b> megapixel che permette al Oppo Find N2 Flip di scattare foto di alta qualità con una risoluzione di <b>8165x6124</b> pixel e di registrare video in <b>4K</b> alla risoluzione di <b>3840x2160</b> pixel. Lo spessore di <b>7.5mm</b> è veramente contenuto e rende questo Oppo Find N2 Flip ancora più spettacolare. "
+ }
 
 #####
 

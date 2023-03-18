@@ -1,7 +1,6 @@
 const express = require("express")
 const router = express.Router()
 const BlogPosts = require("../models/blogpost")
-const Authors = require("../models/authors")
 
 router.get("/BlogPosts", async(req, res)=>{
     try {
@@ -26,6 +25,7 @@ router.post("/BlogPosts", async(req, res)=>{
             unit: req.body.readTime.unit   
             },
         author: {
+                id: req.body.author.id,
                 name: req.body.author.name,
                 avatar: req.body.author.avatar
         },
