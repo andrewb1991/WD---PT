@@ -4,6 +4,7 @@ const booksRoute = require("./routes/books")
 const commentsRoute = require("./routes/comments")
 const authorsRoute = require("./routes/authors")
 const BlogPostsRoute = require("./routes/blogpost")
+const DataBaseRoute = require("./routes/databasediprova")
 const port = 4040
 const app = express()
 const cors = require("cors")
@@ -17,6 +18,7 @@ app.use("/", booksRoute)
 app.use("/", commentsRoute)
 app.use("/", authorsRoute)
 app.use("/", BlogPostsRoute)
+app.use("/", DataBaseRoute)
 
 mongoose.connect("mongodb+srv://andreabramucci:yyJH5ugMl17X6zvA@cluster0.sf1v3sj.mongodb.net/test")
 const db = mongoose.connection
