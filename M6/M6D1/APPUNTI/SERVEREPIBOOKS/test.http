@@ -128,3 +128,31 @@ DELETE http://localhost:4040/BlogPosts/6410c1d8fa82f861c63abbb8
 GET http://localhost:4040/author?name=Armando
 
 #####
+
+GET http://localhost:4040/BlogComments/
+
+#####
+
+POST  http://localhost:4040/BlogPosts/6410c1d8fa82f861c63abb8/BlogComments HTTP/1.1
+Content-Type: application/json
+
+{
+"author": "anddgfgs Paolucci",
+"comment": "Primo commento di adfgdfaprova",
+"rate": 4,
+"blogpostId": "6410c1d8fa82f861c63abb8"
+}
+
+#####
+
+# PATCH http://localhost:4040/BlogComments/6419d61988e855e7a99016cc
+# content-type: application/json
+
+# {
+# "author": "Gianluca Gianluchy",
+# "comment": "Secondo commento di prova aggiornato con Patch",
+#  },
+
+ #####
+
+DELETE http://localhost:4040/BlogComments/6419da119fee9974cb1bfa71

@@ -8,7 +8,11 @@ import { getBlogs } from "../../states/BlogState";
 import { blogsState, blogsStateLoading, blogsStateError } from "../../states/BlogState";
 import posts from "../../data/posts.json";
 import "./styles.css";
+import Comments from "./Comments";
+
 const Blog = (props) => {
+  const [search, setSearch] = useState('');
+  const [click, setClick] = useState(false)
   const {id} = useParams()
   const dispatch = useDispatch()
   const isBlogsLoading = useSelector(blogsStateLoading)
@@ -22,6 +26,7 @@ const Blog = (props) => {
   return (
     <>
     <div className="blog-details-root">
+
           <Container>
             <Image className="blog-details-cover" src={allBlogs.cover} fluid />
             <h1 className="blog-details-title">{allBlogs.title}</h1>
@@ -48,6 +53,7 @@ const Blog = (props) => {
               __html: allBlogs.content,
               }}
               ></div>
+          <Comments key={props.id}></Comments>
           </Container>
           </div>
     </>

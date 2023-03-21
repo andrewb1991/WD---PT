@@ -14,7 +14,7 @@ createAsyncThunk('comments/getComments/', async (id) =>{
         {
           headers: {
             "Content-type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2Nzc1MjI0MjMsImV4cCI6MTY3ODczMjAyM30.oQ2LN3saWm4tg7NG3lhGlQtpdNuUzJbbzOvLG2FRiVY"
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RlOTQ3ODE2YWI2ODAwMTVhMjVmYjkiLCJpYXQiOjE2Nzk0MTczMjEsImV4cCI6MTY4MDYyNjkyMX0.SL6R8CZdiEx9NGMT3_U3NBNLLNgAcG59cRvgWdZ3Flk"
 
           },
         }

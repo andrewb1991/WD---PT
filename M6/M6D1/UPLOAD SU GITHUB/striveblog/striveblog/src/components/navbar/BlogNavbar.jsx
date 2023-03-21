@@ -1,9 +1,14 @@
-import React from "react";
-import { Button, Container, Navbar } from "react-bootstrap";
+import React, {useState, useEffect} from 'react'
+import { Button, Container, Navbar} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./styles.css";
+import useFetch from '../blog/blog-item/useFetch';
 const NavBar = props => {
+  const [search, setSearch] = useState('');
+  const [click, setClick] = useState(false)
+  const {data, loading, error} = useFetch("http://localhost:4040/BlogPosts")
+  console.log(data, loading, error)
   return (
     <Navbar expand="lg" className="blog-navbar" fixed="top">
       <Container className="justify-content-between">
@@ -24,6 +29,8 @@ const NavBar = props => {
           </svg>
           Nuovo Articolo
         </Button>
+       
+
       </Container>
     </Navbar>
   );
