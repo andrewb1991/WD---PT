@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 
 const BlogPostsSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     category: {
         type: String,
         required: true,
@@ -46,4 +47,4 @@ const BlogPostsSchema = new mongoose.Schema({
     }
 }, {timestamps: true, strict: true})
 
-module.exports = mongoose.model("BlogPostsModel", BlogPostsSchema, "BlogPosts")
+module.exports = mongoose.model("BlogPosts", BlogPostsSchema, "BlogPosts")

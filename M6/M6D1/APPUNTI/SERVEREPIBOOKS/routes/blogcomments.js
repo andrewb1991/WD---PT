@@ -1,17 +1,25 @@
 const express = require("express")
-const blogcomments = require("../models/blogcomments")
 const router = express.Router()
 const BlogComments = require("../models/blogcomments")
+const BlogPosts = require("../models/blogpost")
+const mongoose = require("mongoose");
 
 router.get("/BlogComments/", async(req, res)=>{
-const {id} = req.params
-const blogcomments = await BlogComments.find()
+const blogcomments = await BlogComments.find().populate('blogpostId', 'title')
 res.status(200).send(blogcomments)
-
 })
 
-router.post("/BlogPosts/:id/BlogComments", async(req, res)=>{
+router.post("/BlogComments", async(req, res)=>{
+    BlogPosts.findById(req.body.blogpostId)
+    .then(blogpost =>{
+    if(!blogpost){
+    return res.status(404).send({
+    message: "Blogpost non trovato"
+    })
+    }
+    })
     const blogcomments = new BlogComments({
+    _id: mongoose.Types.ObjectId(),
     author: req.body.author,
     comment: req.body.comment,
     rate: req.body.rate,
