@@ -9,8 +9,8 @@ const blogcomments = await BlogComments.find().populate('blogpostId', 'title')
 res.status(200).send(blogcomments)
 })
 
-router.post("/BlogComments", async(req, res)=>{
-    BlogPosts.findById(req.body.blogpostId)
+router.post("/BlogComments/", async(req, res)=>{
+    BlogPosts.findById(req.body._id)
     .then(blogpost =>{
     if(!blogpost){
     return res.status(404).send({
@@ -18,24 +18,24 @@ router.post("/BlogComments", async(req, res)=>{
     })
     }
     })
-    const blogcomments = new BlogComments({
-    _id: mongoose.Types.ObjectId(),
+    const blogcomment = new BlogComments({
     author: req.body.author,
     comment: req.body.comment,
     rate: req.body.rate,
-    blogpostId: req.body.blogpostId
+    blogpostId: req.body._id
     })
     try {
-        const newblogcomments =  await blogcomments.save()
-        res.status(200).send({
-        message: "Comments Added",
-        payload: newblogcomments
-        })
+    const newblogcomments =  await blogcomment.save()
+    res.status(200).send({
+    message: "Comments Added",
+    payload: newblogcomments
+       
+    })    
     } catch (error) {
         res.status(500).send({
-        message: "internal server error",
-        error: error
-        })
+            message: "internal server error",
+            error: error
+            })    
     }
 })
 

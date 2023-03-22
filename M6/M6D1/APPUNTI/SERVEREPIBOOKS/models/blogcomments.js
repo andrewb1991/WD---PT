@@ -1,7 +1,10 @@
 const mongoose = require("mongoose")
 
 const BlogCommentsSchema = new mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
+    _id: {
+    type: String,
+    required: true
+    },
     author: {
     type: String,
     required: true
@@ -14,11 +17,11 @@ const BlogCommentsSchema = new mongoose.Schema({
     type: Number,
     required: true
     },
-    blogpostId: {
+    blogpostId: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "BlogPosts",
+        ref: "BlogPostsModel",
         required: true
-    }
+    }]
 }, {timestamps: true, strict: true })
 
 module.exports = mongoose.model("BlogCommentsModel", BlogCommentsSchema, "BlogComments")

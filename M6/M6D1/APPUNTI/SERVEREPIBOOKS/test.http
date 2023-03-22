@@ -77,19 +77,20 @@ POST  http://localhost:4040/BlogPosts/ HTTP/1.1
 Content-Type: application/json
 
 {
-"category": "PRova",
+"category": "provaposta",
 "title": "L'iPhon migliore di sempre",
 "cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61XO4bORHUL._AC_SL1500_.jpg",
 "readTime":{
-  "value": "4",
+  "time": 3,
   "unit": "minuti"
-
 },
 "author": {
+"id": "001",
   "name": "Carlo Cracco",
   "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
 },
-"content": "HTML"
+"content": "HTML",
+"comments": []
 }
 
 #####
@@ -133,15 +134,15 @@ GET http://localhost:4040/BlogComments/
 
 #####
 
-POST  http://localhost:4040/BlogComments/640f71e3bea275c3f3b27013 HTTP/1.1
+POST  http://localhost:4040/BlogComments/ HTTP/1.1
 Content-Type: application/json
 
 {
-"_id": "641206f5db32a284b81fc8fb",
+"_id": "",
 "author": "anddgfgs Paolucci",
-"comment": "Primo commento di adfgdfaprova",
+"comment": "terzo commento di adfgdfaprova",
 "rate": 4,
-"blogpostId": "641206f5db32a284b81fc8fb"
+"blogpostId": "640f71e3bea275c3f3b27013"
 }
 
 #####
