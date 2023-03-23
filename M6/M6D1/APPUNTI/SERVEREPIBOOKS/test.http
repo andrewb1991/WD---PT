@@ -77,11 +77,11 @@ POST  http://localhost:4040/BlogPosts/ HTTP/1.1
 Content-Type: application/json
 
 {
-"category": "provaposta",
-"title": "L'iPhon migliore di sempre",
-"cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61XO4bORHUL._AC_SL1500_.jpg",
+"category": "Perchè Scegliere OnePlus?",
+"title": "prova",
+"cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81lLg4xOGeL._AC_SY606_.jpg",
 "readTime":{
-  "time": 3,
+  "time": "5",
   "unit": "minuti"
 },
 "author": {
@@ -89,8 +89,12 @@ Content-Type: application/json
   "name": "Carlo Cracco",
   "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
 },
-"content": "HTML",
-"comments": []
+"content": "Potenza assoluta.
+Tutto pronto per il cloud 9.
+Dotato di un hardware leader di settore, potrai giocare e sfruttare tutta la potenza grazie al processore Snapdragon® 8 Gen 2, alla memoria LPDDR5X RAM, fino alle memorie UFS4.0. Progettato per coloro vogliono superarsi, grazie alle prestazioni da hypercar il tuo viaggio digitale nella corsia di sorpasso è assicurato.
+Scheda grafica di nuova generazione
+Ray tracing
+abilitato"
 }
 
 #####
@@ -99,29 +103,35 @@ GET  http://localhost:3030/BlogPosts/640f73d9399ee1c323208acd
 
 #####
 
-PATCH http://localhost:4040/BlogPosts/641206f5db32a284b81fc8fb
+PATCH http://localhost:4040/BlogPosts/641c20fdaa87ac5701e71eca
 content-type: application/json
 
 {
-# "category": "TECH",
-# "title": "Il Nuovo Samsung Galaxy S23 è una bomba!",
-# "cover": "https://www.elettrofuturo.it/wp-content/uploads/2023/02/Samsung-Galaxy-S23-Verde.png",
-# "readTime":{
-#   "time": "5",
-#   "unit": "minuti"
+"category": "TECH",
+"title": "Perchè provare OnePlus!",
+"cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81lLg4xOGeL._AC_SY606_.jpg",
+"readTime":{
+  "time": 5,
+  "unit": "minuti"
 
-# },
+},
 "author": {
-"id": "003",
-  "name": "Armando Calandrelli",
-  "avatar": "https://ui-avatars.com/api/?name=Armando+Calandrelli"
-}
-# "content": "Oppo Find N2 Flip è indubbiamente uno degli smartphone <a più avanzati e completi disponibili sul mercato, grazie alla ricca dotazione e all'elevata multimedialità. Dispone di un grande display da <b>6.8</b> pollici con una risoluzione di <b>2520x1080</b> pixel. Le funzionalità offerte da questo Oppo Find N2 Flip sono veramente tante e all'avanguardia. A cominciare dal modulo <b>5G</b> che permette un trasferimento dati e una navigazione in internet eccellente. <br>Questo Oppo Find N2 Flip è un prodotto con pochi competitor per ciò che riguarda la multimedialità grazie alla fotocamera da ben <b>50</b> megapixel che permette al Oppo Find N2 Flip di scattare foto di alta qualità con una risoluzione di <b>8165x6124</b> pixel e di registrare video in <b>4K</b> alla risoluzione di <b>3840x2160</b> pixel. Lo spessore di <b>7.5mm</b> è veramente contenuto e rende questo Oppo Find N2 Flip ancora più spettacolare. "
+"id": "001",
+  "name": "Carlo Cracco",
+  "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
+},
+"content": "Potenza assoluta.
+Tutto pronto per il cloud 9.
+Dotato di un hardware leader di settore, potrai giocare e sfruttare tutta la potenza grazie al processore Snapdragon® 8 Gen 2, alla memoria LPDDR5X RAM, fino alle memorie UFS4.0. Progettato per coloro vogliono superarsi, grazie alle prestazioni da hypercar il tuo viaggio digitale nella corsia di sorpasso è assicurato.
+Scheda grafica di nuova generazione
+Ray tracing
+abilitato
+"
  }
 
 #####
 
-DELETE http://localhost:4040/BlogPosts/6410c1d8fa82f861c63abbb8
+DELETE http://localhost:4040/BlogPosts/641c20fdaa87ac5701e71eca
 
 
 #####
@@ -138,11 +148,9 @@ POST  http://localhost:4040/BlogComments/ HTTP/1.1
 Content-Type: application/json
 
 {
-"_id": "",
 "author": "anddgfgs Paolucci",
 "comment": "terzo commento di adfgdfaprova",
-"rate": 4,
-"blogpostId": "640f71e3bea275c3f3b27013"
+"rate": 4
 }
 
 #####
@@ -162,3 +170,19 @@ content-type: application/json
  #####
 
 DELETE http://localhost:4040/BlogComments/6419da119fee9974cb1bfa71
+
+#####
+
+POST http://localhost:4040/post HTTP/1.1
+Content-Type: application/json
+
+{
+"title": "Prova Autor numero 2",
+"category": "Prova categoria numero 2",
+"content": "Questa è una prova, mani in alto per due volte",
+"_id": "640f6134d232f52bf48f2beb"
+}
+
+#####
+
+GET http://localhost:4040/post/641b594a5cab553c9dafabc4

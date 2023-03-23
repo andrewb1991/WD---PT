@@ -1,10 +1,6 @@
 const mongoose = require("mongoose")
-
+const BlogPosts = require("../models/blogpost")
 const BlogCommentsSchema = new mongoose.Schema({
-    _id: {
-    type: String,
-    required: true
-    },
     author: {
     type: String,
     required: true
@@ -19,7 +15,7 @@ const BlogCommentsSchema = new mongoose.Schema({
     },
     blogpostId: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "BlogPostsModel",
+        ref: "BlogPosts",
         required: true
     }]
 }, {timestamps: true, strict: true })

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const BlogPostsSchema = new mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
     category: {
         type: String,
         required: true,
@@ -43,9 +42,8 @@ const BlogPostsSchema = new mongoose.Schema({
 
     },
     content: {
-        type: String,
+        type: String
     },
-    comments: [{type: Schema.Types.ObjectId, ref: 'BlogComments'}]
 }, {timestamps: true, strict: true})
 
 module.exports = mongoose.model("BlogPosts", BlogPostsSchema, "BlogPosts")
