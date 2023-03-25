@@ -15,7 +15,7 @@ const BlogList = (props) => {
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setPage] = useState(1);
   const limit = 1;
-  const {data, loading, error} = useFetch(`http://localhost:4040/BlogPosts`)
+  const {data, loading, error} = useFetch(`http://localhost:4040/BlogPosts/`)
 console.log(data)
 
 

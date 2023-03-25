@@ -10,6 +10,7 @@ const postRoute = require("./routes/post")
 const port = 4040
 const app = express()
 const cors = require("cors")
+require('dotenv').config()
 const logMiddlewares = require("./middlewares/logMiddlewares")
 const blogcomments = require("./models/blogcomments")
 
@@ -25,7 +26,7 @@ app.use("/", DataBaseRoute)
 app.use("/", BlogCommentsRoute)
 app.use("/", postRoute)
 
-mongoose.connect("mongodb+srv://andreabramucci:yyJH5ugMl17X6zvA@cluster0.sf1v3sj.mongodb.net/test")
+mongoose.connect(`mongodb+srv://andreabramucci:yyJH5ugMl17X6zvA@cluster0.sf1v3sj.mongodb.net/test`)
 const db = mongoose.connection
 db.on("error", console.log.bind(console, "Connection Error"))
 db.once("open", ()=>{
