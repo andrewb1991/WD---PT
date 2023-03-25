@@ -77,29 +77,26 @@ POST  http://localhost:4040/BlogPosts/ HTTP/1.1
 Content-Type: application/json
 
 {
-"category": "Perchè Scegliere OnePlus?",
-"title": "prova",
+"category": "TECH",
+"title": "Perchè scegleire OnePlus?",
 "cover": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81lLg4xOGeL._AC_SY606_.jpg",
-"readTime":{
-  "time": "5",
+"readTime": {
+  "time": 5,
   "unit": "minuti"
 },
 "author": {
-"id": "001",
+  "id": "001",
   "name": "Carlo Cracco",
   "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
-},
-"content": "Potenza assoluta.
-Tutto pronto per il cloud 9.
-Dotato di un hardware leader di settore, potrai giocare e sfruttare tutta la potenza grazie al processore Snapdragon® 8 Gen 2, alla memoria LPDDR5X RAM, fino alle memorie UFS4.0. Progettato per coloro vogliono superarsi, grazie alle prestazioni da hypercar il tuo viaggio digitale nella corsia di sorpasso è assicurato.
-Scheda grafica di nuova generazione
-Ray tracing
-abilitato"
+  },
+  
+  "content": "ciao"
+ 
 }
 
-#####
+######
 
-GET  http://localhost:3030/BlogPosts/640f73d9399ee1c323208acd
+GET  http://localhost:4040/BlogPosts/
 
 #####
 
@@ -118,7 +115,7 @@ content-type: application/json
 "author": {
 "id": "001",
   "name": "Carlo Cracco",
-  "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco"
+  "avatar": "https://ui-avatars.com/api/?name=Carlo+Cracco",
 },
 "content": "Potenza assoluta.
 Tutto pronto per il cloud 9.

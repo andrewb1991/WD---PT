@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
-const DatabaseSchema = new mongoose.Schema({
+const DatabaseSchema = new mongoose.Schema(
+    {
     about: {
         type: String,
         required: true

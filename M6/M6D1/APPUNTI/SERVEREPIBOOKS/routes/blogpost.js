@@ -14,7 +14,7 @@ router.get("/BlogPosts", async(req, res)=>{
         }
 })
 
-router.post("/BlogPosts", async(req, res)=>{
+router.post("/BlogPosts/", async(req, res)=>{
     console.log(req.body)
     const blogpost = new BlogPosts({
         category: req.body.category,
@@ -29,7 +29,7 @@ router.post("/BlogPosts", async(req, res)=>{
                 name: req.body.author.name,
                 avatar: req.body.author.avatar
         },
-        content: req.body.content
+        content: req.body.content,
     }) 
     try {
         const newblogpost = await blogpost.save()
@@ -124,7 +124,25 @@ router.get('/author', async (req, res) => {
     } catch (error) {
     res.status(500).send("errore interno del server")
     }
-  });
+  })
+
+
+  router.get("/BlogPosts", async(req, res)=>{
+const {page = 1, limit = 4} = req.query
+try {
+const blogposts = await BlogPosts.find()
+.limit(limit*1)
+.skip((page-1)*limit)
+const totalBlogPosts = await BlogPosts.count()
+res.status(200).send({
+blogposts,
+totalBlogPosts: Math.ceil(count/limit),
+currentPage: page
+})    
+} catch (error) {
+  console.log(error)  
+}
+})
   
 
 

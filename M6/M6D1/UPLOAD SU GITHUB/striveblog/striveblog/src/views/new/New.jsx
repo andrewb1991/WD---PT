@@ -19,6 +19,7 @@ const NewBlogPost = (props) => {
       time: formData.time,
     },
     author: {
+      id: formData.id,
       name: formData.name,
       avatar: formData.avatar,
     },
@@ -107,6 +108,19 @@ const NewBlogPost = (props) => {
               setFormData({
                 ...formData,
                 unit: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group controlId="blog-form" className="mt-3">
+          <Form.Label>Author Id</Form.Label>
+          <Form.Control
+            size="lg"
+            placeholder="author id"
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                id: e.target.value,
               })
             }
           />
