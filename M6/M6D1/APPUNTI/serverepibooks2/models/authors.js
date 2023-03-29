@@ -16,11 +16,12 @@ const AuthorsSchema = new mongoose.Schema({
         type: String,
         required: true,
         max: 255,
+        unique: true
+
     },
     password: {
         type: String,
         required: true,
-        unique: true
     },
     birthdate: {
         type: String,

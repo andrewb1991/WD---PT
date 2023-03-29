@@ -197,7 +197,7 @@ Content-Type: application/json
 {
 "nome": "Andrea",
 "cognome": "Bramucci",
-"email": "andrea.bramucci@me.com",
+"email": "andrea.bramucci@me.it",
 "password": "AndreaBramucci",
 "birthdate": "07/12/1991",
 "avatar": "https://ui-avatars.com/api/?name=Andrea+Bramucci"

@@ -24,14 +24,15 @@ router.get("/authors", async(req, res)=>{
 router.post("/authors",  upload.single('image'), async(req, res)=>{
     const salt = await bcrypt.genSalt(10)
     const hashpassword = await bcrypt.hash(req.body.password, salt)
-    // const result = await cloudinary.uploader.upload(req.file.path)
+    // const result = await cloudinary.uploader.upload(req.file.filename)
     const authors = new Authors({
     nome: req.body.nome,
     cognome: req.body.cognome,
     email: req.body.email,
     password: hashpassword,
     birthdate: req.body.birthdate,
-    // avatar: result.secure_url,
+    avatar: req.body.avatar
+    // result.secure_url,
     })
 try {
     const newauthor = await authors.save()
