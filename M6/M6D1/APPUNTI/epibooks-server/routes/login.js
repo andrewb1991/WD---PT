@@ -16,7 +16,7 @@ try {
 } catch (error) {
     res.status(400).send("token non valido o scaduto")
 }
-}
+
 }
 
 router.post("/login", async(req, res)=>{

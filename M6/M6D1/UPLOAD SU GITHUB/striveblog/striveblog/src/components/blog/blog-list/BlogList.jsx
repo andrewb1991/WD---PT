@@ -8,29 +8,35 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Pagination from 'react-bootstrap/Pagination';
 import PageItem from 'react-bootstrap/PageItem'
+import { FormComponent } from "./FormImage";
 
 const BlogList = (props) => {
   const [search, setSearch] = useState('');
   const [click, setClick] = useState(false)
-  const [totalPages, setTotalPages] = useState(0);
-  const [currentPage, setPage] = useState(1);
-  const limit = 1;
-  const {data, loading, error} = useFetch(`http://localhost:4040/BlogPosts/`)
+  const [page, setPage] = useState(1);
+  const [pageCount, setPageCount] = useState(1);
+  const limit = 5;
+  const {data, loading, error} = useFetch(`http://localhost:4040/BlogPosts/?page=${page}&limit=${limit}`)
 console.log(data)
 
 
   useEffect(() => {
     if(data){
-      setTotalPages(data.totalPages)
+      setPageCount(data.pageCount)
     }
 }, [data]);
 
-const handlePrevClick = () => {
-  setPage((prevPage) => prevPage - 1);
+const handlePrevious = () => {
+  setPage((page) =>{
+    if(page === 1) return page;
+  return page - 1});
 };
-
-const handleNextClick = () => {
-  setPage((prevPage) => prevPage + 1);
+ 
+const handleNext = () => {
+  setPage((page) => {
+    if(page === pageCount) return page;
+  return page +1;
+  });
 };
   return (
     <>
@@ -66,29 +72,16 @@ const handleNextClick = () => {
   ))}
      </div>
    </div> 
-   {/* {(totalPages === 1) ? '' :
-    <Pagination className='justify-content-center'>
-        <Pagination.Prev 
-          onClick={handlePrevClick} 
-          disabled={currentPage === 1}
-        />
-
-        <Pagination.Item>{`${currentPage} of ${totalPages}`}</Pagination.Item>
-
-        <Pagination.Next 
-          onClick={handleNextClick} 
-          disabled={currentPage === totalPages}
-        />
-    </Pagination>} */}
+   
    <div>
     <Pagination className="justify-content-center">
-      <Pagination.Prev />
-      <Pagination.Item active>{1}</Pagination.Item>
-      <Pagination.Next />
+      <Pagination.Prev  onClick={handlePrevious} />
+      <Pagination.Item active>{page}</Pagination.Item>
+      <Pagination.Next onClick={handleNext} />
       </Pagination>
   </div>
     </Container>
-  
+  <FormComponent></FormComponent>
     </>  
   );
 };

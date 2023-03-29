@@ -1,6 +1,12 @@
 const express = require("express")
 const router = express.Router()
 const Authors = require("../models/authors")
+const cloudinary = require("../utils/cloudinary")
+const upload = require("../utils/multer")
+const path = require("path")
+const bcrypt = require('bcrypt')
+const jwt = require("jsonwebtoken")
+
 
 router.get("/authors", async(req, res)=>{
     try {
@@ -15,13 +21,17 @@ router.get("/authors", async(req, res)=>{
 
 })
 
-router.post("/authors", async(req, res)=>{
+router.post("/authors",  upload.single('image'), async(req, res)=>{
+    const salt = await bcrypt.genSalt(10)
+    const hashpassword = await bcrypt.hash(req.body.password, salt)
+    const result = await cloudinary.uploader.upload(req.file.path)
     const authors = new Authors({
     nome: req.body.nome,
     cognome: req.body.cognome,
     email: req.body.email,
+    password: hashpassword,
     birthdate: req.body.birthdate,
-    avatar: req.body.avatar,
+    avatar: result.secure_url,
     })
 try {
     const newauthor = await authors.save()

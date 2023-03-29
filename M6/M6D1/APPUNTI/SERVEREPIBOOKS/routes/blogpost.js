@@ -1,6 +1,30 @@
 const express = require("express")
 const router = express.Router()
 const BlogPosts = require("../models/blogpost")
+const cloudinary = require("../utils/cloudinary")
+const upload = require("../utils/multer")
+const path = require("path")
+
+router.patch("/BlogPosts/:id/author", upload.single('image'), async(req, res)=>{
+try {  
+    const {id} = req.query
+    let blogpost = await BlogPosts.findById(req.params.id)
+    await cloudinary.uploader.destroy(blogpost.cloudinary_id)
+    const result = await cloudinary.uploader.upload(req.file.path)
+    // res.json(result)
+    const data =  {
+        author: {
+                id: req.body.author.id,
+                name: req.body.author.name,
+                avatar: result.secure_url,
+            }
+    }
+blogpost = await BlogPosts.findByIdAndUpdate(req.params.id, data, {new: true})
+res.json(blogpost)
+} catch (error) {
+    console.log(error)
+}
+})
 
 router.get("/BlogPosts", async(req, res)=>{
     try {
@@ -14,8 +38,22 @@ router.get("/BlogPosts", async(req, res)=>{
         }
 })
 
-router.post("/BlogPosts/", async(req, res)=>{
+router.get("/TestCloudinary", async(req, res)=>{
+    try {
+        const blogpost = await BlogPosts.find()
+        res.status(200).send(blogpost)
+    } catch (error) {
+        res.status(500).send({
+        message: "Errore interno del server",
+        error: error     
+        })
+        }
+})
+
+
+router.post("/BlogPosts/", upload.single('image'),async(req, res)=>{
     console.log(req.body)
+    const result = await cloudinary.uploader.upload(req.file.path)
     const blogpost = new BlogPosts({
         category: req.body.category,
         title: req.body.title,
@@ -27,7 +65,7 @@ router.post("/BlogPosts/", async(req, res)=>{
         author: {
                 id: req.body.author.id,
                 name: req.body.author.name,
-                avatar: req.body.author.avatar
+                avatar: result.secure_url
         },
         content: req.body.content,
     }) 
@@ -62,6 +100,8 @@ router.get("/BlogPosts/:id", async(req, res)=>{
     }
 })
 
+
+
 router.patch("/BlogPosts/:id", async(req, res)=>{
     const {id} = req.params
     const blogpostExist = await BlogPosts.findById(id)
@@ -88,6 +128,8 @@ router.patch("/BlogPosts/:id", async(req, res)=>{
     }
 }
 )
+
+
 
 router.delete("/BlogPosts/:id", async(req, res)=>{
     const {id} = req.params
@@ -127,18 +169,15 @@ router.get('/author', async (req, res) => {
   })
 
 
-  router.get("/BlogPosts", async(req, res)=>{
-const {page = 1, limit = 4} = req.query
+//PAGINATION 
+router.get("/BlogPosts/", async(req, res)=>{
+let {page, limit} = req.query;
 try {
-const blogposts = await BlogPosts.find()
-.limit(limit*1)
-.skip((page-1)*limit)
-const totalBlogPosts = await BlogPosts.count()
-res.status(200).send({
-blogposts,
-totalBlogPosts: Math.ceil(count/limit),
-currentPage: page
-})    
+if(!page) page = 1;
+if(!limit) limit = 4;
+const skip = (page -1) * 10;
+const totalBlogPosts = await BlogPosts.find().skip(skip).limit(limit)
+res.status(200).send(totalBlogPosts)    
 } catch (error) {
   console.log(error)  
 }

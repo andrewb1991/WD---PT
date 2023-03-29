@@ -17,7 +17,7 @@ const BlogPostsSchema = new mongoose.Schema(
     },
     readTime: {
       time: {
-        type: Number,
+        type: String,
         required: true
       },
       unit: {
