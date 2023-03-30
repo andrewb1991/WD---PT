@@ -6,7 +6,10 @@ const bcrypt = require("bcrypt")
 
 router.get("/users", async(req, res)=>{
     try{
-    const users = await Users.find()
+    const users = await Users.find({
+    email: req.body.email,
+    password: req.body.password
+    })
     res.status(200).send(users)
     }
     catch (error) {
@@ -25,7 +28,8 @@ router.post("/users", async(req, res)=>{
         email: req.body.email,
         password: hashpassword,
         name: req.body.name,
-        surname: req.body.surname
+        surname: req.body.surname,
+        avatar: req.body.avatar
     })
     try{
         const newuser = await users.save()

@@ -11,14 +11,17 @@ import {
   Route,
   Link 
 } from "react-router-dom";
+import Login from "./views/login/Login";
+import { Nav } from "react-bootstrap";
 function App() {
   return (
     <Router>
-      <NavBar/>
+    <NavBar/>
       <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/blog/:id" element={<Blog />} />
-        <Route path="/new" element={<NewBlogPost />} />
+        <Route path="/" exact element={<Login/>}/>
+        <Route path="/home" element={<Home/>}/>
+        <Route path="/blog/:id" element={<Blog/>} />
+        <Route path="/new" element={<NewBlogPost/>} />
       </Routes>
       <Footer />
     </Router>
