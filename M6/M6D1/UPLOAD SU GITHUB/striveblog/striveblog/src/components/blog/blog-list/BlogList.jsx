@@ -15,7 +15,7 @@ const BlogList = (props) => {
   const [click, setClick] = useState(false)
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(1);
-  const limit = 5;
+  const limit = 3;
   const {data, loading, error} = useFetch(`http://localhost:4040/BlogPosts/?page=${page}&limit=${limit}`)
 console.log(data)
 

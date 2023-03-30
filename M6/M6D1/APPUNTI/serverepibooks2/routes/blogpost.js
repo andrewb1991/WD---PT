@@ -26,17 +26,17 @@ res.json(blogpost)
 }
 })
 
-router.get("/BlogPosts", async(req, res)=>{
-    try {
-        const blogpost = await BlogPosts.find()
-        res.status(200).send(blogpost)
-    } catch (error) {
-        res.status(500).send({
-        message: "Errore interno del server",
-        error: error     
-        })
-        }
-})
+// router.get("/BlogPosts", async(req, res)=>{
+//     try {
+//         const blogpost = await BlogPosts.find()
+//         res.status(200).send(blogpost)
+//     } catch (error) {
+//         res.status(500).send({
+//         message: "Errore interno del server",
+//         error: error     
+//         })
+//         }
+// })
 
 router.get("/TestCloudinary", async(req, res)=>{
     try {
@@ -174,8 +174,8 @@ router.get("/BlogPosts/", async(req, res)=>{
 let {page, limit} = req.query;
 try {
 if(!page) page = 1;
-if(!limit) limit = 4;
-const skip = (page -1) * 10;
+if(!limit) limit = 9;
+const skip = (page -1) * limit;
 const totalBlogPosts = await BlogPosts.find().skip(skip).limit(limit)
 res.status(200).send(totalBlogPosts)    
 } catch (error) {
