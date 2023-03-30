@@ -73,7 +73,7 @@ const Login = () => {
                   <MDBIcon fab icon='github' size="sm"/>
                 </MDBBtn>
               </div>
-  
+      
               <p className="text-center mt-3">or:</p>
             </div>
   
